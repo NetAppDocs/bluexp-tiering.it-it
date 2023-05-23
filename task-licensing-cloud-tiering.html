@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head class="at-element-marker">
+  <title>Impostare le licenze per il tiering BlueXP | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Impostare le licenze per il tiering BlueXP | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/it-it/cloud-manager-tiering/task-licensing-cloud-tiering.html" />
+	<meta property="og:description" content="Una versione di prova gratuita di 30 giorni del tiering BlueXP inizia quando si imposta il tiering dal primo cluster. Al termine della prova gratuita, dovrai..." />
+  <meta property="og:image" content="https://docs.netapp.com/it-it/cloud-manager-tiering/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Una versione di prova gratuita di 30 giorni del tiering BlueXP inizia quando si imposta il tiering dal primo cluster. Al termine della prova gratuita, dovrai...">
+  <meta name="keywords" content=" subscribe, trial, marketplace, subscription, paygo, pay as you go, byol, bring your own license, annual, tiering, cloud tiering"><!-- Icons -->
+  <link rel="icon" href="/it-it/cloud-manager-tiering/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/it-it/cloud-manager-tiering/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/it-it/cloud-manager-tiering/css/netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/it-it/cloud-manager-tiering/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/it-it/cloud-manager-tiering/css/tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/it-it/cloud-manager-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/cloud-manager-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/cloud-manager-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/cloud-manager-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/cloud-manager-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/cloud-manager-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/cloud-manager-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/cloud-manager-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/cloud-manager-tiering/task-licensing-cloud-tiering.html" />
+  <link rel='stylesheet' href='/it-it/cloud-manager-tiering/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    function addAdobeLaunch(adobeId) {
+      var head = document.getElementsByTagName('head')[0];
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/"+adobeId+".min.js";
+      head.appendChild(adobe);
+    }
+
+    function addGoogleAnalytics(gtagId) {
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id="+gtagId;
+      var head = document.getElementsByTagName('head')[0];
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gtagId);
+    }
+
+    function addConsent(consentId) {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/"+consentId+"/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = consentId;
+      head.appendChild(onetrustScript);
+    }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
+    addAdobeLaunch("launch-e9ff3acac59f");
+    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/it-it/cloud-manager-tiering/js/na-search.js'></script><script src='/it-it/cloud-manager-tiering/js/na-pagenav.js'></script><script src='/it-it/cloud-manager-tiering/js/na-utility.js'></script>
+ <!--  
+  <link rel='stylesheet' href='/it-it/cloud-manager-tiering/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/it-it/cloud-manager-tiering/css/prism-netapp.css' type='text/css'>
+ -->
+
+  <!-- <script src='/it-it/cloud-manager-tiering/js/na-utility.js'></script> -->
+  <script src='/it-it/cloud-manager-tiering/js/clouddocs.js'></script>
+  <script src='/it-it/cloud-manager-tiering/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- <script src='/it-it/cloud-manager-tiering/js/toc.js'></script> -->
+  <!-- <script src='/it-it/cloud-manager-tiering/js/customscripts.js'></script> --><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+          $(".sidebar-nav-container").on("scroll", function() {
+            $.cookie("sidebarScroll", $(".sidebar-nav-container").scrollTop(), {
+              path    : "/it-it/cloud-manager-tiering"  
+            });
+          });
+          $(function() {
+            if ($.cookie("sidebarScroll")) {
+              $(".sidebar-nav-container").scrollTop($.cookie("sidebarScroll"));
+            }
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+  <script src='/it-it/cloud-manager-tiering/js/custom-dropdown.js'></script>
+  <script src='/it-it/cloud-manager-tiering/js/FileSaver.min.js'></script>
+  <script src='/it-it/cloud-manager-tiering/js/jszip-utils.min.js'></script>
+  <script src='/it-it/cloud-manager-tiering/js/jszip.min.js'></script>
+  <!-- <script src='/it-it/cloud-manager-tiering/js/pdf-ux.js'></script> -->
+</head>
+
+
+  <body class role="document" data-flavor="">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-tiering.it-it/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/it-it/cloud-manager-tiering/task-licensing-cloud-tiering.html&page-title=Impostare le licenze per il tiering BlueXP" class="page-nav-contribute-link" role="button"><img src="/it-it/cloud-manager-tiering/images/discuss-sm.svg" alt="" class="github-icon" />Richiedi modifiche alla documentazione</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-tiering/blob/main/task-licensing-cloud-tiering.adoc" class="page-nav-contribute-link" role="button"><img src="/it-it/cloud-manager-tiering/images/edit-sm.svg" alt="" class="github-icon" />Modifica questa pagina</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/it-it/cloud-manager-tiering/images/article-sm.svg" alt="" class="github-icon" />Scopri come collaborare</a></div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">IN QUESTA PAGINA</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">Prodotto e soluzioni</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">Supporto e training</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">Community</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">Blog</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Testimonianze dei clienti</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/company/contact-us/" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contatto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/it-it/cloud-manager-tiering/images/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/it-it/cloud-manager-tiering/images/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/it-it/cloud-manager-tiering/images/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/it-it/cloud-manager-tiering/search.html"
+          data-type="widget" 
+          data-placeholder="Esplora la documentazione"
+          data-no-results-found="Nessun risultato per {query}"
+          data-did-you-mean="Cerca {suggestion}."
+          data-no-results-found-did-you-mean="Nessun risultato per {query}. Intendi {suggestion}?"
+          data-results-found="{hitCount} risultati trovati"
+          data-error-message="Si è verificato un problema durante il recupero dei risultati. Riprova."
+          data-error-reset="Reimposta ricerca"
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/it-it/cloud-manager-tiering/images/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">Italiano</span>
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/it-it/cloud-manager-tiering/images/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/it-it/cloud-manager-tiering/task-licensing-cloud-tiering.html" target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-tiering/task-licensing-cloud-tiering.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-tiering/task-licensing-cloud-tiering.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-tiering/task-licensing-cloud-tiering.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-tiering/task-licensing-cloud-tiering.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/de-de/cloud-manager-tiering/task-licensing-cloud-tiering.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/es-es/cloud-manager-tiering/task-licensing-cloud-tiering.html" target="_self"><span translate="no" class="notranslate">Español</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/fr-fr/cloud-manager-tiering/task-licensing-cloud-tiering.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
+        </li></ul>
+    </div>
+    <!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <button id="btn-sidebar-collapse" onclick="hideSidebar()"><img src="/it-it/cloud-manager-tiering/images/collapse.png" alt="Comprimi pannello di navigazione"></button>
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/it-it/cloud-manager-tiering/images/pdf.png" alt="" width="16" height="16"/>PDF disponibili<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
+        <a target="_blank" href="/it-it/cloud-manager-tiering/pdfs/fullsite-sidebar/Documentazione_sui_tiering_BlueXP.pdf" >
+          <img src="/it-it/cloud-manager-tiering/images/pdf.png" alt="" width="16" height="16"/>PDF del sito di questa documentazione</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-tiering/pdfs/sidebar/Inizia_subito.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-tiering/images/pdf.png" alt="" width="16" height="16"/>
+            Inizia subito
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-tiering/pdfs/sidebar/Tiering_on_premise_dei_dati_nel_cloud.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-tiering/images/pdf.png" alt="" width="16" height="16"/>
+            Tiering on-premise dei dati nel cloud
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-tiering/pdfs/sidebar/Utilizza_il_tiering_BlueXP.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-tiering/images/pdf.png" alt="" width="16" height="16"/>
+            Utilizza il tiering BlueXP
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-tiering/pdfs/sidebar/Riferimento.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-tiering/images/pdf.png" alt="" width="16" height="16"/>
+            Riferimento
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-tiering/pdfs/sidebar/Conoscenza_e_supporto.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-tiering/images/pdf.png" alt="" width="16" height="16"/>
+            Conoscenza e supporto
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/it-it/cloud-manager-tiering/images/pdf-zip.png" alt="" width="16" height="16"/>
+      <pre>Raccolta di documenti PDF separati<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/it-it/cloud-manager-family/"><img src="/it-it/cloud-manager-tiering/images/left_arrow.png" alt=""><pre>Tutta la documentazione BlueXP</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Documenti di tiering BlueXP"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/index.html">
+        Documenti di tiering BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Note di rilascio"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/whats-new.html">
+        Note di rilascio
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Inizia subito"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Inizia subito</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Scopri di più sul tiering BlueXP"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/concept-cloud-tiering.html">
+        Scopri di più sul tiering BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tiering on-premise dei dati nel cloud"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Tiering on-premise dei dati nel cloud</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to Amazon S3"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/task-tiering-onprem-aws.html">
+        Tier to Amazon S3
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to Azure Blob storage"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/task-tiering-onprem-azure.html">
+        Tier to Azure Blob storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to Google Cloud Storage"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/task-tiering-onprem-gcp.html">
+        Tier to Google Cloud Storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to StorageGRID"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/task-tiering-onprem-storagegrid.html">
+        Tier to StorageGRID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier allo storage a oggetti S3"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/task-tiering-onprem-s3-compat.html">
+        Tier allo storage a oggetti S3
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Impostare la licenza"
+      data-li-level="2#" 
+      class="  active "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/task-licensing-cloud-tiering.html">
+        Impostare la licenza
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="FAQ"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/faq-cloud-tiering.html">
+        FAQ
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Utilizza il tiering BlueXP"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Utilizza il tiering BlueXP</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire il tiering dei dati"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/task-managing-tiering.html">
+        Gestire il tiering dei dati
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire lo storage a oggetti"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/task-managing-object-storage.html">
+        Gestire lo storage a oggetti
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Test delle performance del cloud"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/task-tiering-test.html">
+        Test delle performance del cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Visualizza la panoramica del tiering per tutti i cluster"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/task-tiering-onprem-overview.html">
+        Visualizza la panoramica del tiering per tutti i cluster
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Riferimento"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Riferimento</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Classi e regioni di storage Amazon S3 supportate"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/reference-aws-support.html">
+        Classi e regioni di storage Amazon S3 supportate
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Aree geografiche e livelli di accesso Azure supportati"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/reference-azure-support.html">
+        Aree geografiche e livelli di accesso Azure supportati
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Classi e regioni di storage Google Cloud supportate"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/reference-google-support.html">
+        Classi e regioni di storage Google Cloud supportate
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Conoscenza e supporto"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Conoscenza e supporto</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Registrati per ricevere assistenza"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/task-support-registration.html">
+        Registrati per ricevere assistenza
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Richiedi assistenza"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/task-get-help.html">
+        Richiedi assistenza
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Note legali"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-tiering/legal-notices.html">
+        Note legali
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script>$("#mysidebar li.active").parents('ul').css("display","block");</script>
+
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <div class="ie-utility">
+  <button id="btn-sidebar-expand" onclick="showSidebar()"><img src="/it-it/cloud-manager-tiering/images/expand.png" alt="Espandi pannello di navigazione"></button>
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/us-en/cloud/">Documentazione Cloud</a>
+        </li>
+        
+
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/it-it/cloud-manager-family/">BlueXP</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/it-it/cloud-manager-tiering/">BlueXP&nbsp;tiering</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/it-it/cloud-manager-tiering/images/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Impostare le licenze per il tiering BlueXP</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2023-05-23 21:06:40 +0000">05/23/2023</time>
+    
+  
+
+<span>Collaboratori
+</span>
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Una versione di prova gratuita di 30 giorni del tiering BlueXP inizia quando si imposta il tiering dal primo cluster. Al termine della prova gratuita, dovrai pagare il tiering BlueXP tramite un abbonamento pay-as-you-go o annuale dal mercato del tuo cloud provider, una licenza BYOL di NetApp o una combinazione di entrambi.</p>
+</div>
+<div class="paragraph">
+<p>Alcune note prima di leggere ulteriori informazioni:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Se hai già sottoscritto l&#8217;abbonamento BlueXP (PAYGO) nel mercato del tuo cloud provider, sei automaticamente iscritto al tiering BlueXP anche per i sistemi ONTAP on-premise. Verrà visualizzato un abbonamento attivo nella scheda BlueXP Tiering <strong>on-premise dashboard</strong>. Non dovrai più iscriverti. Nel Digital Wallet viene visualizzato un abbonamento attivo.</p>
+</li>
+<li>
+<p>La licenza di tiering BYOL BlueXP (precedentemente nota come licenza "Cloud Tiering") è una licenza <em>floating</em> che è possibile utilizzare in più cluster ONTAP on-premise nel proprio account BlueXP. Si tratta di un&#8217;operazione diversa (e molto più semplice) rispetto al passato in cui è stata acquistata una licenza <em>FabricPool</em> per ciascun cluster.</p>
+</li>
+<li>
+<p>Non sono previsti costi per il tiering dei dati a StorageGRID, pertanto non è richiesta alcuna licenza BYOL o registrazione PAYGO. Questi dati a più livelli non vengono conteggiati in relazione alla capacità acquistata nella licenza.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="concept-cloud-tiering.html#pricing-and-licenses">"Scopri di più sul funzionamento delle licenze per il tiering BlueXP"</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="utilizza-un-abbonamento-a-bluexp-tiering-paygo">Utilizza un abbonamento A BLUEXP Tiering PAYGO</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Gli abbonamenti pay-as-you-go dal mercato del tuo cloud provider ti consentono di concedere in licenza l&#8217;utilizzo dei sistemi Cloud Volumes ONTAP e di molti servizi dati cloud, come il tiering BlueXP.</p>
+</div>
+<div class="sect2">
+<h3 id="iscrizione-a-aws-marketplace">Iscrizione a AWS Marketplace</h3>
+<div class="paragraph">
+<p>Iscriviti a BlueXP Tiering da AWS Marketplace per impostare un abbonamento pay-as-you-go per il tiering dei dati dai cluster ONTAP ad AWS S3.</p>
+</div>
+<div id="subscribe-aws" class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>In BlueXP, fare clic su <strong>Mobility &gt; Tiering &gt; on-premise Dashboard</strong>.</p>
+</li>
+<li>
+<p>Nella sezione <em>abbonamenti Marketplace</em>, fare clic su <strong>Iscriviti</strong> sotto Amazon Web Services, quindi fare clic su <strong>continua</strong>.</p>
+</li>
+<li>
+<p>Iscriviti alla <a href="https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&amp;ref_=beagle&amp;applicationId=AWSMPContessa" target="_blank" rel="noopener">"Mercato AWS"</a>, Quindi accedere nuovamente al sito Web di BlueXP per completare la registrazione.</p>
+<div class="paragraph">
+<p>Il seguente video mostra il processo:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="./media/video_subscribing_aws_tiering.mp4" width="848" height="480" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="iscrizione-a-azure-marketplace">Iscrizione a Azure Marketplace</h3>
+<div class="paragraph">
+<p>Iscriviti a BlueXP Tiering da Azure Marketplace per impostare un abbonamento pay-as-you-go per il tiering dei dati dai cluster ONTAP allo storage Azure Blob.</p>
+</div>
+<div id="subscribe-azure" class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>In BlueXP, fare clic su <strong>Mobility &gt; Tiering &gt; on-premise Dashboard</strong>.</p>
+</li>
+<li>
+<p>Nella sezione <em>abbonamenti Marketplace</em>, fare clic su <strong>Iscriviti</strong> sotto Microsoft Azure, quindi fare clic su <strong>continua</strong>.</p>
+</li>
+<li>
+<p>Iscriviti alla <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview" target="_blank" rel="noopener">"Azure Marketplace"</a>, Quindi accedere nuovamente al sito Web di BlueXP per completare la registrazione.</p>
+<div class="paragraph">
+<p>Il seguente video mostra il processo:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="./media/video_subscribing_azure_tiering.mp4" width="848" height="480" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="iscrizione-al-gcp-marketplace">Iscrizione al GCP Marketplace</h3>
+<div class="paragraph">
+<p>Iscriviti a BlueXP Tiering dal GCP Marketplace per impostare un abbonamento pay-as-you-go per il tiering dei dati dai cluster ONTAP allo storage Google Cloud.</p>
+</div>
+<div id="subscribe-gcp" class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>In BlueXP, fare clic su <strong>Mobility &gt; Tiering &gt; on-premise Dashboard</strong>.</p>
+</li>
+<li>
+<p>Nella sezione <em>abbonamenti Marketplace</em>, fare clic su <strong>Iscriviti</strong> sotto Google Cloud, quindi fare clic su <strong>continua</strong>.</p>
+</li>
+<li>
+<p>Iscriviti alla <a href="https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&amp;rif_reserved" target="_blank" rel="noopener">"Mercato GCP"</a>, Quindi accedere nuovamente al sito Web di BlueXP per completare la registrazione.</p>
+<div class="paragraph">
+<p>Il seguente video mostra il processo:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="./media/video_subscribing_gcp_tiering.mp4" width="848" height="480" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="utilizzare-un-contratto-annuale">Utilizzare un contratto annuale</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pagare il tiering BlueXP ogni anno acquistando un contratto annuale.</p>
+</div>
+<div class="paragraph">
+<p>Quando si esegue il tiering dei dati inattivi su AWS, è possibile sottoscrivere un contratto annuale disponibile su <a href="https://aws.amazon.com/marketplace/pp/B086PDWSS8" target="_blank" rel="noopener">"Pagina AWS Marketplace"</a>. È disponibile in termini di 1, 2 o 3 anni.</p>
+</div>
+<div class="paragraph">
+<p>Se si desidera utilizzare questa opzione, impostare l&#8217;abbonamento dalla pagina Marketplace, quindi <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription" target="_blank" rel="noopener">"Associare l&#8217;abbonamento alle credenziali AWS"</a>.</p>
+</div>
+<div class="paragraph">
+<p>I contratti annuali non sono attualmente supportati quando si esegue il tiering con Azure o GCP.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="utilizzare-una-licenza-bluexp-tiering-byol">Utilizzare una licenza BlueXP Tiering BYOL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Le licenze Bring-Your-Own di NetApp offrono termini di 1, 2 o 3 anni. La licenza BYOL <strong>BlueXP Tiering</strong> (precedentemente nota come licenza "Cloud Tiering") è una licenza <em>mobile</em> che è possibile utilizzare su più cluster ONTAP on-premise nel proprio account BlueXP. La capacità di tiering totale definita nella licenza di tiering BlueXP è condivisa tra <strong>tutti</strong> i cluster on-premise, semplificando il rinnovo e la licenza iniziale. La capacità minima per una licenza BYOL tiering inizia a 10 TIB.</p>
+</div>
+<div class="paragraph">
+<p>Se non disponi di una licenza di tiering BlueXP, contattaci per acquistarne una:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mailto:ng-cloud-tiering@netapp.com?subject=Licensing[Invia e-mail per acquistare una licenza].</p>
+</li>
+<li>
+<p>Fare clic sull&#8217;icona della chat nell&#8217;angolo inferiore destro di BlueXP per richiedere una licenza.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Se si dispone di una licenza basata su nodo non assegnata per Cloud Volumes ONTAP che non si intende utilizzare, è possibile convertirla in una licenza di tiering BlueXP con la stessa equivalenza in dollari e la stessa data di scadenza. <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses" target="_blank" rel="noopener">"Fai clic qui per ulteriori informazioni"</a>.</p>
+</div>
+<div class="paragraph">
+<p>La pagina del portafoglio digitale BlueXP consente di gestire le licenze BYOL di tiering BlueXP. È possibile aggiungere nuove licenze e aggiornare quelle esistenti.</p>
+</div>
+<div class="sect2">
+<h3 id="bluexp-tiering-byol-licensing-a-partire-dal-2021">BlueXP Tiering BYOL licensing a partire dal 2021</h3>
+<div class="paragraph">
+<p>La nuova licenza <strong>BlueXP Tiering</strong> è stata introdotta nell&#8217;agosto 2021 per le configurazioni di tiering supportate in BlueXP utilizzando il servizio di tiering BlueXP. Attualmente BlueXP supporta il tiering per i seguenti storage cloud: Amazon S3, Azure Blob, Google Cloud Storage, NetApp StorageGRID e lo storage a oggetti compatibile con S3.</p>
+</div>
+<div class="paragraph">
+<p>La licenza <strong>FabricPool</strong> utilizzata in passato per il Tier dei dati ONTAP on-premise nel cloud viene conservata solo per le implementazioni ONTAP in siti che non dispongono di accesso a Internet (noti anche come "siti oscuri") e per il tiering delle configurazioni per lo storage a oggetti cloud IBM. Se si utilizza questo tipo di configurazione, si installerà una licenza FabricPool su ciascun cluster utilizzando Gestione di sistema o l&#8217;interfaccia utente di ONTAP.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-tiering/images/tip.svg" alt="Suggerimento">
+</td>
+<td class="content">
+Tenere presente che il tiering a StorageGRID non richiede una licenza di tiering FabricPool o BlueXP.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Se si utilizza la licenza FabricPool, non si è interessati fino a quando la licenza FabricPool non raggiunge la data di scadenza o la capacità massima. Contatta NetApp quando hai bisogno di aggiornare la licenza o prima per assicurarti che non ci siano interruzioni nella tua capacità di tiering dei dati nel cloud.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Se si utilizza una configurazione supportata in BlueXP, le licenze FabricPool verranno convertite in licenze di tiering BlueXP e verranno visualizzate nel portafoglio digitale BlueXP. Una volta scadute le licenze iniziali, sarà necessario aggiornare le licenze di tiering BlueXP.</p>
+</li>
+<li>
+<p>Se si utilizza una configurazione non supportata in BlueXP, continuare a utilizzare una licenza FabricPool. <a href="https://docs.netapp.com/us-en/ontap/cloud-install-fabricpool-task.html" target="_blank" rel="noopener">"Scopri come eseguire il tiering delle licenze con System Manager"</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Di seguito sono riportate alcune informazioni sulle due licenze:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Licenza di tiering BlueXP</th>
+<th class="tableblock halign-left valign-top">Licenza FabricPool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Si tratta di una licenza <em>mobile</em> utilizzabile su più cluster ONTAP on-premise.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Si tratta di una licenza per cluster acquistata e concessa in licenza per <em>every</em> cluster.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">È registrato nel portafoglio digitale BlueXP.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Viene applicato a singoli cluster utilizzando Gestore di sistema o l&#8217;interfaccia utente di ONTAP.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La configurazione e la gestione del tiering vengono eseguite tramite il servizio di tiering BlueXP in BlueXP.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La configurazione e la gestione del tiering vengono eseguite tramite Gestore di sistema o l&#8217;interfaccia CLI di ONTAP.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Una volta configurato, è possibile utilizzare il servizio di tiering senza licenza per 30 giorni utilizzando la versione di prova gratuita.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Una volta configurato, è possibile eseguire il Tier dei primi 10 TB di dati gratuitamente.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="ottenere-il-file-di-licenza-per-il-tiering-bluexp">Ottenere il file di licenza per il tiering BlueXP</h3>
+<div class="paragraph">
+<p>Dopo aver acquistato la licenza di tiering BlueXP, attivare la licenza in BlueXP inserendo il numero di serie del tiering BlueXP e l&#8217;account NSS oppure caricando il file di licenza NLF. Se si prevede di utilizzare questo metodo, la procedura riportata di seguito mostra come ottenere il file di licenza NLF.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Accedere a <a href="https://mysupport.netapp.com" target="_blank" rel="noopener">"Sito di supporto NetApp"</a> E fare clic su <strong>sistemi &gt; licenze software</strong>.</p>
+</li>
+<li>
+<p>Inserire il numero di serie della licenza di tiering BlueXP.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_cloud_tiering_license_step1.gif" alt="Una schermata che mostra una tabella di licenze dopo la ricerca per numero di serie."></span></p>
+</div>
+</li>
+<li>
+<p>In <strong>License Key</strong> (chiave di licenza), fare clic su <strong>Get NetApp License file</strong> (Ottieni file di licenza NetApp).</p>
+</li>
+<li>
+<p>Inserire l&#8217;ID account BlueXP (chiamato ID tenant sul sito di supporto) e fare clic su <strong>Submit</strong> (Invia) per scaricare il file di licenza.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_cloud_tiering_license_step2.gif" alt="Una schermata che mostra la finestra di dialogo Get License (Ottieni licenza) in cui inserire l&#8217;ID tenant e fare clic su Submit (Invia) per scaricare il file di licenza."></span></p>
+</div>
+<div class="paragraph">
+<p>Puoi trovare il tuo ID account BlueXP selezionando l&#8217;elenco a discesa <strong>account</strong> nella parte superiore di BlueXP, quindi facendo clic su <strong>Gestisci account</strong> accanto all&#8217;account. L&#8217;ID account si trova nella scheda Panoramica.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="aggiungi-le-licenze-bluexp-tiering-byol-al-tuo-account">Aggiungi le licenze BlueXP Tiering BYOL al tuo account</h3>
+<div class="paragraph">
+<p>Dopo aver acquistato una licenza di tiering BlueXP per l&#8217;account BlueXP, è necessario aggiungere la licenza a BlueXP per utilizzare il servizio di tiering BlueXP.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Fare clic su <strong>Governance &gt; Digital wallet &gt; licenze servizi dati</strong>.</p>
+</li>
+<li>
+<p>Fare clic su <strong>Aggiungi licenza</strong>.</p>
+</li>
+<li>
+<p>Nella finestra di dialogo <em>Add License</em>, inserire le informazioni sulla licenza e fare clic su <strong>Add License</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se si dispone del numero di serie della licenza di tiering e si conosce l&#8217;account NSS, selezionare l&#8217;opzione <strong>inserire il numero di serie</strong> e immettere le informazioni desiderate.</p>
+<div class="paragraph">
+<p>Se il tuo account NetApp Support Site non è disponibile nell&#8217;elenco a discesa, <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html" target="_blank" rel="noopener">"Aggiungere l&#8217;account NSS a BlueXP"</a>.</p>
+</div>
+</li>
+<li>
+<p>Se si dispone del file di licenza di tiering, selezionare l&#8217;opzione <strong>Upload License file</strong> (carica file di licenza) e seguire le istruzioni per allegare il file.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_services_license_add.png" alt="Una schermata che mostra la pagina per aggiungere la licenza BYOL per il tiering BlueXP."></span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Risultato</div>
+<p>BlueXP aggiunge la licenza in modo che il servizio di tiering BlueXP sia attivo.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="aggiornare-una-licenza-bluexp-tiering-byol">Aggiornare una licenza BlueXP Tiering BYOL</h3>
+<div class="paragraph">
+<p>Se la durata della licenza è prossima alla data di scadenza, o se la capacità concessa in licenza sta raggiungendo il limite, verrà inviata una notifica in BlueXP Tiering.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_services_license_expire2.png" alt="Una schermata che mostra una licenza in scadenza nella pagina di tiering di BlueXP."></span></p>
+</div>
+<div class="paragraph">
+<p>Questo stato viene visualizzato anche nella pagina del portafoglio digitale BlueXP.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_services_license_expire1.png" alt="Una schermata che mostra una licenza in scadenza nella pagina del portafoglio digitale BlueXP."></span></p>
+</div>
+<div class="paragraph">
+<p>Puoi aggiornare la tua licenza di tiering BlueXP prima della scadenza, in modo da non interrompere la tua capacità di tiering dei dati nel cloud.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Fare clic sull&#8217;icona della chat nell&#8217;angolo inferiore destro di BlueXP per richiedere un&#8217;estensione del termine o una capacità aggiuntiva della licenza di tiering BlueXP per il numero di serie specifico.</p>
+<div class="paragraph">
+<p>Dopo aver pagato la licenza e averla registrata nel NetApp Support Site, BlueXP aggiorna automaticamente la licenza nel portafoglio digitale BlueXP e la pagina licenze servizi dati rifletterà la modifica tra 5 e 10 minuti.</p>
+</div>
+</li>
+<li>
+<p>Se BlueXP non riesce ad aggiornare automaticamente la licenza, sarà necessario caricare manualmente il file di licenza.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>È possibile <a href="#ottenere-il-file-di-licenza-per-il-tiering-bluexp">Ottenere il file di licenza dal NetApp Support Site</a>.</p>
+</li>
+<li>
+<p>Nella pagina del portafoglio digitale BlueXP della scheda <em>licenze servizi dati</em>, fare clic su <span class="image"><img src="./media/screenshot_horizontal_more_button.gif" alt="Icona Altro"></span> Per il numero di serie del servizio che si sta aggiornando, fare clic su <strong>Aggiorna licenza</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_services_license_update.png" alt="Schermata che mostra la selezione del pulsante Update License (Aggiorna licenza) per un determinato servizio."></span></p>
+</div>
+</li>
+<li>
+<p>Nella pagina <em>Update License</em>, caricare il file di licenza e fare clic su <strong>Update License</strong> (Aggiorna licenza).</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Risultato</div>
+<p>BlueXP aggiorna la licenza in modo che il servizio di tiering BlueXP continui ad essere attivo.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="applicare-le-licenze-di-tiering-bluexp-ai-cluster-in-configurazioni-speciali">Applicare le licenze di tiering BlueXP ai cluster in configurazioni speciali</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I cluster ONTAP nelle seguenti configurazioni possono utilizzare le licenze di tiering BlueXP, ma la licenza deve essere applicata in modo diverso rispetto ai cluster a nodo singolo, ai cluster configurati in ha, ai cluster nelle configurazioni di mirror di tiering e alle configurazioni MetroCluster che utilizzano il mirror di FabricPool:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cluster a più livelli per IBM Cloud Object Storage</p>
+</li>
+<li>
+<p>Cluster installati in "siti oscuri"</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="processo-per-i-cluster-esistenti-che-dispongono-di-una-licenza-fabricpool">Processo per i cluster esistenti che dispongono di una licenza FabricPool</h3>
+<div class="paragraph">
+<p>Quando vuoi <a href="task-managing-tiering.html#discovering-additional-clusters-from-bluexp-tiering">"Scopri uno di questi tipi di cluster speciali in BlueXP Tiering"</a>, BlueXP Tiering riconosce la licenza FabricPool e la aggiunge al portafoglio digitale BlueXP. Questi cluster continueranno a tiering dei dati come al solito. Alla scadenza della licenza FabricPool, è necessario acquistare una licenza di tiering BlueXP.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="processo-per-i-cluster-appena-creati">Processo per i cluster appena creati</h3>
+<div class="paragraph">
+<p>Quando si scoprono cluster tipici in BlueXP Tiering, si configurerà il tiering utilizzando l&#8217;interfaccia di tiering BlueXP. In questi casi si verificano le seguenti azioni:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>La licenza di tiering BlueXP "padre" tiene traccia della capacità utilizzata per il tiering da tutti i cluster per garantire che la licenza disponga di capacità sufficiente. La capacità totale concessa in licenza e la data di scadenza sono indicate nel portafoglio digitale BlueXP.</p>
+</li>
+<li>
+<p>Una licenza di tiering "figlio" viene automaticamente installata su ciascun cluster per comunicare con la licenza "padre".</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-tiering/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+La capacità concessa in licenza e la data di scadenza mostrate in Gestore di sistema o nell&#8217;interfaccia CLI di ONTAP per la licenza "figlio" non sono le informazioni reali, quindi non preoccuparti se le informazioni non sono le stesse. Questi valori sono gestiti internamente dal software di tiering BlueXP. Le informazioni reali vengono registrate nel portafoglio digitale BlueXP.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Per le due configurazioni elencate in precedenza, è necessario configurare il tiering utilizzando Gestione di sistema o l&#8217;interfaccia CLI di ONTAP (non utilizzando l&#8217;interfaccia di tiering BlueXP). Quindi, in questi casi, è necessario trasferire manualmente la licenza "figlio" a questi cluster dall&#8217;interfaccia di tiering BlueXP.</p>
+</div>
+<div class="paragraph">
+<p>Si noti che, poiché i dati vengono suddivisi in due diverse posizioni di storage a oggetti per le configurazioni di Tiering Mirror, sarà necessario acquistare una licenza con capacità sufficiente per il tiering dei dati in entrambe le posizioni.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Installare e configurare i cluster ONTAP utilizzando Gestione di sistema o l&#8217;interfaccia utente di ONTAP.</p>
+<div class="paragraph">
+<p>Non configurare il tiering a questo punto.</p>
+</div>
+</li>
+<li>
+<p><a href="task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license">"Acquistare una licenza di tiering BlueXP"</a> per la capacità necessaria per il nuovo cluster o cluster.</p>
+</li>
+<li>
+<p>In BlueXP, <a href="task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account">"Aggiungere la licenza al portafoglio digitale BlueXP"</a>.</p>
+</li>
+<li>
+<p>Nel tiering BlueXP, <a href="task-managing-tiering.html#discovering-additional-clusters-from-bluexp-tiering">"scopri i nuovi cluster"</a>.</p>
+</li>
+<li>
+<p>Nella pagina Clusters, fare clic su <span class="image"><img src="./media/screenshot_horizontal_more_button.gif" alt="Icona Altro"></span> Per il cluster e selezionare <strong>Deploy License</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_deploy_license.png" alt="Una schermata che mostra come implementare una licenza di tiering in un cluster ONTAP."></span></p>
+</div>
+</li>
+<li>
+<p>Nella finestra di dialogo <em>Deploy License</em>, fare clic su <strong>Deploy</strong>.</p>
+<div class="paragraph">
+<p>La licenza secondaria viene implementata nel cluster ONTAP.</p>
+</div>
+</li>
+<li>
+<p>Tornare a Gestore di sistema o all&#8217;interfaccia utente di ONTAP e configurare la configurazione del tiering.</p>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/ontap/fabricpool/manage-mirrors-task.html">"Informazioni di configurazione del mirror FabricPool"</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html">"Informazioni di configurazione di FabricPool MetroCluster"</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/ontap/fabricpool/setup-ibm-object-storage-cloud-tier-task.html">"Tiering delle informazioni su IBM Cloud Object Storage"</a></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/copyright/">© 2023 NetApp, Inc.</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Condizioni per l'utilizzo</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Direttiva sulla privacy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Direttiva sui Cookie</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Impostazioni cookie</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a target="_self" href="javascript:netapp_mailto()">Invia feedback su questa pagina</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-tiering/images/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-tiering/images/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-tiering/images/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-tiering/images/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-tiering/images/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-tiering/images/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-tiering/images/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/it-it/cloud-manager-tiering/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/it-it/cloud-manager-tiering/js/prism.js'></script>
+      <script type="text/javascript" src='/it-it/cloud-manager-tiering/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/it-it/cloud-manager-tiering/js/tabbed-blocks.js'></script>
+    <script src='/it-it/cloud-manager-tiering/js/sidebar.js'></script>
+  </body></html>
