@@ -1,0 +1,523 @@
+---
+sidebar: sidebar 
+permalink: faq-cloud-tiering.html 
+keywords: faq, questions, requirements, service connector, object store, object storage, aws, azure, bucket, cluster, aggregate, s3, storage class, standard, inactive data reporting, auto, volume tiering policy, policy, tiering policy, snapshot, cold, inactive, infrequent 
+summary: Queste FAQ possono essere utili se stai cercando una risposta rapida a una domanda. 
+---
+= FAQ tecniche sul tiering BlueXP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Queste FAQ possono essere utili se stai cercando una risposta rapida a una domanda.
+
+
+
+== Servizio di tiering BlueXP
+
+Le seguenti FAQ si riferiscono al funzionamento del tiering BlueXP.
+
+
+
+=== Quali sono i vantaggi dell'utilizzo del servizio di tiering BlueXP?
+
+BlueXP Tiering affronta le sfide legate alla rapida crescita dei dati, offrendo vantaggi come:
+
+* Estensione semplice del data center al cloud, fornendo fino a 50 volte più spazio
+* Ottimizzazione dello storage, con un risparmio medio dello storage del 70%
+* Costo totale di proprietà ridotto in media del 30%
+* Non è necessario modificare il fattore di fattore delle applicazioni
+
+
+
+
+=== Quali tipi di dati sono utili per eseguire il tiering nel cloud?
+
+In sostanza, tutti i dati considerati inattivi sui sistemi di storage primario e secondario sono un buon obiettivo per il passaggio al cloud. Nei sistemi primari, tali dati possono includere snapshot, record storici e progetti finiti. Nei sistemi secondari, sono inclusi tutti i volumi che contengono copie dei dati primari effettuate per scopi di DR e backup.
+
+
+
+=== È possibile tierare i dati da volumi NAS e SAN?
+
+Sì, puoi eseguire il tiering dei dati dai volumi NAS al cloud pubblico o ai cloud privati, come StorageGRID. Quando si esegue il tiering dei dati a cui si accede tramite protocolli SAN, NetApp consiglia di utilizzare cloud privati perché i protocolli SAN sono più sensibili ai problemi di connettività rispetto a NAS.
+
+
+
+=== Qual è la definizione di dati inattivi o utilizzati di rado e come vengono controllati?
+
+La definizione di ciò che si può anche fare riferimento ai dati cold è: "Blocchi di volume (metadati esclusi) a cui non è stato effettuato l'accesso per un certo periodo di tempo". La "quantità di tempo" è determinata da un attributo di policy di tiering denominato Cooling-days.
+
+
+
+=== Il tiering BlueXP manterrà i risparmi sull'efficienza dello storage nel Tier cloud?
+
+Sì, le efficienze dello storage a livello di volume di ONTAP, come compressione, deduplica e compattazione, vengono preservate quando si spostano i dati nel Tier cloud.
+
+
+
+=== Qual è la differenza tra il tiering FabricPool e BlueXP?
+
+FabricPool è la tecnologia di tiering ONTAP che può essere gestita in autonomia tramite l'interfaccia CLI e il gestore di sistema di ONTAP oppure gestita come servizio tramite il tiering BlueXP. BlueXP Tiering trasforma FabricPool in un servizio gestito con processi di automazione avanzati, sia su ONTAP che nel cloud, fornendo maggiore visibilità e controllo sul tiering nelle implementazioni ibride e multi-cloud.
+
+
+
+=== È possibile utilizzare i dati a più livelli nel cloud per il disaster recovery o per il backup/archiviazione?
+
+No Poiché i metadati del volume non vengono mai suddivisi in Tier dal Tier di performance, non è possibile accedere direttamente ai dati memorizzati nello storage a oggetti.
+
+Tuttavia, il tiering BlueXP può essere utilizzato per ottenere backup e DR convenienti abilitando l'IT sui sistemi secondari e sui volumi di destinazione SnapMirror (volumi DP), per eseguire il tiering di tutti i dati (esclusi i metadati), riducendo così l'impatto del data center e il TCO.
+
+
+
+=== Il tiering BlueXP viene applicato a livello di volume o aggregato?
+
+Il tiering BlueXP viene attivato a livello di volume associando un criterio di tiering a ciascun volume. L'identificazione dei dati cold viene eseguita a livello di blocco.
+
+
+
+=== In che modo il tiering BlueXP determina quali blocchi si devono tierare per il cloud?
+
+La policy di tiering associata al volume è il meccanismo che controlla quali blocchi sono a livelli e quando. Il criterio definisce il tipo di blocchi di dati (snapshot, dati utente o entrambi) e il periodo di raffreddamento. Vedere link:concept-cloud-tiering.html#volume-tiering-policies["Policy di tiering dei volumi"] per ulteriori informazioni.
+
+
+
+=== In che modo il tiering BlueXP influisce sulla capacità del volume?
+
+Il tiering BlueXP non ha alcun effetto sulla capacità del volume, ma piuttosto sull'utilizzo del Tier di performance dell'aggregato.
+
+
+
+=== Il tiering BlueXP abilita il reporting dei dati inattivo?
+
+Sì, il tiering BlueXP attiva la funzione IDR (Inactive Data Reporting) su ciascun aggregato. Questa impostazione consente di identificare la quantità di dati inattivi che possono essere suddivisi in livelli per lo storage a oggetti a basso costo.
+
+
+
+=== Quanto tempo richiede IDR per mostrare le informazioni dal momento in cui le utilizzo?
+
+L'IDR inizia a mostrare le informazioni una volta trascorso il periodo di raffreddamento configurato. Utilizzando ONTAP 9.7 e versioni precedenti, IDR aveva un periodo di raffreddamento non regolabile di 31 giorni. A partire da ONTAP 9.8, il periodo di raffreddamento IDR può essere configurato fino a 183 giorni.
+
+
+
+== Licenze e costi
+
+Le seguenti FAQ si riferiscono alle licenze e ai costi per l'utilizzo del tiering BlueXP.
+
+
+
+=== Quanto costa l'utilizzo del tiering BlueXP?
+
+Quando si esegue il tiering dei dati cold nel cloud pubblico:
+
+* Per l'abbonamento pay-as-you-go (PAYGO), basato sull'utilizzo: 0.05 dollari per GB/mese.
+* Per l'abbonamento annuale (BYOL), basato su termini: A partire da 0.033 dollari per GB/mese.
+
+
+https://bluexp.netapp.com/pricing["Consulta i dettagli sui prezzi"].
+
+Quando si esegue il tiering dei dati cold su un sistema NetApp StorageGRID (cloud privato), non è previsto alcun costo.
+
+
+
+=== È possibile disporre di una licenza BYOL e PAYGO per lo stesso cluster ONTAP?
+
+Sì. BlueXP Tiering consente di utilizzare una licenza BYOL, UN abbonamento PAYGO o una combinazione di entrambi.
+
+
+
+=== Cosa succede se è stato raggiunto il limite di capacità BYOL?
+
+Se si raggiunge il limite di capacità BYOL, il tiering dei nuovi dati cold si interrompe. Tutti i dati su più livelli in precedenza rimangono accessibili, il che significa che è possibile recuperare e utilizzare questi dati. Una volta recuperati, questi dati vengono spostati di nuovo nel Tier di performance dal cloud.
+
+Tuttavia, se disponi di un abbonamento al marketplace PAYGO per _BlueXP - Deploy & Manage Cloud Data Services_, i nuovi dati cold continueranno a essere suddivisi in livelli per lo storage a oggetti e pagherai per ciascun utilizzo.
+
+
+
+=== La licenza di tiering BlueXP include i costi di uscita del provider cloud?
+
+No, non lo fa.
+
+
+
+=== La reidratazione dei sistemi on-premise è soggetta ai costi di uscita addebitati dai cloud provider?
+
+Sì. Tutte le letture del cloud pubblico sono soggette a costi di uscita.
+
+
+
+=== Come posso stimare i costi del cloud? Esiste una modalità "what if" per il tiering BlueXP?
+
+Il modo migliore per stimare quanto un cloud provider addebiterà per l'hosting dei tuoi dati è utilizzare i calcolatori: https://calculator.aws/#/["AWS"], https://azure.microsoft.com/en-us/pricing/calculator/["Azure"] e. https://cloud.google.com/products/calculator["Google Cloud"].
+
+
+
+=== I provider di servizi cloud addebitano costi aggiuntivi per la lettura/recupero dei dati dallo storage a oggetti allo storage on-premise?
+
+Sì. Controllare https://aws.amazon.com/s3/pricing/["Prezzi Amazon S3"], https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["Prezzo a blocchi"], e. https://cloud.google.com/storage/pricing["Prezzi del cloud storage"] per ulteriori prezzi sostenuti per la lettura/recupero dei dati.
+
+
+
+=== Come posso stimare i risparmi dei miei volumi e ottenere un report cold data prima di abilitare il tiering BlueXP?
+
+Per ottenere una stima, è sufficiente aggiungere il cluster ONTAP a BlueXP e ispezionarlo attraverso la pagina dei cluster di tiering BlueXP. Fare clic su *Calculate potenziali risparmi di tiering* per avviare il cluster https://bluexp.netapp.com/cloud-tiering-service-tco["Calcolatore del TCO di BlueXP Tiering"^] per vedere quanto denaro puoi risparmiare.
+
+
+
+== ONTAP
+
+Le seguenti domande si riferiscono a ONTAP.
+
+
+
+=== Quali versioni di ONTAP supportano il tiering BlueXP?
+
+BlueXP Tiering supporta ONTAP versione 9.2 e successive.
+
+
+
+=== Quali tipi di sistemi ONTAP sono supportati?
+
+BlueXP Tiering è supportato con cluster AFF, FAS e ONTAP Select a nodo singolo e ad alta disponibilità. Sono supportati anche i cluster nelle configurazioni mirror FabricPool e nelle configurazioni MetroCluster.
+
+
+
+=== È possibile tierare i dati solo dai sistemi FAS con HDD?
+
+Sì, a partire da ONTAP 9.8 è possibile eseguire il tiering dei dati dai volumi ospitati su aggregati di dischi rigidi.
+
+
+
+=== È possibile eseguire il tiering dei dati da un AFF collegato a un cluster con nodi FAS con HDD?
+
+Sì. BlueXP Tiering può essere configurato per tiering volumi ospitati su qualsiasi aggregato. La configurazione del tiering dei dati è irrilevante per il tipo di controller utilizzato e se il cluster è eterogeneo o meno.
+
+
+
+=== E Cloud Volumes ONTAP?
+
+Se disponi di sistemi Cloud Volumes ONTAP, troverai i sistemi nella pagina dei cluster di tiering BlueXP, in modo da ottenere una vista completa del tiering dei dati nella tua infrastruttura di cloud ibrido. Tuttavia, i sistemi Cloud Volumes ONTAP sono di sola lettura dal tiering BlueXP. Non è possibile impostare il tiering dei dati su Cloud Volumes ONTAP dal tiering BlueXP. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html["È possibile impostare il tiering per i sistemi Cloud Volumes ONTAP dall'ambiente di lavoro in BlueXP"^].
+
+
+
+=== Quali altri requisiti sono necessari per i cluster ONTAP?
+
+Dipende dalla posizione in cui si suddividere i dati cold. Per ulteriori informazioni, fare riferimento ai seguenti collegamenti:
+
+* link:task-tiering-onprem-aws.html#prepare-your-ontap-cluster["Tiering dei dati su Amazon S3"]
+* link:task-tiering-onprem-azure.html#preparing-your-ontap-clusters["Tiering dei dati sullo storage Azure Blob"]
+* link:task-tiering-onprem-gcp.html#preparing-your-ontap-clusters["Tiering dei dati su Google Cloud Storage"]
+* link:task-tiering-onprem-storagegrid.html#preparing-your-ontap-clusters["Tiering dei dati su StorageGRID"]
+* link:task-tiering-onprem-s3-compat.html#preparing-your-ontap-clusters["Tiering dei dati sullo storage a oggetti S3"]
+
+
+
+
+== Storage a oggetti
+
+Le seguenti domande si riferiscono allo storage a oggetti.
+
+
+
+=== Quali provider di storage a oggetti sono supportati?
+
+BlueXP Tiering supporta i seguenti provider di storage a oggetti:
+
+* Amazon S3
+* Microsoft Azure Blob
+* Storage Google Cloud
+* NetApp StorageGRID
+* Storage a oggetti compatibile con S3 (ad esempio, MinIO)
+* Storage a oggetti cloud IBM (la configurazione di FabricPool deve essere eseguita utilizzando Gestione di sistema o l'interfaccia CLI di ONTAP)
+
+
+
+
+=== Posso usare il mio bucket/container?
+
+Sì, è possibile. Quando si imposta il tiering dei dati, è possibile aggiungere un nuovo bucket/container o selezionare un bucket/container esistente.
+
+
+
+=== Quali regioni sono supportate?
+
+* link:reference-aws-support.html["Regioni AWS supportate"]
+* link:reference-azure-support.html["Aree Azure supportate"]
+* link:reference-google-support.html["Aree di Google Cloud supportate"]
+
+
+
+
+=== Quali classi di storage S3 sono supportate?
+
+BlueXP Tiering supporta il tiering dei dati per le classi di storage _Standard_, _Standard-infrequent Access_, _One zone-infrequent Access_, _Intelligent Tiering_ e _Glacier Instant Retrieval_. Vedere link:reference-aws-support.html["Classi di storage S3 supportate"] per ulteriori dettagli.
+
+
+
+=== Perché Amazon S3 Glacier Flexible e S3 Glacier Deep Archive non sono supportati dal tiering BlueXP?
+
+Il motivo principale per cui Amazon S3 Glacier Flexible e S3 Glacier Deep Archive non sono supportati è che il tiering BlueXP è progettato come una soluzione di tiering dalle performance elevate, pertanto i dati devono essere continuamente disponibili e rapidamente accessibili per il recupero. Con S3 Glacier Flexible e S3 Glacier Deep Archive, il recupero dei dati può durare da pochi minuti a 48 ore.
+
+
+
+=== È possibile utilizzare altri servizi di storage a oggetti compatibili con S3, come MinIO, con il tiering BlueXP?
+
+Sì, la configurazione dello storage a oggetti compatibile con S3 tramite l'interfaccia utente di tiering è supportata per i cluster che utilizzano ONTAP 9.8 e versioni successive. link:task-tiering-onprem-s3-compat.html["Consulta i dettagli qui"].
+
+
+
+=== Quali livelli di accesso di Azure Blob sono supportati?
+
+BlueXP Tiering supporta il tiering dei dati ai livelli di accesso _hot_ o _Cool_ per i dati inattivi. Vedere link:reference-azure-support.html["Livelli di accesso supportati da Azure Blob"] per ulteriori dettagli.
+
+
+
+=== Quali classi di storage sono supportate per Google Cloud Storage?
+
+BlueXP Tiering supporta il tiering dei dati per le classi di storage _Standard_, _Nearline_, _Coldline_ e _Archive_. Vedere link:reference-google-support.html["Classi di storage Google Cloud supportate"] per ulteriori dettagli.
+
+
+
+=== Il tiering BlueXP supporta l'utilizzo di policy di gestione del ciclo di vita?
+
+Sì. È possibile attivare la gestione del ciclo di vita in modo che il tiering BlueXP possa eseguire la transizione dei dati dalla classe di storage predefinita/Tier di accesso a un Tier più conveniente dopo un certo numero di giorni. La regola del ciclo di vita viene applicata a tutti gli oggetti nel bucket selezionato per lo storage Amazon S3 e Google Cloud e a tutti i container nell'account di storage selezionato per Azure Blob.
+
+
+
+=== Il tiering BlueXP utilizza un archivio di oggetti per l'intero cluster o uno per aggregato?
+
+In una configurazione tipica è presente un archivio di oggetti per l'intero cluster. A partire da agosto 2022, è possibile utilizzare la pagina *Advanced Setup* per aggiungere ulteriori archivi di oggetti per un cluster e quindi associare diversi archivi di oggetti a diversi aggregati oppure collegare 2 archivi di oggetti a un aggregato per il mirroring.
+
+
+
+=== È possibile collegare più bucket allo stesso aggregato?
+
+È possibile collegare fino a due bucket per aggregato allo scopo di eseguire il mirroring, in cui i dati cold vengono associati in maniera sincrona a entrambi i bucket. I bucket possono provenire da diversi provider e da diverse posizioni. A partire da agosto 2022, è possibile utilizzare la pagina *Advanced Setup* per allegare due archivi di oggetti a un singolo aggregato.
+
+
+
+=== È possibile collegare diversi bucket a diversi aggregati nello stesso cluster?
+
+Sì. La Best practice generale consiste nel collegare un singolo bucket a più aggregati. Tuttavia, quando si utilizza il cloud pubblico esiste un limite massimo di IOPS per i servizi di storage a oggetti, pertanto è necessario prendere in considerazione più bucket.
+
+
+
+=== Cosa accade con i dati a più livelli quando si esegue la migrazione di un volume da un cluster a un altro?
+
+Durante la migrazione di un volume da un cluster a un altro, tutti i dati cold vengono letti dal livello cloud. La posizione di scrittura sul cluster di destinazione dipende dall'attivazione del tiering e dal tipo di policy di tiering utilizzata sui volumi di origine e di destinazione.
+
+
+
+=== Cosa accade con i dati a più livelli quando si sposta un volume da un nodo all'altro nello stesso cluster?
+
+Se l'aggregato di destinazione non dispone di un Tier cloud collegato, i dati vengono letti dal Tier cloud dell'aggregato di origine e scritti interamente nel Tier locale dell'aggregato di destinazione. Se l'aggregato di destinazione ha un Tier cloud collegato, i dati vengono letti dal Tier cloud dell'aggregato di origine e scritti per primi nel Tier locale dell'aggregato di destinazione, per facilitare un cutover rapido. In seguito, in base alla policy di tiering utilizzata, viene scritta nel Tier cloud.
+
+A partire da ONTAP 9.6, se l'aggregato di destinazione utilizza lo stesso livello cloud dell'aggregato di origine, i dati cold non tornano al livello locale.
+
+
+
+=== Come posso riportare on-premise i miei dati Tiered al livello di performance?
+
+La riscrittura viene generalmente eseguita in lettura e dipende dal tipo di policy di tiering. Prima di ONTAP 9.8, la scrittura dell'intero volume può essere eseguita con un'operazione di _spostamento del volume_. A partire da ONTAP 9.8, l'interfaccia utente di tiering dispone di opzioni per *riportare tutti i dati* o *riportare il file system attivo*. link:task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier["Scopri come riportare i dati al livello di performance"].
+
+
+
+=== Quando si sostituisce un controller AFF/FAS esistente con un nuovo controller, i dati a più livelli verranno migrati di nuovo on-premise?
+
+No Durante la procedura di "head swap", l'unica cosa che cambia è la proprietà dell'aggregato. In questo caso, verrà modificato nel nuovo controller senza alcun spostamento dei dati.
+
+
+
+=== Posso utilizzare la console del provider cloud o gli esploratori dello storage a oggetti per esaminare i dati suddivisi in livelli in un bucket? È possibile utilizzare i dati memorizzati nello storage a oggetti direttamente senza ONTAP?
+
+No Gli oggetti costruiti e suddivisi in Tier nel cloud non contengono un singolo file, ma fino a 1,024 blocchi da 4 KB da più file. I metadati di un volume rimangono sempre nel Tier locale.
+
+
+
+== Connettori
+
+Le seguenti domande si riferiscono a BlueXP Connector.
+
+
+
+=== Che cos'è il connettore?
+
+Il connettore è un software in esecuzione su un'istanza di calcolo all'interno del tuo account cloud o on-premise, che consente a BlueXP di gestire in modo sicuro le risorse cloud. Per utilizzare il servizio di tiering BlueXP, è necessario implementare un connettore.
+
+
+
+=== Dove deve essere installato il connettore?
+
+* Quando si esegue il tiering dei dati in S3, il connettore può risiedere in un VPC AWS o in sede.
+* Quando si esegue il tiering dei dati sullo storage Blob, il connettore può risiedere in un Azure VNET o in sede.
+* Quando si esegue il tiering dei dati su Google Cloud Storage, il connettore deve risiedere in un VPC Google Cloud Platform.
+* Quando si esegue il tiering dei dati a StorageGRID o ad altri provider di storage compatibili con S3, il connettore deve risiedere in sede.
+
+
+
+
+=== È possibile implementare il connettore on-premise?
+
+Sì. Il software del connettore può essere scaricato e installato manualmente su un host Linux nella rete. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-on-prem.html["Scopri come installare il connettore nella tua sede"].
+
+
+
+=== È necessario un account con un provider di servizi cloud prima di utilizzare il tiering BlueXP?
+
+Sì. È necessario disporre di un account prima di poter definire lo storage a oggetti che si desidera utilizzare. Per configurare il connettore nel cloud su un VPC o VNET, è necessario anche un account con un provider di cloud storage.
+
+
+
+=== Quali sono le implicazioni in caso di guasto del connettore?
+
+In caso di guasto di un connettore, viene influenzata solo la visibilità negli ambienti a più livelli. Tutti i dati sono accessibili e i dati cold identificati di recente vengono automaticamente suddivisi in livelli per lo storage a oggetti.
+
+
+
+== Policy di tiering
+
+
+
+=== Quali sono le policy di tiering disponibili?
+
+Esistono quattro policy di tiering:
+
+* Nessuno: Classifica tutti i dati come sempre caldi, impedendo lo spostamento dei dati dal volume allo storage a oggetti.
+* Snapshot a freddo (solo Snapshot): Solo i blocchi snapshot a freddo vengono spostati nello storage a oggetti.
+* Cold User Data and Snapshots (Auto): Entrambi i blocchi Cold snapshot e Cold User Data vengono spostati nello storage a oggetti.
+* Tutti i dati utente (tutti): Classifica tutti i dati come cold; sposta immediatamente l'intero volume nello storage a oggetti.
+
+
+link:concept-cloud-tiering.html#volume-tiering-policies["Scopri di più sulle policy di tiering"].
+
+
+
+=== A che punto i miei dati sono considerati freddi?
+
+Poiché il tiering dei dati viene eseguito a livello di blocco, un blocco di dati viene considerato freddo dopo che non è stato effettuato l'accesso per un determinato periodo di tempo, definito dall'attributo Minimum-cooling-days della policy di tiering. L'intervallo applicabile è di 2-63 giorni con ONTAP 9.7 e versioni precedenti o di 2-183 giorni a partire da ONTAP 9.8.
+
+
+
+=== Qual è il periodo di raffreddamento predefinito per i dati prima che vengano suddivisi in Tier al livello cloud?
+
+Il periodo di raffreddamento predefinito per il criterio Cold Snapshot è di 2 giorni, mentre il periodo di raffreddamento predefinito per Cold User Data e Snapshot è di 31 giorni. Il parametro Cooling-days (giorni di raffreddamento) non è applicabile alla policy di tutti i livelli.
+
+
+
+=== Tutti i dati a livelli vengono recuperati dallo storage a oggetti quando si esegue un backup completo?
+
+Durante il backup completo vengono letti tutti i dati cold. Il recupero dei dati dipende dalla policy di tiering utilizzata. Quando si utilizzano i criteri tutti e dati utente a freddo e Snapshot, i dati a freddo non vengono riscritti nel Tier di performance. Quando si utilizza il criterio Cold Snapshots, solo nel caso in cui venga utilizzato un vecchio snapshot per il backup verranno recuperati i blocchi a freddo.
+
+
+
+=== È possibile scegliere una dimensione di tiering per volume?
+
+No Tuttavia, è possibile scegliere quali volumi sono idonei per il tiering, il tipo di dati da tiering e il periodo di raffreddamento. A tale scopo, associare un criterio di tiering a tale volume.
+
+
+
+=== La policy All User Data è l'unica opzione per i volumi di protezione dei dati?
+
+No I volumi di protezione dei dati (DP) possono essere associati a una delle tre policy disponibili. Il tipo di policy utilizzata sui volumi di origine e destinazione (DP) determina la posizione di scrittura dei dati.
+
+
+
+=== Il ripristino della policy di tiering di un volume su None consente di reidratare i dati cold o semplicemente di impedire lo spostamento di blocchi cold futuri nel cloud?
+
+Non viene eseguita alcuna operazione di reidratazione quando si reimposta una policy di tiering, ma si impedisce che i nuovi blocchi freddi vengano spostati nel Tier cloud.
+
+
+
+=== Dopo aver effettuato il tiering dei dati nel cloud, posso modificare la policy di tiering?
+
+Sì. Il comportamento dopo la modifica dipende dalla nuova policy associata.
+
+
+
+=== Cosa devo fare se voglio garantire che alcuni dati non vengano spostati nel cloud?
+
+Non associare un criterio di tiering al volume contenente tali dati.
+
+
+
+=== Dove sono memorizzati i metadati dei file?
+
+I metadati di un volume vengono sempre memorizzati localmente, sul Tier di performance -- non viene mai tierato nel cloud.
+
+
+
+== Networking e sicurezza
+
+Le seguenti domande si riferiscono al networking e alla sicurezza.
+
+
+
+=== Quali sono i requisiti di rete?
+
+* Il cluster ONTAP avvia una connessione HTTPS sulla porta 443 al provider di storage a oggetti.
++
+ONTAP legge e scrive i dati da e verso lo storage a oggetti. Lo storage a oggetti non viene mai avviato, ma risponde.
+
+* Per StorageGRID, il cluster ONTAP avvia una connessione HTTPS a StorageGRID tramite una porta specificata dall'utente (la porta è configurabile durante la configurazione del tiering).
+* Un connettore richiede una connessione HTTPS in uscita sulla porta 443 ai cluster ONTAP, all'archivio di oggetti e al servizio di tiering BlueXP.
+
+
+Per ulteriori informazioni, consulta:
+
+* link:task-tiering-onprem-aws.html["Tiering dei dati su Amazon S3"]
+* link:task-tiering-onprem-azure.html["Tiering dei dati sullo storage Azure Blob"]
+* link:task-tiering-onprem-gcp.html["Tiering dei dati su Google Cloud Storage"]
+* link:task-tiering-onprem-storagegrid.html["Tiering dei dati su StorageGRID"]
+* link:task-tiering-onprem-s3-compat.html["Tiering dei dati sullo storage a oggetti S3"]
+
+
+
+
+=== Quali strumenti posso utilizzare per il monitoraggio e il reporting per gestire i dati cold memorizzati nel cloud?
+
+Oltre al tiering BlueXP, https://docs.netapp.com/us-en/active-iq-unified-manager/["Active IQ Unified Manager"^] e. https://docs.netapp.com/us-en/active-iq/index.html["BlueXP Digital Advisor"^] può essere utilizzato per il monitoraggio e la creazione di report.
+
+
+
+=== Quali sono le implicazioni in caso di guasto del collegamento di rete con il cloud provider?
+
+In caso di guasto alla rete, il Tier di performance locale rimane online e i dati hot rimangono accessibili. Tuttavia, i blocchi già spostati nel Tier cloud non saranno accessibili e le applicazioni riceveranno un messaggio di errore quando tentano di accedere a tali dati. Una volta ripristinata la connettività, tutti i dati saranno perfettamente accessibili.
+
+
+
+=== Esiste una raccomandazione sulla larghezza di banda della rete?
+
+La latenza di lettura della tecnologia di tiering FabricPool sottostante dipende dalla connettività al Tier cloud. Sebbene il tiering funzioni su qualsiasi larghezza di banda, si consiglia di posizionare le LIF di intercluster su porte a 10 Gbps per fornire performance adeguate. Non esistono raccomandazioni o limitazioni di larghezza di banda per il connettore.
+
+
+
+=== C'è latenza quando un utente tenta di accedere ai dati a più livelli?
+
+Sì. I Tier cloud non possono fornire la stessa latenza del Tier locale poiché la latenza dipende dalla connettività. Per stimare la latenza e il throughput di un archivio di oggetti, il tiering BlueXP fornisce un test delle performance cloud (basato sul profiler dell'archivio di oggetti ONTAP) che può essere utilizzato dopo il collegamento dell'archivio di oggetti e prima della configurazione del tiering.
+
+
+
+=== Come sono protetti i miei dati?
+
+La crittografia AES-256-GCM viene mantenuta sia a livello di performance che di cloud. La crittografia TLS 1.2 viene utilizzata per crittografare i dati via cavo durante lo spostamento tra i Tier e per crittografare la comunicazione tra il connettore e il cluster ONTAP e l'archivio di oggetti.
+
+
+
+=== È necessaria una porta Ethernet installata e configurata su AFF?
+
+Sì. È necessario configurare una LIF di intercluster su una porta ethernet, su ciascun nodo all'interno di una coppia ha che ospita volumi con dati che si intende raggruppare nel cloud. Per ulteriori informazioni, consulta la sezione requisiti per il cloud provider in cui intendi tierare i dati.
+
+
+
+=== Quali autorizzazioni sono necessarie?
+
+* link:task-tiering-onprem-aws.html#set-up-s3-permissions["Per Amazon, sono necessarie le autorizzazioni per gestire il bucket S3"].
+* Per Azure, non sono necessarie autorizzazioni aggiuntive al di fuori delle autorizzazioni che è necessario fornire a BlueXP.
+* link:task-tiering-onprem-gcp.html#preparing-google-cloud-storage["Per Google Cloud, sono necessarie le autorizzazioni Storage Admin per un account di servizio che dispone di chiavi di accesso allo storage"].
+* link:task-tiering-onprem-storagegrid.html#preparing-storagegrid["Per StorageGRID, sono necessarie le autorizzazioni S3"].
+* link:task-tiering-onprem-s3-compat.html#preparing-s3-compatible-object-storage["Per lo storage a oggetti compatibile con S3, sono necessarie le autorizzazioni S3"].
+

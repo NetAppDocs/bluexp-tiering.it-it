@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: task-tiering-onprem-overview.html 
+keywords: overview, tiering overview, tiered clusters, clusters enabled for tiering, data tiering overview, cold data, hot data, tiered data, savings, savings opportunities, saving opportunity, policies, cold snapshots, all dp user data, cold user data & snapshots, cold user data and snapshots, all user data, no policy, marketplace subscriptions, clusters associated 
+summary: 'BlueXP Tiering offre una vista aggregata del tiering dei dati da ciascuno dei cluster on-premise. Questa panoramica fornisce un quadro chiaro dell"ambiente e consente di intraprendere le azioni appropriate.' 
+---
+= Ottieni una panoramica del tiering dei dati dai tuoi cluster
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+BlueXP Tiering offre una vista aggregata del tiering dei dati da ciascuno dei cluster on-premise. Questa panoramica fornisce un quadro chiaro dell'ambiente e consente di intraprendere le azioni appropriate.
+
+Fai clic su *Tiering > on-premise Dashboard*. BlueXP Tiering fornisce i seguenti dettagli sull'ambiente in uso.
+
+image:screenshot_tiering_onprem_dashboard.png["Schermata della pagina del dashboard on-premise."]
+
+Cluster rilevati:: Il numero di cluster on-premise scoperto dal tiering BlueXP. Il grafico fornisce una panoramica dello stato del tiering per questi cluster.
++
+--
+* Tiering elevato: Cluster che tierano oltre il 20% dei dati cold
+* Tiering basso: Cluster che tierano meno del 20% dei dati cold
+* Nessun tiering - Clusters che non tiering alcun dato
+* Non idoneo - Clusters che non supportano il tiering dei dati
+
+
+--
+Panoramica dei dati:: La quantità di dati utilizzati da tutti i cluster rilevati. Il grafico indica la quantità di dati a più livelli per questi cluster.
++
+--
+* Tiered data (dati a più livelli): Dati cold totali che vengono Tiered nel cloud
+* Cold data (dati cold) - dati cold totali che non vengono sottoposti a tiering
+* Hot data (dati hot) - dati hot totali in uso
+* Non idoneo - dati totali che non vengono sottoposti a tiering perché il cluster o il volume non supporta il tiering dei dati
+
+
+--
+Panoramica sul tiering:: La quantità di dati attualmente in via di tiering e la quantità di dati cold potenzialmente in grado di essere tiered.
+Policy:: Il numero di volte in cui ciascun criterio di tiering è stato applicato a un volume.
+Abbonamenti al marketplace:: Il numero di cluster associati a ciascun tipo di Marketplace Subscription e un'indicazione dello stato dell'abbonamento.
+

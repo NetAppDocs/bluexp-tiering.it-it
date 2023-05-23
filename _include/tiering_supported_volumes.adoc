@@ -1,0 +1,6 @@
+= 
+:allow-uri-read: 
+
+
+Volumi e aggregati supportati:: Il numero totale di volumi a cui è possibile eseguire il tiering BlueXP potrebbe essere inferiore al numero di volumi nel sistema ONTAP. Questo perché i volumi non possono essere suddivisi in livelli da alcuni aggregati. Consultare la documentazione ONTAP per https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html#functionality-or-features-not-supported-by-fabricpool["Funzionalità o funzionalità non supportate da FabricPool"^].
+

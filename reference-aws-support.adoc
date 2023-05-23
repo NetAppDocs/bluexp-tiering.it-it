@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: reference-aws-support.html 
+keywords: aws, amazon, s3, support, regions, storage classes 
+summary: BlueXP Tiering supporta diverse classi di storage S3 e la maggior parte delle regioni. 
+---
+= Classi e regioni di storage S3 supportate
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP Tiering supporta diverse classi di storage S3 e la maggior parte delle regioni.
+
+
+
+== Classi di storage S3 supportate
+
+Quando si imposta il tiering dei dati su AWS, il tiering BlueXP utilizza automaticamente la classe di storage _Standard_ per i dati inattivi. BlueXP Tiering può applicare una regola del ciclo di vita in modo che i dati transitino dalla classe di storage _Standard_ a un'altra classe di storage dopo un certo numero di giorni. È possibile scegliere tra le seguenti classi di storage:
+
+* Standard-infrequent Access (accesso standard-non frequente)
+* Accesso non frequente a una sola zona
+* Intelligent-Tiering (in cui AWS sposta automaticamente i dati tra due livelli: Accesso frequente e accesso infrequente, quando cambiano i modelli di accesso)
+* Glacier Instant Retrieval
+
+
+Se non si sceglie un'altra classe di storage, i dati rimangono nella classe di storage _Standard_ e non vengono applicate regole.
+
+Quando si configura una regola del ciclo di vita del tiering BlueXP, non è necessario configurare alcuna regola del ciclo di vita quando si imposta il bucket nell'account AWS.
+
+https://aws.amazon.com/s3/storage-classes/["Scopri le classi di storage S3"^].
+
+
+
+== Regioni AWS supportate
+
+BlueXP Tiering supporta le seguenti aree AWS.
+
+
+
+=== Asia Pacifico
+
+* Mumbai
+* Seul
+* Singapore
+* Sydney
+* Tokyo
+
+
+
+
+=== Europa
+
+* Francoforte
+* Irlanda
+* Londra
+* Parigi
+* Stoccolma
+
+
+
+
+=== Nord America
+
+* Canada centrale
+* US East (N. Virginia)
+* USA Est (Ohio)
+* US West (N. California)
+* STATI UNITI occidentali (Oregon)
+
+
+
+
+=== America del Sud
+
+* São Paolo
+

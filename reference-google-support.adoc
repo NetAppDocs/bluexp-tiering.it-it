@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: reference-google-support.html 
+keywords: google, gcp, regions, google regions, gcp regions, storage class, standard, nearline, coldline, archive 
+summary: BlueXP Tiering supporta diverse classi di storage Google Cloud e la maggior parte delle regioni. 
+---
+= Classi e regioni di storage Google Cloud supportate
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP Tiering supporta diverse classi di storage Google Cloud e la maggior parte delle regioni.
+
+
+
+== Classi di storage GCP supportate
+
+Quando si imposta il tiering dei dati su GCP, il tiering BlueXP utilizza automaticamente la classe di storage _Standard_ per i dati inattivi. BlueXP Tiering può applicare una regola del ciclo di vita in modo che i dati transitino dalla classe di storage _Standard_ ad altre classi di storage dopo un certo numero di giorni. È possibile scegliere tra le seguenti classi di storage:
+
+* Nearline
+* Coldline
+* Archiviare
+
+
+Se non si sceglie un'altra classe di storage, i dati rimangono nella classe di storage _Standard_ e non vengono applicate regole.
+
+Quando si configura una regola del ciclo di vita del tiering BlueXP, non è necessario configurare alcuna regola del ciclo di vita quando si imposta il bucket nell'account Google.
+
+https://cloud.google.com/storage/docs/storage-classes["Scopri di più sulle classi di storage di Google Cloud"^].
+
+
+
+== Aree di Google Cloud supportate
+
+Il tiering BlueXP supporta le seguenti regioni.
+
+
+
+=== Americhe
+
+* Iowa
+* Los Angeles
+* Montreal
+* N. Virginia
+* Oregon
+* San Paolo
+* Carolina del Sud
+
+
+
+
+=== Asia Pacifico
+
+* Hong Kong
+* Mumbai
+* Osaka
+* Singapore
+* Sydney
+* Taiwan
+* Tokyo
+
+
+
+
+=== Europa
+
+* Belgio
+* Finlandia
+* Francoforte
+* Londra
+* Paesi Bassi
+* Zurigo
+

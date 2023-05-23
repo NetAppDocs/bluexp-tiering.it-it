@@ -1,0 +1,238 @@
+---
+sidebar: sidebar 
+permalink: task-tiering-onprem-gcp.html 
+keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, google, gcp, google cloud storage 
+summary: Liberare spazio sui cluster ONTAP on-premise eseguendo il tiering dei dati inattivi su Google Cloud Storage. 
+---
+= Tiering dei dati dai cluster ONTAP on-premise allo storage cloud Google
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Liberare spazio sui cluster ONTAP on-premise eseguendo il tiering dei dati inattivi su Google Cloud Storage.
+
+
+
+== Avvio rapido
+
+Inizia subito seguendo questi passaggi o scorri verso il basso fino alle sezioni rimanenti per ottenere dettagli completi.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Preparatevi a eseguire il tiering dei dati su Google Cloud Storage
+[role="quick-margin-para"]
+Sono necessari i seguenti elementi:
+
+[role="quick-margin-list"]
+* Un cluster ONTAP on-premise che esegue ONTAP 9.6 o versione successiva e dispone di una connessione HTTPS allo storage cloud Google. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
+* Account di servizio con il ruolo Storage Admin predefinito e le chiavi di accesso allo storage.
+* Un connettore installato in un VPC della piattaforma Google Cloud.
+* Rete per il connettore che abilita una connessione HTTPS in uscita al cluster ONTAP nel data center, allo storage cloud Google e al servizio di tiering BlueXP.
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"] Impostare il tiering
+[role="quick-margin-para"]
+In BlueXP, selezionare un ambiente di lavoro on-premise, fare clic su *Enable* (attiva) per il servizio Tiering e seguire le istruzioni per assegnare i dati a Google Cloud Storage.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"] Impostare la licenza
+[role="quick-margin-para"]
+Al termine della prova gratuita, è possibile pagare il tiering BlueXP tramite un abbonamento pay-as-you-go, una licenza BYOL per tiering ONTAP BlueXP o una combinazione di entrambi:
+
+[role="quick-margin-list"]
+* Per iscriversi al GCP Marketplace, https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["Vai all'offerta BlueXP Marketplace"^], Fare clic su *Subscribe*, quindi seguire le istruzioni.
+* Per pagare utilizzando una licenza BlueXP Tiering BYOL, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contattaci se devi acquistarne una], quindi link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account["Aggiungilo al tuo account da BlueXP Digital Wallet"].
+
+
+
+
+== Requisiti
+
+Verificare il supporto per il cluster ONTAP, configurare la rete e preparare lo storage a oggetti.
+
+L'immagine seguente mostra ciascun componente e le connessioni che è necessario preparare tra di essi:
+
+image:diagram_cloud_tiering_google.png["Immagine dell'architettura che mostra il servizio di tiering BlueXP con una connessione al connettore del provider cloud, il connettore con una connessione al cluster ONTAP e una connessione tra il cluster ONTAP e lo storage a oggetti nel provider cloud. I dati attivi risiedono nel cluster ONTAP, mentre i dati inattivi risiedono nello storage a oggetti."]
+
+
+NOTE: La comunicazione tra il connettore e Google Cloud Storage è solo per la configurazione dello storage a oggetti.
+
+
+
+=== Preparazione dei cluster ONTAP
+
+I cluster ONTAP devono soddisfare i seguenti requisiti quando si esegue il tiering dei dati su Google Cloud Storage.
+
+Piattaforme ONTAP supportate::
++
+--
+* Quando si utilizza ONTAP 9.8 e versioni successive: È possibile tierare i dati dai sistemi AFF o FAS con aggregati all-SSD o aggregati all-HDD.
+* Quando si utilizza ONTAP 9.7 e versioni precedenti: È possibile eseguire il tiering dei dati dai sistemi AFF o dai sistemi FAS con aggregati all-SSD.
+
+
+--
+Versioni di ONTAP supportate:: ONTAP 9.6 o versione successiva
+Requisiti di rete del cluster::
++
+--
+* Il cluster ONTAP avvia una connessione HTTPS sulla porta 443 allo storage cloud Google.
++
+ONTAP legge e scrive i dati da e verso lo storage a oggetti. Lo storage a oggetti non viene mai avviato, ma risponde.
+
++
+Sebbene un'interconnessione cloud di Google offra performance migliori e costi di trasferimento dei dati inferiori, non è necessaria tra il cluster ONTAP e lo storage cloud di Google. Tuttavia, questa è la Best practice consigliata.
+
+* È necessaria una connessione in entrata dal connettore, che risiede in un VPC Google Cloud Platform.
++
+Non è richiesta una connessione tra il cluster e il servizio di tiering BlueXP.
+
+* Per ogni nodo ONTAP che ospita i volumi da tierare è necessario un LIF intercluster. La LIF deve essere associata a _IPSpace_ che ONTAP deve utilizzare per connettersi allo storage a oggetti.
++
+Quando si imposta il tiering dei dati, il tiering BlueXP richiede l'utilizzo di IPSpace. È necessario scegliere l'IPSpace a cui ciascun LIF è associato. Potrebbe trattarsi dell'IPSpace "predefinito" o di un IPSpace personalizzato creato. Scopri di più https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html["LIF"^] e. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["IPspaces"^].
+
+
+
+--
+Volumi e aggregati supportati:: Il numero totale di volumi a cui è possibile eseguire il tiering BlueXP potrebbe essere inferiore al numero di volumi nel sistema ONTAP. Questo perché i volumi non possono essere suddivisi in livelli da alcuni aggregati. Consultare la documentazione ONTAP per https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html#functionality-or-features-not-supported-by-fabricpool["Funzionalità o funzionalità non supportate da FabricPool"^].
+
+
+
+NOTE: Il tiering BlueXP supporta i volumi FlexGroup. Il programma di installazione funziona come qualsiasi altro volume.
+
+
+
+=== Rilevamento di un cluster ONTAP
+
+È necessario creare un ambiente di lavoro ONTAP on-premise in BlueXP prima di iniziare a tierare i dati cold.
+
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
+
+
+
+=== Creazione o commutazione di connettori
+
+Per eseguire il Tier dei dati nel cloud è necessario un connettore. Quando si esegue il tiering dei dati su Google Cloud Storage, un connettore deve essere disponibile in un VPC Google Cloud Platform. Sarà necessario creare un nuovo connettore o assicurarsi che il connettore attualmente selezionato risieda in GCP.
+
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Scopri di più sui connettori"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html["Implementazione di un connettore in GCP"^]
+
+
+
+
+=== Preparazione del collegamento in rete per il connettore
+
+Assicurarsi che il connettore disponga delle connessioni di rete richieste.
+
+.Fasi
+. Assicurarsi che il VPC su cui è installato il connettore consenta i seguenti collegamenti:
++
+** Una connessione HTTPS tramite la porta 443 al servizio di tiering BlueXP e allo storage Google Cloud (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations["vedere l'elenco degli endpoint"^])
+** Una connessione HTTPS sulla porta 443 alla LIF di gestione del cluster ONTAP
+
+
+. Facoltativo: Abilitare l'accesso privato a Google sulla subnet in cui si intende implementare il connettore.
++
+https://cloud.google.com/vpc/docs/configure-private-google-access["Accesso privato a Google"^] È consigliabile se si dispone di una connessione diretta dal cluster ONTAP al VPC e si desidera che la comunicazione tra il connettore e lo storage cloud di Google rimanga nella rete privata virtuale. Si noti che Private Google Access funziona con istanze di macchine virtuali che hanno solo indirizzi IP interni (privati) (non indirizzi IP esterni).
+
+
+
+
+
+=== Preparazione di Google Cloud Storage
+
+Quando si imposta il tiering, è necessario fornire le chiavi di accesso allo storage per un account di servizio che dispone delle autorizzazioni Storage Admin. Un account di servizio consente al tiering BlueXP di autenticare e accedere ai bucket di storage cloud utilizzati per il tiering dei dati. Le chiavi sono necessarie in modo che Google Cloud Storage sappia chi sta effettuando la richiesta.
+
+I bucket di cloud storage devono trovarsi in una link:reference-google-support.html#supported-google-cloud-regions["Regione che supporta il tiering BlueXP"].
+
+
+NOTE: Se si prevede di configurare il tiering BlueXP per utilizzare classi di storage a basso costo in cui i dati a più livelli passeranno dopo un certo numero di giorni, non è necessario selezionare alcuna regola del ciclo di vita durante la configurazione del bucket nell'account GCP. BlueXP Tiering gestisce le transizioni del ciclo di vita.
+
+.Fasi
+. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["Creare un account di servizio con il ruolo di amministratore dello storage predefinito"^].
+. Passare a. https://console.cloud.google.com/storage/settings["Impostazioni storage GCP"^] e creare le chiavi di accesso per l'account di servizio:
++
+.. Selezionare un progetto e fare clic su *interoperabilità*. Se non è già stato fatto, fare clic su *Enable Interoperability access* (attiva accesso all'interoperabilità).
+.. In *chiavi di accesso per gli account di servizio*, fare clic su *Crea una chiave per un account di servizio*, selezionare l'account di servizio appena creato e fare clic su *Crea chiave*.
++
+Quando si imposta il tiering BlueXP, sarà necessario inserire le chiavi in un secondo momento.
+
+
+
+
+
+
+
+== Tiering dei dati inattivi dal primo cluster a Google Cloud Storage
+
+Dopo aver preparato l'ambiente Google Cloud, inizia a tiering dei dati inattivi dal primo cluster.
+
+.Di cosa hai bisogno
+* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Un ambiente di lavoro on-premise"^].
+* Chiavi di accesso allo storage per un account di servizio che ha il ruolo di amministratore dello storage.
+
+
+.Fasi
+. Selezionare l'ambiente di lavoro on-premise ONTAP.
+. Fare clic su *Enable* (attiva) per il servizio Tiering dal pannello di destra.
++
+Se la destinazione del tiering di Google Cloud Storage esiste come ambiente di lavoro su Canvas, è possibile trascinare il cluster sull'ambiente di lavoro di Google Cloud Storage per avviare la procedura di installazione guidata.
+
++
+image:screenshot_setup_tiering_onprem.png["Una schermata che mostra l'opzione Enable (attiva) visualizzata sul lato destro della schermata dopo aver selezionato un ambiente di lavoro ONTAP on-premise."]
+
+. *Define Object Storage Name*: Immettere un nome per lo storage a oggetti. Deve essere univoco rispetto a qualsiasi altro storage a oggetti utilizzato con gli aggregati di questo cluster.
+. *Seleziona provider*: Seleziona *Google Cloud* e fai clic su *continua*.
+. Completare la procedura riportata nelle pagine *Create Object Storage*:
++
+.. *Bucket*: Aggiungi un nuovo bucket di storage Google Cloud o seleziona un bucket esistente.
+.. *Storage Class Life Cycle*: Il tiering BlueXP gestisce le transizioni del ciclo di vita dei dati a più livelli. I dati iniziano nella classe _Standard_, ma è possibile creare regole per spostare i dati in altre classi dopo un certo numero di giorni.
++
+Selezionare la classe di storage Google Cloud a cui si desidera trasferire i dati a più livelli e il numero di giorni prima che i dati vengano spostati, quindi fare clic su *continua*. Ad esempio, la schermata seguente mostra che i dati a più livelli vengono spostati dalla classe _Standard_ alla classe _Nearline_ dopo 30 giorni di storage a oggetti, quindi alla classe _Coldline_ dopo 60 giorni di storage a oggetti.
+
++
+Se si sceglie *Mantieni i dati in questa classe di storage*, i dati rimangono nella classe di storage selezionata. link:reference-google-support.html["Vedere classi di storage supportate"^].
+
++
+image:screenshot_tiering_lifecycle_selection_gcp.png["Una schermata che mostra come selezionare ulteriori classi di storage in cui i dati vengono spostati dopo un certo numero di giorni."]
+
++
+Si noti che la regola del ciclo di vita viene applicata a tutti gli oggetti nel bucket selezionato.
+
+.. *Credenziali*: Inserire la chiave di accesso allo storage e la chiave segreta per un account di servizio che ha il ruolo di amministratore dello storage.
+.. *Rete cluster*: Selezionare l'IPSpace che ONTAP deve utilizzare per connettersi allo storage a oggetti.
++
+La selezione dell'IPSpace corretto garantisce che il tiering BlueXP possa configurare una connessione da ONTAP allo storage a oggetti del provider di cloud.
+
+
+
+. Fare clic su *Continue* (continua) per selezionare i volumi a cui si desidera assegnare il Tier.
+. Nella pagina _Tier Volumes_, selezionare i volumi per i quali si desidera configurare il tiering e avviare la pagina Tiering Policy:
++
+** Per selezionare tutti i volumi, selezionare la casella nella riga del titolo (image:button_backup_all_volumes.png[""]) E fare clic su *Configure Volumes* (Configura volumi).
+** Per selezionare più volumi, selezionare la casella relativa a ciascun volume (image:button_backup_1_volume.png[""]) E fare clic su *Configure Volumes* (Configura volumi).
+** Per selezionare un singolo volume, fare clic sulla riga (o. image:screenshot_edit_icon.gif["icona modifica matita"] ) per il volume.
++
+image:screenshot_tiering_tier_volumes.png["Una schermata che mostra come selezionare un singolo volume, più volumi o tutti i volumi e il pulsante Modify Selected Volumes (Modifica volumi selezionati)."]
+
+
+
+. Nella finestra di dialogo _Tiering Policy_, selezionare una policy di tiering, regolare i giorni di raffreddamento per i volumi selezionati e fare clic su *Apply* (Applica).
++
+link:concept-cloud-tiering.html#volume-tiering-policies["Scopri di più sulle policy di tiering dei volumi e sui giorni di raffreddamento"].
+
++
+image:screenshot_tiering_policy_settings.png["Una schermata che mostra le impostazioni dei criteri di tiering configurabili."]
+
+
+
+.Risultato
+Hai configurato correttamente il tiering dei dati dai volumi del cluster allo storage a oggetti Google Cloud.
+
+.Quali sono le prossime novità?
+link:task-licensing-cloud-tiering.html["Assicurarsi di sottoscrivere il servizio di tiering BlueXP"].
+
+È possibile rivedere le informazioni relative ai dati attivi e inattivi sul cluster. link:task-managing-tiering.html["Scopri di più sulla gestione delle impostazioni di tiering"].
+
+È inoltre possibile creare storage a oggetti aggiuntivo nei casi in cui si desidera eseguire il Tier dei dati da determinati aggregati di un cluster a diversi archivi di oggetti. Oppure, se si prevede di utilizzare il mirroring FabricPool, dove i dati a più livelli vengono replicati in un archivio di oggetti aggiuntivo. link:task-managing-object-storage.html["Scopri di più sulla gestione degli archivi di oggetti"].

@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: reference-azure-support.html 
+keywords: microsoft azure, azure, hot, access tier, cold, regions 
+summary: BlueXP Tiering supporta due livelli di accesso e la maggior parte delle regioni. 
+---
+= Aree e livelli di accesso supportati da Azure Blob
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP Tiering supporta due livelli di accesso e la maggior parte delle regioni.
+
+
+
+== Livelli di accesso supportati da Azure Blob
+
+Quando si imposta il tiering dei dati su Azure, il tiering BlueXP utilizza automaticamente il Tier di accesso _Hot_ per i dati inattivi. BlueXP Tiering può applicare una regola del ciclo di vita in modo che i dati transitino dal Tier di accesso _Hot_ al Tier di accesso _Cool_ dopo un certo numero di giorni.
+
+Se non si sceglie il livello di accesso _Cool_, i dati rimangono nel livello di accesso _Hot_ e non vengono applicate regole.
+
+Quando si configura una regola del ciclo di vita del tiering BlueXP, non è necessario configurare alcuna regola del ciclo di vita durante la configurazione del container nell'account Azure.
+
+https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Scopri i Tier di accesso di Azure Blob"^].
+
+
+
+== Aree Azure supportate
+
+BlueXP Tiering supporta il tiering per qualsiasi account storage in qualsiasi regione accessibile tramite il connettore.

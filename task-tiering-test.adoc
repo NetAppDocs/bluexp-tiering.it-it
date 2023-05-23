@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: task-tiering-test.html 
+keywords: throughput, latency, tiering performance, cloud performance test, tiering test, object storage performance 
+summary: Eseguire un test delle performance del cloud per misurare la latenza di rete e le performance di throughput da un cluster ONTAP a un archivio di oggetti prima e dopo la configurazione del tiering dei dati. 
+---
+= Misurare la latenza di rete e le performance di throughput
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Eseguire un test delle performance del cloud per misurare la latenza di rete e le performance di throughput da un cluster ONTAP a un archivio di oggetti prima e dopo la configurazione del tiering dei dati. Il test identifica anche gli eventuali errori che si sono verificati.
+
+Ecco alcuni esempi di risultati delle performance:
+
+image:screenshot_cloud_performance_test.png["Una schermata dei risultati delle performance del cluster per un Cloud Performance Test."]
+
+.Prima di iniziare
+Si consiglia di eseguire questo controllo quando l'utilizzo della CPU del cluster è inferiore al 50%.
+
+.Procedura per un cluster che non è stato configurato per il tiering
+. Dal menu di navigazione a sinistra, selezionare *mobilità > Tiering*.
+. Dalla pagina *Clusters*, fare clic sull'icona del menu di un cluster e selezionare *Cloud Performance Test*.
+. Rivedere i dettagli e fare clic su *continua*.
+. Seguire le istruzioni per fornire le informazioni richieste.
++
+Le informazioni che è necessario fornire sono le stesse di quelle relative all'impostazione del tiering nel cluster.
+
+. Se si desidera, passare alla procedura guidata Tier Volumes per completare l'installazione.
+
+
+.Procedura per un cluster configurato per il tiering
+. Dal menu di navigazione a sinistra, selezionare *mobilità > Tiering*.
+. Dalla pagina *Clusters*, fare clic sull'icona del menu di un cluster e selezionare *Cloud Performance Test*.
+. Selezionare un nodo dall'elenco a discesa.
+. Visualizzare i risultati o ricontrollare le prestazioni.
+

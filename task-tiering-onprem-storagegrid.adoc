@@ -1,0 +1,214 @@
+---
+sidebar: sidebar 
+permalink: task-tiering-onprem-storagegrid.html 
+keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, storagegrid, tier to storagegrid, fabricpool storagegrid 
+summary: Liberare spazio sui cluster ONTAP on-premise eseguendo il tiering dei dati inattivi su StorageGRID. 
+---
+= Tiering dei dati dai cluster ONTAP on-premise a StorageGRID
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Liberare spazio sui cluster ONTAP on-premise eseguendo il tiering dei dati inattivi su StorageGRID.
+
+
+
+== Avvio rapido
+
+Inizia subito seguendo questi passaggi o scorri verso il basso fino alle sezioni rimanenti per ottenere dettagli completi.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Preparatevi a eseguire il tiering dei dati su StorageGRID
+[role="quick-margin-para"]
+Sono necessari i seguenti elementi:
+
+[role="quick-margin-list"]
+* Un cluster ONTAP on-premise con ONTAP 9.4 o versione successiva e una connessione a StorageGRID tramite una porta specificata dall'utente. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
+* StorageGRID 10.3 o versione successiva con chiavi di accesso AWS che dispongono delle autorizzazioni S3.
+* Un connettore installato in sede.
+* Rete per il connettore che abilita una connessione HTTPS in uscita al cluster ONTAP, a StorageGRID e al servizio di tiering BlueXP.
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"] Impostare il tiering
+[role="quick-margin-para"]
+In BlueXP, selezionare un ambiente di lavoro on-premise, fare clic su *Enable* (attiva) per il servizio Tiering e seguire le istruzioni per assegnare i dati a StorageGRID.
+
+
+
+== Requisiti
+
+Verificare il supporto per il cluster ONTAP, configurare la rete e preparare lo storage a oggetti.
+
+L'immagine seguente mostra ciascun componente e le connessioni che è necessario preparare tra di essi:
+
+image:diagram_cloud_tiering_storagegrid.png["Immagine dell'architettura che mostra il servizio di tiering BlueXP con una connessione al connettore on-premise, il connettore con una connessione al cluster ONTAP e una connessione tra il cluster ONTAP e lo storage a oggetti. I dati attivi risiedono nel cluster ONTAP, mentre i dati inattivi risiedono nello storage a oggetti."]
+
+
+NOTE: La comunicazione tra il connettore e StorageGRID è solo per la configurazione dello storage a oggetti.
+
+
+
+=== Preparazione dei cluster ONTAP
+
+I cluster ONTAP devono soddisfare i seguenti requisiti quando si esegue il tiering dei dati in StorageGRID.
+
+Piattaforme ONTAP supportate::
++
+--
+* Quando si utilizza ONTAP 9.8 e versioni successive: È possibile tierare i dati dai sistemi AFF o FAS con aggregati all-SSD o aggregati all-HDD.
+* Quando si utilizza ONTAP 9.7 e versioni precedenti: È possibile eseguire il tiering dei dati dai sistemi AFF o dai sistemi FAS con aggregati all-SSD.
+
+
+--
+Versione di ONTAP supportata:: ONTAP 9.4 o versione successiva
+Licensing:: Non è richiesta una licenza di tiering BlueXP nell'account BlueXP, né una licenza FabricPool sul cluster ONTAP, quando si esegue il tiering dei dati in StorageGRID.
+Requisiti di rete del cluster::
++
+--
+* Il cluster ONTAP avvia una connessione HTTPS al nodo gateway StorageGRID tramite una porta specificata dall'utente (la porta è configurabile durante l'impostazione del tiering).
++
+ONTAP legge e scrive i dati da e verso lo storage a oggetti. Lo storage a oggetti non viene mai avviato, ma risponde.
+
+* È necessaria una connessione in entrata dal connettore, che deve risiedere in sede.
++
+Non è richiesta una connessione tra il cluster e il servizio di tiering BlueXP.
+
+* Per ogni nodo ONTAP che ospita i volumi da tierare è necessario un LIF intercluster. La LIF deve essere associata a _IPSpace_ che ONTAP deve utilizzare per connettersi allo storage a oggetti.
++
+Quando si imposta il tiering dei dati, il tiering BlueXP richiede l'utilizzo di IPSpace. È necessario scegliere l'IPSpace a cui ciascun LIF è associato. Potrebbe trattarsi dell'IPSpace "predefinito" o di un IPSpace personalizzato creato. Scopri di più https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html["LIF"^] e. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["IPspaces"^].
+
+
+
+--
+Volumi e aggregati supportati:: Il numero totale di volumi a cui è possibile eseguire il tiering BlueXP potrebbe essere inferiore al numero di volumi nel sistema ONTAP. Questo perché i volumi non possono essere suddivisi in livelli da alcuni aggregati. Consultare la documentazione ONTAP per https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html#functionality-or-features-not-supported-by-fabricpool["Funzionalità o funzionalità non supportate da FabricPool"^].
+
+
+
+NOTE: BlueXP Tiering supporta i volumi FlexGroup, a partire da ONTAP 9.5. Il programma di installazione funziona come qualsiasi altro volume.
+
+
+
+=== Rilevamento di un cluster ONTAP
+
+È necessario creare un ambiente di lavoro ONTAP on-premise in BlueXP Canvas prima di iniziare a tierare i dati cold.
+
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
+
+
+
+=== Preparazione di StorageGRID
+
+StorageGRID deve soddisfare i seguenti requisiti.
+
+Versioni di StorageGRID supportate:: È supportato StorageGRID 10.3 e versioni successive.
+Credenziali S3:: Quando si imposta il tiering su StorageGRID, è necessario fornire il tiering BlueXP con una chiave di accesso S3 e una chiave segreta. BlueXP Tiering utilizza le chiavi per accedere ai bucket.
++
+--
+Queste chiavi di accesso devono essere associate a un utente che dispone delle seguenti autorizzazioni:
+
+[source, json]
+----
+"s3:ListAllMyBuckets",
+"s3:ListBucket",
+"s3:GetObject",
+"s3:PutObject",
+"s3:DeleteObject",
+"s3:CreateBucket"
+----
+--
+Versione degli oggetti:: Non è necessario attivare la versione degli oggetti StorageGRID nel bucket dell'archivio di oggetti.
+
+
+
+
+=== Creazione o commutazione di connettori
+
+Per eseguire il Tier dei dati nel cloud è necessario un connettore. Quando si esegue il tiering dei dati su StorageGRID, è necessario che un connettore sia disponibile on-premise. È necessario installare un nuovo connettore o assicurarsi che il connettore attualmente selezionato risieda on-premise.
+
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Scopri di più sui connettori"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["Installazione di un connettore su un host Linux"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html["Passaggio da un connettore all'altro"^]
+
+
+
+
+=== Preparazione del collegamento in rete per il connettore
+
+Assicurarsi che il connettore disponga delle connessioni di rete richieste.
+
+.Fasi
+. Assicurarsi che la rete in cui è installato il connettore abiliti le seguenti connessioni:
++
+** Una connessione HTTPS tramite la porta 443 al servizio di tiering BlueXP (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-on-prem.html#endpoints-contacted-for-day-to-day-operations["vedere l'elenco degli endpoint"^])
+** Una connessione HTTPS tramite la porta 443 al sistema StorageGRID
+** Una connessione HTTPS sulla porta 443 alla LIF di gestione del cluster ONTAP
+
+
+
+
+
+
+== Tiering dei dati inattivi dal primo cluster a StorageGRID
+
+Dopo aver preparato l'ambiente, iniziare a tiering dei dati inattivi dal primo cluster.
+
+.Di cosa hai bisogno
+* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Un ambiente di lavoro on-premise"^].
+* L'FQDN del nodo gateway StorageGRID e la porta che verrà utilizzata per le comunicazioni HTTPS.
+* Chiave di accesso AWS con le autorizzazioni S3 richieste.
+
+
+.Fasi
+. Selezionare l'ambiente di lavoro on-premise ONTAP.
+. Fare clic su *Enable* (attiva) per il servizio Tiering dal pannello di destra.
++
+Se la destinazione del tiering StorageGRID esiste come ambiente di lavoro in Canvas, è possibile trascinare il cluster nell'ambiente di lavoro StorageGRID per avviare l'installazione guidata.
+
++
+image:screenshot_setup_tiering_onprem.png["Una schermata che mostra l'opzione di configurazione del tiering visualizzata sul lato destro della schermata dopo aver selezionato un ambiente di lavoro ONTAP on-premise."]
+
+. *Define Object Storage Name*: Immettere un nome per lo storage a oggetti. Deve essere univoco rispetto a qualsiasi altro storage a oggetti utilizzato con gli aggregati di questo cluster.
+. *Seleziona provider*: Seleziona *StorageGRID* e fai clic su *continua*.
+. Completare la procedura riportata nelle pagine *Create Object Storage*:
++
+.. *Server*: Immettere l'FQDN del nodo gateway StorageGRID, la porta che ONTAP deve utilizzare per la comunicazione HTTPS con StorageGRID e la chiave di accesso e la chiave segreta per un account che dispone delle autorizzazioni S3 richieste.
+.. *Bucket*: Aggiungi un nuovo bucket o seleziona un bucket esistente che inizia con il prefisso _fabric-pool_ e fai clic su *continua*.
++
+Il prefisso _fabric-pool_ è necessario perché il criterio IAM per il connettore consente all'istanza di eseguire azioni S3 sui bucket denominati con quel prefisso esatto. Ad esempio, è possibile chiamare il bucket S3 _fabric-pool-AFF1_, dove AFF1 è il nome del cluster.
+
+.. *Rete cluster*: Selezionare l'IPSpace che ONTAP deve utilizzare per connettersi allo storage a oggetti e fare clic su *continua*.
++
+La selezione dell'IPSpace corretto garantisce che il tiering BlueXP possa impostare una connessione da ONTAP allo storage a oggetti StorageGRID.
+
+
+
+. Nella pagina _Tier Volumes_, selezionare i volumi per i quali si desidera configurare il tiering e avviare la pagina Tiering Policy:
++
+** Per selezionare tutti i volumi, selezionare la casella nella riga del titolo (image:button_backup_all_volumes.png[""]) E fare clic su *Configure Volumes* (Configura volumi).
+** Per selezionare più volumi, selezionare la casella relativa a ciascun volume (image:button_backup_1_volume.png[""]) E fare clic su *Configure Volumes* (Configura volumi).
+** Per selezionare un singolo volume, fare clic sulla riga (o. image:screenshot_edit_icon.gif["icona modifica matita"] ) per il volume.
++
+image:screenshot_tiering_tier_volumes.png["Una schermata che mostra come selezionare un singolo volume, più volumi o tutti i volumi e il pulsante Modify Selected Volumes (Modifica volumi selezionati)."]
+
+
+
+. Nella finestra di dialogo _Tiering Policy_, selezionare una policy di tiering, regolare i giorni di raffreddamento per i volumi selezionati e fare clic su *Apply* (Applica).
++
+link:concept-cloud-tiering.html#volume-tiering-policies["Scopri di più sulle policy di tiering dei volumi e sui giorni di raffreddamento"].
+
++
+image:screenshot_tiering_policy_settings.png["Una schermata che mostra le impostazioni dei criteri di tiering configurabili."]
+
+
+
+.Risultato
+Il tiering dei dati è stato configurato correttamente dai volumi del cluster a StorageGRID.
+
+.Quali sono le prossime novità?
+È possibile rivedere le informazioni relative ai dati attivi e inattivi sul cluster. link:task-managing-tiering.html["Scopri di più sulla gestione delle impostazioni di tiering"].
+
+È inoltre possibile creare storage a oggetti aggiuntivo nei casi in cui si desidera eseguire il Tier dei dati da determinati aggregati di un cluster a diversi archivi di oggetti. Oppure, se si prevede di utilizzare il mirroring FabricPool, dove i dati a più livelli vengono replicati in un archivio di oggetti aggiuntivo. link:task-managing-object-storage.html["Scopri di più sulla gestione degli archivi di oggetti"].

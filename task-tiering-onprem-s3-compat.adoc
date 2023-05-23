@@ -1,0 +1,219 @@
+---
+sidebar: sidebar 
+permalink: task-tiering-onprem-s3-compat.html 
+keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, s3, tier to s3, minio 
+summary: 'Liberare spazio sui cluster ONTAP on-premise eseguendo il tiering dei dati inattivi su qualsiasi servizio di storage a oggetti che utilizza il protocollo S3 (Simple Storage Service).' 
+---
+= Tiering dei dati dai cluster ONTAP on-premise allo storage a oggetti S3
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Liberare spazio sui cluster ONTAP on-premise eseguendo il tiering dei dati inattivi su qualsiasi servizio di storage a oggetti che utilizza il protocollo S3 (Simple Storage Service).
+
+Al momento, lo storage a oggetti MinIO è stato qualificato.
+
+[CAUTION]
+====
+I clienti che desiderano utilizzare archivi di oggetti non ufficialmente supportati come Tier cloud possono farlo seguendo queste istruzioni. I clienti devono verificare e confermare che l'archivio di oggetti soddisfi i propri requisiti.
+
+NetApp non supporta, né è responsabile, per qualsiasi problema derivante da qualsiasi servizio Object Store di terze parti, in particolare se non ha concordato accordi di supporto con la terza parte con cui il prodotto ha avuto origine. Si riconosce e si accetta che NetApp non sarà responsabile per eventuali danni associati o che sia altrimenti tenuta a fornire supporto su quel prodotto di terze parti.
+
+====
+
+
+== Avvio rapido
+
+Inizia subito seguendo questi passaggi o scorri verso il basso fino alle sezioni rimanenti per ottenere dettagli completi.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Preparatevi a eseguire il tiering dei dati per lo storage a oggetti compatibile con S3
+[role="quick-margin-para"]
+Sono necessari i seguenti elementi:
+
+[role="quick-margin-list"]
+* Un cluster ONTAP di origine on-premise che esegue ONTAP 9.8 o versione successiva e una connessione tramite una porta specificata dall'utente allo storage a oggetti compatibile con S3 di destinazione. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
+* L'FQDN, la chiave di accesso e la chiave segreta per il server di storage a oggetti, in modo che il cluster ONTAP possa accedere al bucket.
+* Un connettore installato in sede.
+* Rete per il connettore che abilita una connessione HTTPS in uscita al cluster ONTAP di origine, allo storage a oggetti compatibile con S3 e al servizio di tiering BlueXP.
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"] Impostare il tiering
+[role="quick-margin-para"]
+In BlueXP, selezionare un ambiente di lavoro on-premise, fare clic su *Enable* (attiva) per il servizio Tiering e seguire le istruzioni per tiering data to S3-compatible object storage.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"] Impostare la licenza
+[role="quick-margin-para"]
+Paga il tiering BlueXP con un abbonamento pay-as-you-go del tuo provider cloud, una licenza tiering NetApp BlueXP Bring-your-own-License o una combinazione di entrambi:
+
+[role="quick-margin-list"]
+* Per iscriversi all'offerta BlueXP PAYGO di https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["Mercato AWS"^], https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azure Marketplace"^], o. https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["Mercato GCP"^], Fare clic su *Subscribe* e seguire le istruzioni.
+* Per pagare utilizzando una licenza BlueXP Tiering BYOL, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contattaci se devi acquistarne una], quindi link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account["Aggiungilo al tuo account da BlueXP Digital Wallet"].
+
+
+
+
+== Requisiti
+
+Verificare il supporto per il cluster ONTAP, configurare la rete e preparare lo storage a oggetti.
+
+L'immagine seguente mostra ciascun componente e le connessioni che è necessario preparare tra di essi:
+
+image:diagram_cloud_tiering_s3_compat.png["Immagine dell'architettura che mostra il servizio di tiering BlueXP con una connessione al connettore on-premise, il connettore con una connessione al cluster ONTAP e una connessione tra il cluster ONTAP e lo storage a oggetti. I dati attivi risiedono nel cluster ONTAP, mentre i dati inattivi risiedono nello storage a oggetti."]
+
+
+NOTE: La comunicazione tra il connettore e il server di storage a oggetti compatibile con S3 è solo per la configurazione dello storage a oggetti.
+
+
+
+=== Preparazione dei cluster ONTAP
+
+I cluster ONTAP di origine devono soddisfare i seguenti requisiti quando si tierano i dati in uno storage a oggetti compatibile con S3.
+
+Piattaforme ONTAP supportate:: Puoi tierare i dati dai sistemi AFF o FAS con aggregati all-SSD o aggregati all-HDD.
+Versione di ONTAP supportata:: ONTAP 9.8 o versione successiva
+Requisiti di rete del cluster::
++
+--
+* Il cluster ONTAP avvia una connessione HTTPS su una porta specificata dall'utente per lo storage a oggetti compatibile con S3 (la porta è configurabile durante la configurazione del tiering).
++
+Il sistema ONTAP di origine legge e scrive i dati da e verso lo storage a oggetti. Lo storage a oggetti non viene mai avviato, ma risponde.
+
+* È necessaria una connessione in entrata dal connettore, che deve risiedere in sede.
++
+Non è richiesta una connessione tra il cluster e il servizio di tiering BlueXP.
+
+* Per ogni nodo ONTAP che ospita i volumi da tierare è necessario un LIF intercluster. La LIF deve essere associata a _IPSpace_ che ONTAP deve utilizzare per connettersi allo storage a oggetti.
++
+Quando si imposta il tiering dei dati, il tiering BlueXP richiede l'utilizzo di IPSpace. È necessario scegliere l'IPSpace a cui ciascun LIF è associato. Potrebbe trattarsi dell'IPSpace "predefinito" o di un IPSpace personalizzato creato. Scopri di più https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html["LIF"^] e. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["IPspaces"^].
+
+
+
+--
+Volumi e aggregati supportati:: Il numero totale di volumi a cui è possibile eseguire il tiering BlueXP potrebbe essere inferiore al numero di volumi nel sistema ONTAP. Questo perché i volumi non possono essere suddivisi in livelli da alcuni aggregati. Consultare la documentazione ONTAP per https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html#functionality-or-features-not-supported-by-fabricpool["Funzionalità o funzionalità non supportate da FabricPool"^].
+
+
+
+TIP: BlueXP Tiering supporta volumi FlexVol e FlexGroup.
+
+
+
+=== Rilevamento di un cluster ONTAP
+
+È necessario creare un ambiente di lavoro ONTAP on-premise in BlueXP Canvas prima di iniziare a tierare i dati cold.
+
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
+
+
+
+=== Preparazione dello storage a oggetti compatibile con S3
+
+Lo storage a oggetti compatibile con S3 deve soddisfare i seguenti requisiti.
+
+Credenziali S3:: Quando si imposta il tiering sullo storage a oggetti compatibile con S3, viene richiesto di creare un bucket S3 o di selezionare un bucket S3 esistente. È necessario fornire il tiering BlueXP con una chiave di accesso S3 e una chiave segreta. BlueXP Tiering utilizza le chiavi per accedere al bucket.
++
+--
+Queste chiavi di accesso devono essere associate a un utente che dispone delle seguenti autorizzazioni:
+
+[source, json]
+----
+"s3:ListAllMyBuckets",
+"s3:ListBucket",
+"s3:GetObject",
+"s3:PutObject",
+"s3:DeleteObject",
+"s3:CreateBucket"
+----
+--
+
+
+
+
+=== Creazione o commutazione di connettori
+
+Per eseguire il Tier dei dati nel cloud è necessario un connettore. Quando si esegue il tiering dei dati su storage a oggetti compatibile con S3, è necessario che un connettore sia disponibile in sede. È necessario installare un nuovo connettore o assicurarsi che il connettore attualmente selezionato risieda on-premise.
+
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Scopri di più sui connettori"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["Installazione di un connettore su un host Linux"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html["Passaggio da un connettore all'altro"^]
+
+
+
+
+=== Preparazione del collegamento in rete per il connettore
+
+Assicurarsi che il connettore disponga delle connessioni di rete richieste.
+
+.Fasi
+. Assicurarsi che la rete in cui è installato il connettore abiliti le seguenti connessioni:
++
+** Una connessione HTTPS tramite la porta 443 al servizio di tiering BlueXP (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-on-prem.html#endpoints-contacted-for-day-to-day-operations["vedere l'elenco degli endpoint"^])
+** Una connessione HTTPS tramite la porta 443 allo storage a oggetti compatibile con S3
+** Una connessione HTTPS sulla porta 443 alla LIF di gestione del cluster ONTAP
+
+
+
+
+
+
+== Tiering dei dati inattivi dal primo cluster allo storage a oggetti compatibile con S3
+
+Dopo aver preparato l'ambiente, iniziare a tiering dei dati inattivi dal primo cluster.
+
+.Di cosa hai bisogno
+* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Un ambiente di lavoro on-premise"^].
+* L'FQDN del server di storage a oggetti compatibile con S3 e la porta che verrà utilizzata per le comunicazioni HTTPS.
+* Chiave di accesso e chiave segreta con le autorizzazioni S3 richieste.
+
+
+.Fasi
+. Selezionare l'ambiente di lavoro on-premise ONTAP.
+. Fare clic su *Enable* (attiva) per il servizio Tiering dal pannello di destra.
++
+image:screenshot_setup_tiering_onprem.png["Una schermata che mostra l'opzione Tiering (tiering) visualizzata sul lato destro della schermata dopo aver selezionato un ambiente di lavoro ONTAP on-premise."]
+
+. *Define Object Storage Name*: Immettere un nome per lo storage a oggetti. Deve essere univoco rispetto a qualsiasi altro storage a oggetti utilizzato con gli aggregati di questo cluster.
+. *Select Provider* (Seleziona provider): Selezionare *S3 Compatible* (compatibile S3) e fare clic su *Continue* (continua).
+. Completare la procedura riportata nelle pagine *Create Object Storage*:
++
+.. *Server*: Immettere l'FQDN del server di storage a oggetti compatibile con S3, la porta che ONTAP deve utilizzare per la comunicazione HTTPS con il server e la chiave di accesso e la chiave segreta per un account che dispone delle autorizzazioni S3 richieste.
+.. *Bucket*: Aggiungi un nuovo bucket o seleziona un bucket esistente e fai clic su *continua*.
+.. *Rete cluster*: Selezionare l'IPSpace che ONTAP deve utilizzare per connettersi allo storage a oggetti e fare clic su *continua*.
++
+La selezione dell'IPSpace corretto garantisce che il tiering BlueXP possa impostare una connessione da ONTAP allo storage a oggetti compatibile con S3.
+
+
+
+. Nella pagina _Success_ fare clic su *Continue* per configurare i volumi.
+. Nella pagina _Tier Volumes_, selezionare i volumi per i quali si desidera configurare il tiering e fare clic su *Continue*:
++
+** Per selezionare tutti i volumi, selezionare la casella nella riga del titolo (image:button_backup_all_volumes.png[""]) E fare clic su *Configure Volumes* (Configura volumi).
+** Per selezionare più volumi, selezionare la casella relativa a ciascun volume (image:button_backup_1_volume.png[""]) E fare clic su *Configure Volumes* (Configura volumi).
+** Per selezionare un singolo volume, fare clic sulla riga (o. image:screenshot_edit_icon.gif["icona modifica matita"] ) per il volume.
++
+image:screenshot_tiering_tier_volumes.png["Una schermata che mostra come selezionare un singolo volume, più volumi o tutti i volumi e il pulsante Modify Selected Volumes (Modifica volumi selezionati)."]
+
+
+
+. Nella finestra di dialogo _Tiering Policy_, selezionare una policy di tiering, regolare i giorni di raffreddamento per i volumi selezionati e fare clic su *Apply* (Applica).
++
+link:concept-cloud-tiering.html#volume-tiering-policies["Scopri di più sulle policy di tiering dei volumi e sui giorni di raffreddamento"].
+
++
+image:screenshot_tiering_policy_settings.png["Una schermata che mostra le impostazioni dei criteri di tiering configurabili."]
+
+
+
+.Risultato
+Il tiering dei dati è stato configurato correttamente dai volumi del cluster allo storage a oggetti compatibile con S3.
+
+.Quali sono le prossime novità?
+link:task-licensing-cloud-tiering.html["Assicurarsi di sottoscrivere il servizio di tiering BlueXP"].
+
+È possibile rivedere le informazioni relative ai dati attivi e inattivi sul cluster. link:task-managing-tiering.html["Scopri di più sulla gestione delle impostazioni di tiering"].
+
+È inoltre possibile creare storage a oggetti aggiuntivo nei casi in cui si desidera eseguire il Tier dei dati da determinati aggregati di un cluster a diversi archivi di oggetti. Oppure, se si prevede di utilizzare il mirroring FabricPool, dove i dati a più livelli vengono replicati in un archivio di oggetti aggiuntivo. link:task-managing-object-storage.html["Scopri di più sulla gestione degli archivi di oggetti"].

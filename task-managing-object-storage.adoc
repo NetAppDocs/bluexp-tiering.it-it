@@ -1,0 +1,165 @@
+---
+sidebar: sidebar 
+permalink: task-managing-object-storage.html 
+keywords: object storage, mirror object storage, create object storage, remove object storage, swap object storage, display object storage 
+summary: Dopo aver configurato i cluster ONTAP on-premise per il Tier dei dati su uno storage a oggetti specifico, è possibile eseguire ulteriori attività di storage a oggetti. È possibile aggiungere nuovo storage a oggetti, eseguire il mirroring dei dati a livelli in uno storage a oggetti secondario, sostituire lo storage a oggetti primario e mirror, rimuovere un archivio a oggetti mirrorati da un aggregato e molto altro ancora. 
+---
+= Gestione dello storage a oggetti utilizzato per il tiering dei dati
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Dopo aver configurato i cluster ONTAP on-premise per il Tier dei dati su uno storage a oggetti specifico, è possibile eseguire ulteriori attività di storage a oggetti. È possibile aggiungere nuovo storage a oggetti, eseguire il mirroring dei dati a livelli in uno storage a oggetti secondario, sostituire lo storage a oggetti primario e mirror, rimuovere un archivio a oggetti mirrorati da un aggregato e molto altro ancora.
+
+
+
+== Visualizzazione degli archivi di oggetti configurati per un cluster
+
+È possibile visualizzare tutti gli archivi di oggetti configurati per il cluster e a quali aggregati sono collegati. BlueXP Tiering fornisce queste informazioni per ogni cluster.
+
+.Fasi
+. Dalla pagina *Clusters*, fare clic sull'icona del menu di un cluster e selezionare *Info archivio oggetti*.
+. Esaminare i dettagli sugli archivi di oggetti.
++
+Questo esempio mostra un archivio di oggetti Amazon S3 e Azure Blob collegato a diversi aggregati di un cluster.
+
++
+image:screenshot_tiering_object_store_view.png["Una schermata che mostra le informazioni sullo storage a oggetti, che indicano la capacità totale utilizzata, l'aggregato collegato all'archivio di oggetti, il nome dell'archivio di oggetti e altre informazioni."]
+
+
+
+
+
+== Aggiunta di un nuovo archivio di oggetti
+
+È possibile aggiungere un nuovo archivio di oggetti che sarà disponibile per gli aggregati nel cluster. Una volta creato, è possibile allegarlo a un aggregato.
+
+.Fasi
+. Dalla pagina *Clusters*, fare clic sull'icona del menu di un cluster e selezionare *Info archivio oggetti*.
+. Dalla pagina Object Store Information (informazioni archivio oggetti), fare clic su *Create New Object Store* (Crea nuovo archivio oggetti).
++
+image:screenshot_tiering_object_store_create_button.png["Una schermata che mostra il pulsante Create New Object Store (Crea nuovo archivio di oggetti) per creare un nuovo archivio di oggetti."]
+
++
+Viene avviata la procedura guidata di archiviazione degli oggetti. L'esempio seguente mostra come creare un archivio di oggetti in Amazon S3.
+
+. *Define Object Storage Name*: Immettere un nome per lo storage a oggetti. Deve essere univoco rispetto a qualsiasi altro storage a oggetti utilizzato con gli aggregati di questo cluster.
+. *Seleziona provider*: Selezionare il provider, ad esempio *Amazon Web Services*, quindi fare clic su *continua*.
+. Completare la procedura riportata nelle pagine *Create Object Storage*:
++
+.. *S3 bucket*: Aggiungi un nuovo bucket S3 o seleziona un bucket S3 esistente che inizia con il prefisso _fabric-pool_. Quindi, immettere l'ID account AWS che fornisce l'accesso al bucket, selezionare la regione del bucket e fare clic su *continua*.
++
+Il prefisso _fabric-pool_ è necessario perché il criterio IAM per il connettore consente all'istanza di eseguire azioni S3 sui bucket denominati con quel prefisso esatto. Ad esempio, è possibile chiamare il bucket S3 _fabric-pool-AFF1_, dove AFF1 è il nome del cluster.
+
+.. *Storage Class Life Cycle*: Il tiering BlueXP gestisce le transizioni del ciclo di vita dei dati a più livelli. I dati iniziano nella classe _Standard_, ma è possibile creare una regola per spostare i dati in un'altra classe dopo un certo numero di giorni.
++
+Selezionare la classe di storage S3 a cui si desidera trasferire i dati a più livelli e il numero di giorni prima che i dati vengano spostati, quindi fare clic su *continua*. Ad esempio, la schermata seguente mostra che i dati a più livelli vengono spostati dalla classe _Standard_ alla classe _Standard-IA_ dopo 45 giorni di storage a oggetti.
+
++
+Se si sceglie *Mantieni i dati in questa classe di storage*, i dati rimangono nella classe di storage _Standard_ e non vengono applicate regole. link:reference-aws-support.html["Vedere classi di storage supportate"^].
+
++
+image:screenshot_tiering_lifecycle_selection_aws.png["Una schermata che mostra come selezionare un'altra classe di storage in cui i dati vengono spostati dopo un certo numero di giorni."]
+
++
+Si noti che la regola del ciclo di vita viene applicata a tutti gli oggetti nel bucket selezionato.
+
+.. *Credenziali*: Immettere l'ID della chiave di accesso e la chiave segreta per un utente IAM che dispone delle autorizzazioni S3 richieste, quindi fare clic su *continua*.
++
+L'utente IAM deve trovarsi nello stesso account AWS del bucket selezionato o creato nella pagina *S3 bucket*. Vedere le autorizzazioni richieste nella sezione relativa all'attivazione del tiering.
+
+.. *Rete cluster*: Selezionare l'IPSpace che ONTAP deve utilizzare per connettersi allo storage a oggetti e fare clic su *continua*.
++
+La selezione dell'IPSpace corretto garantisce che il tiering BlueXP possa configurare una connessione da ONTAP allo storage a oggetti del provider di cloud.
+
+
+
+
+
+Viene creato l'archivio di oggetti.
+
+Ora è possibile collegare l'archivio di oggetti a un aggregato nel cluster.
+
+
+
+== Allegare un secondo archivio di oggetti a un aggregato per il mirroring
+
+È possibile collegare un secondo archivio di oggetti a un aggregato per creare un mirror FabricPool per tierare i dati in modo sincrono a due archivi di oggetti. È necessario disporre di un archivio di oggetti già collegato all'aggregato. https://docs.netapp.com/us-en/ontap/fabricpool/create-mirror-task.html["Scopri di più sui mirror FabricPool"^].
+
+Quando si utilizza una configurazione MetroCluster, è consigliabile utilizzare archivi di oggetti nel cloud pubblico che si trovano in diverse zone di disponibilità. https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html["Scopri di più sui requisiti MetroCluster nella documentazione ONTAP"^].
+
+Si noti che quando si utilizza StorageGRID come archivio di oggetti in una configurazione MetroCluster, entrambi i sistemi ONTAP possono eseguire il tiering FabricPool su un singolo sistema StorageGRID. Ogni sistema ONTAP deve eseguire il Tier dei dati in diversi bucket.
+
+.Fasi
+. Dalla pagina *Clusters*, fare clic su *Advanced setup* (Configurazione avanzata) per il cluster selezionato.
++
+image:screenshot_tiering_advanced_setup_button.png["Una schermata che mostra il pulsante Advanced Setup (Configurazione avanzata) per un cluster."]
+
+. Dalla pagina Advanced Setup, trascinare l'archivio di oggetti che si desidera utilizzare nella posizione dell'archivio di oggetti mirror.
++
+image:screenshot_tiering_mirror_config.png["Una schermata che mostra come trascinare un secondo archivio di oggetti in un aggregato per creare un mirror di tiering."]
+
+. Nella finestra di dialogo Allega archivio oggetti, fare clic su *Allega* e il secondo archivio oggetti viene collegato all'aggregato.
++
+image:screenshot_tiering_mirror_config_complete.png["Una schermata che mostra un secondo archivio di oggetti collegato a un aggregato."]
+
+
+
+Lo stato Mirror viene visualizzato come "Sync in Progress" (sincronizzazione in corso) durante la sincronizzazione dei 2 archivi di oggetti. Al termine della sincronizzazione, lo stato diventa "sincronizzato".
+
+
+
+== Sostituire l'archivio di oggetti primario e mirror
+
+È possibile sostituire l'archivio di oggetti primario e mirror con un aggregato. Il mirror dell'archivio di oggetti diventa il principale e il primario originale diventa il mirror.
+
+.Fasi
+. Dalla pagina *Clusters*, fare clic su *Advanced setup* (Configurazione avanzata) per il cluster selezionato.
++
+image:screenshot_tiering_advanced_setup_button.png["Una schermata che mostra il pulsante Advanced Setup (Configurazione avanzata) per un cluster."]
+
+. Dalla pagina Advanced Setup (Configurazione avanzata), fare clic sull'icona del menu dell'aggregato e selezionare *Swap Destinations* (Destinazioni di scambio).
++
+image:screenshot_tiering_mirror_swap.png["Una schermata che mostra l'opzione Swap Destination per un aggregato."]
+
+. Approvare l'azione nella finestra di dialogo e gli archivi di oggetti primario e mirror vengono scambiati.
+
+
+
+
+== Rimozione di un archivio di oggetti mirror da un aggregato
+
+È possibile rimuovere un mirror FabricPool se non è più necessario replicare in un archivio di oggetti aggiuntivo.
+
+.Fasi
+. Dalla pagina *Clusters*, fare clic su *Advanced setup* (Configurazione avanzata) per il cluster selezionato.
++
+image:screenshot_tiering_advanced_setup_button.png["Una schermata che mostra il pulsante Advanced Setup (Configurazione avanzata) per un cluster."]
+
+. Dalla pagina Advanced Setup (Configurazione avanzata), fare clic sull'icona del menu dell'aggregato e selezionare *Unmirror Object Store* (Annulla mirror archivio oggetti).
++
+image:screenshot_tiering_mirror_delete.png["Una schermata che mostra l'opzione Unmirror Object Store per un aggregato."]
+
+
+
+L'archivio di oggetti mirror viene rimosso dall'aggregato e i dati a più livelli non vengono più replicati.
+
+
+NOTE: Quando si rimuove l'archivio di oggetti mirror da una configurazione MetroCluster, viene richiesto se si desidera rimuovere anche l'archivio di oggetti primario. È possibile scegliere di mantenere l'archivio di oggetti primario collegato all'aggregato o di rimuoverlo.
+
+
+
+== Migrazione dei dati a più livelli a un altro cloud provider
+
+BlueXP Tiering consente di migrare facilmente i dati a più livelli a un altro cloud provider. Ad esempio, se desideri passare da Amazon S3 a Azure Blob, puoi seguire i passaggi elencati in precedenza in questo ordine:
+
+. Aggiungere un archivio di oggetti Azure Blob.
+. Collegare questo nuovo archivio di oggetti come mirror all'aggregato esistente.
+. Sostituire gli archivi di oggetti primari e mirror.
+. Annulla il mirroring dell'archivio di oggetti Amazon S3.
+
