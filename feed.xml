@@ -2,22 +2,22 @@
 
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cloud-manager-tiering | NetApp Documentation</title>
-    <atom:link href="https://docs.netapp.com/it-it/cloud-manager-tiering/feed.xml" rel="self" type="application/rss+xml"/>
-    <link>https://docs.netapp.com/it-it/cloud-manager-tiering</link>
+    <title>bluexp-tiering | NetApp Documentation</title>
+    <atom:link href="https://docs.netapp.com/it-it/bluexp-tiering/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>https://docs.netapp.com/it-it/bluexp-tiering</link>
     <description>The latest updates from NetApp Documentation</description>
     <language>it-it</language>
     <ttl>60</ttl>
-    <pubDate>Wed, 24 May 2023 08:37:58 +0000</pubDate>
-    <lastBuildDate>Wed, 24 May 2023 08:37:58 +0000</lastBuildDate>
+    <pubDate>Wed, 31 May 2023 14:37:38 +0000</pubDate>
+    <lastBuildDate>Wed, 31 May 2023 14:37:38 +0000</lastBuildDate>
     
     
     
     <item>
-      <title>Novità del tiering BlueXP (23 May 2023)</title>
-      <pubDate>Tue, 23 May 2023 21:06:40 +0000</pubDate>
-      <link>https://docs.netapp.com/it-it/cloud-manager-tiering/whats-new.html?time=1684876000</link>
-      <guid isPermaLink="false">Tue, 23 May 2023 21:06:40 +0000</guid>
+      <title>Novità del tiering BlueXP (31 May 2023)</title>
+      <pubDate>Wed, 31 May 2023 14:33:54 +0000</pubDate>
+      <link>https://docs.netapp.com/it-it/bluexp-tiering/whats-new.html?time=1685543634</link>
+      <guid isPermaLink="false">Wed, 31 May 2023 14:33:54 +0000</guid>
       <description><![CDATA[ Scopri le novità di BlueXP Tiering. ]]></description>
     </item>
     
