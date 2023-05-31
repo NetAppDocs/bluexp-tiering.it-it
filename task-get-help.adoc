@@ -18,6 +18,10 @@ NetApp fornisce supporto per BlueXP e i suoi servizi cloud in diversi modi. Sono
 
 Queste opzioni sono disponibili gratuitamente, 24 ore su 24, 7 giorni su 7:
 
+* Documentazione
++
+La documentazione BlueXP attualmente visualizzata.
+
 * https://kb.netapp.com/Cloud/BlueXP["Knowledge base"^]
 +
 Cercare nella Knowledge base di BlueXP articoli utili per la risoluzione dei problemi.
@@ -25,10 +29,6 @@ Cercare nella Knowledge base di BlueXP articoli utili per la risoluzione dei pro
 * http://community.netapp.com/["Community"^]
 +
 Unisciti alla community BlueXP per seguire le discussioni in corso o crearne di nuove.
-
-* Documentazione
-+
-La documentazione BlueXP attualmente visualizzata.
 
 * Mailto:ng-cloudmanager-feedback@netapp.com[email di feedback]
 +
@@ -43,7 +43,9 @@ Diamo valore al tuo contributo. Invia un feedback per aiutarci a migliorare Blue
 Oltre alle opzioni di supporto autonomo sopra descritte, puoi collaborare con uno specialista del supporto NetApp per risolvere eventuali problemi dopo l'attivazione del supporto.
 
 .Prima di iniziare
-Per utilizzare la funzione *Crea un caso*, è necessario prima eseguire una registrazione una tantum del numero di serie dell'ID account BlueXP (ad es. 960xxxx) con NetApp. link:task-support-registration.html["Scopri come registrarti per il supporto"].
+* Per utilizzare la funzione *creazione di un caso*, è necessario prima associare le credenziali del sito di supporto NetApp al login BlueXP. https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-user-credentials.html["Scopri come gestire le credenziali associate all'accesso a BlueXP"^].
+* Se stai aprendo un caso per un sistema ONTAP con un numero di serie, il tuo account NSS deve essere associato al numero di serie di quel sistema.
+
 
 .Fasi
 . In BlueXP, fare clic su *Guida > supporto*.
@@ -52,10 +54,6 @@ Per utilizzare la funzione *Crea un caso*, è necessario prima eseguire una regi
 .. Fai clic su *Chiamaci* per parlare con qualcuno al telefono. Viene visualizzata una pagina su netapp.com che elenca i numeri di telefono che è possibile chiamare.
 .. Fare clic su *Crea un caso* per aprire un ticket con uno specialista del supporto NetApp:
 +
-*** *NetApp Support Site account*: Selezionare l'account NSS applicabile associato alla persona che apre il caso di supporto. Questa persona sarà il contatto principale a cui NetApp dovrà contattare, oltre alle e-mail aggiuntive fornite di seguito.
-+
-Se non vedi il tuo account NSS, puoi accedere alla scheda *NSS Management* nella sezione Support di BlueXP per aggiungerlo.
-
 *** *Servizio*: Selezionare il servizio a cui è associato il problema. Ad esempio, BlueXP quando si tratta di un problema di supporto tecnico relativo a flussi di lavoro o funzionalità all'interno del servizio.
 *** *Ambiente di lavoro*: Se applicabile allo storage, selezionare *Cloud Volumes ONTAP* o *on-premise* e quindi l'ambiente di lavoro associato.
 +
@@ -89,7 +87,7 @@ Per una cronologia dei casi di supporto, fare clic su *Impostazioni > Cronologia
 
 "Non sei autorizzato a creare un caso per il servizio selezionato"
 
-Questo errore potrebbe indicare che l'account NSS e la società di registrazione a cui è associato non sono la stessa società di registrazione per il numero di serie dell'account BlueXP (ad es. 960xxxx) o il numero di serie dell'ambiente di lavoro. Puoi consultare l'elenco degli account NSS nella parte superiore del modulo *Crea un caso* per trovare la corrispondenza giusta oppure richiedere assistenza utilizzando una delle seguenti opzioni:
+Questo errore potrebbe indicare che l'account NSS e la società di registrazione a cui è associato non sono la stessa società di registrazione per il numero di serie dell'account BlueXP (ad es. 960xxxx) o il numero di serie dell'ambiente di lavoro. È possibile richiedere assistenza utilizzando una delle seguenti opzioni:
 
 * Utilizza la chat integrata nel prodotto
 * Inviare un caso non tecnico all'indirizzo https://mysupport.netapp.com/site/help[]
