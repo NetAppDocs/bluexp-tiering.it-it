@@ -18,9 +18,9 @@ Prima di aprire un caso di supporto con il supporto tecnico NetApp, è necessari
 
 Per il supporto tecnico sulle seguenti soluzioni di cloud provider integrate in BlueXP, fare riferimento alla sezione "Assistenza" nella documentazione BlueXP relativa a tale prodotto.
 
-* link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/start/concept-fsx-aws.html#getting-help["Amazon FSX per ONTAP"^]
-* link:https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/concept-azure-netapp-files.html#getting-help["Azure NetApp Files"^]
-* link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-service-gcp/concept-cvs-gcp.html#getting-help["Cloud Volumes Service per Google Cloud"^]
+* link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/start/concept-fsx-aws.html#getting-help["Amazon FSX per ONTAP"^]
+* link:https://docs.netapp.com/us-en/bluexp-azure-netapp-files/concept-azure-netapp-files.html#getting-help["Azure NetApp Files"^]
+* link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-service-gcp/concept-cvs-gcp.html#getting-help["Cloud Volumes Service per Google Cloud"^]
 
 
 
@@ -72,7 +72,7 @@ Support Dashboard consente di aggiungere e gestire gli account NetApp Support Si
 .Fasi
 . Nella parte superiore destra della console BlueXP, fare clic sull'icona Guida e selezionare *supporto*.
 +
-image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-help-support.png["Schermata del menu Help (Guida) in cui Support (Assistenza) è la prima opzione elencata"]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/screenshot-help-support.png["Schermata del menu Help (Guida) in cui Support (Assistenza) è la prima opzione elencata"]
 
 . Fare clic su *Gestione NSS > Aggiungi account NSS*.
 . Quando richiesto, fare clic su *Continue* per essere reindirizzati a una pagina di accesso Microsoft.
@@ -97,9 +97,9 @@ Lo stesso vale se si dispone di account NSS a livello di cliente preesistenti e 
 
 ** Una volta effettuato l'accesso, NetApp memorizzerà il nome utente NSS.
 +
-Si tratta di un ID generato dal sistema che viene mappato all'e-mail. Nella pagina *NSS Management*, è possibile visualizzare l'e-mail da image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-nss-menu.png["Un'icona di tre punti orizzontali"] menu.
+Si tratta di un ID generato dal sistema che viene mappato all'e-mail. Nella pagina *NSS Management*, è possibile visualizzare l'e-mail da image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/icon-nss-menu.png["Un'icona di tre punti orizzontali"] menu.
 
-** Se è necessario aggiornare i token delle credenziali di accesso, è disponibile anche l'opzione *Update Credentials* (Aggiorna credenziali) in image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-nss-menu.png["Un'icona di tre punti orizzontali"] menu.
+** Se è necessario aggiornare i token delle credenziali di accesso, è disponibile anche l'opzione *Update Credentials* (Aggiorna credenziali) in image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/icon-nss-menu.png["Un'icona di tre punti orizzontali"] menu.
 +
 Questa opzione richiede di effettuare nuovamente l'accesso. Il token per questi account scade dopo 90 giorni. Verrà inviata una notifica per avvisare l'utente.
 
@@ -122,12 +122,12 @@ Se sei un cliente NetApp con un account NSS, devi semplicemente registrarti per 
 .Fasi
 . Nella parte superiore destra della console BlueXP, fare clic sull'icona Guida e selezionare *supporto*.
 +
-image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-help-support.png["Schermata del menu Help (Guida) in cui Support (Assistenza) è la prima opzione elencata"]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/screenshot-help-support.png["Schermata del menu Help (Guida) in cui Support (Assistenza) è la prima opzione elencata"]
 
 . Se non l'hai ancora fatto, Aggiungi il tuo account NSS a BlueXP.
 . Nella pagina *risorse*, fare clic su *Registra per il supporto*.
 +
-image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-register-support.png["Una schermata che mostra il numero di serie di un account e l'opzione Registra per il supporto"]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/screenshot-register-support.png["Una schermata che mostra il numero di serie di un account e l'opzione Registra per il supporto"]
 
 
 
@@ -155,11 +155,11 @@ Se sei nuovo di NetApp e non disponi di un account NSS, segui i passaggi riporta
 .Fasi
 . Nella parte superiore destra della console BlueXP, fare clic sull'icona Guida e selezionare *supporto*.
 +
-image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-help-support.png["Schermata del menu Help (Guida) in cui Support (Assistenza) è la prima opzione elencata"]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/screenshot-help-support.png["Schermata del menu Help (Guida) in cui Support (Assistenza) è la prima opzione elencata"]
 
 . Individuare il numero di serie dell'ID account nella pagina Support Registration (registrazione supporto).
 +
-image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-serial-number.png["Schermata del menu Help (Guida) in cui Support (Assistenza) è la prima opzione elencata"]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/screenshot-serial-number.png["Schermata del menu Help (Guida) in cui Support (Assistenza) è la prima opzione elencata"]
 
 . Selezionare https://register.netapp.com["Sito per la registrazione del supporto NetApp"^] E selezionare *non sono un cliente NetApp registrato*.
 . Compilare i campi obbligatori (con asterischi rossi).

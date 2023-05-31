@@ -76,7 +76,7 @@ Gli allegati sono limitati a 25 MB per file. Sono supportate le seguenti estensi
 
 
 +
-image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-create-case.png["Schermata del modulo Crea un caso che consente di creare un caso con il supporto NetApp."]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/screenshot-create-case.png["Schermata del modulo Crea un caso che consente di creare un caso con il supporto NetApp."]
 
 
 
@@ -132,19 +132,19 @@ La pagina *Gestione del caso* mostra i casi aperti relativi all'account NSS asso
 ** In *Organization's Cases* (casi dell'organizzazione), fare clic su *View* (Visualizza) per visualizzare tutti i casi associati alla società.
 ** Modificare l'intervallo di date scegliendo un intervallo di date esatto o scegliendo un intervallo di tempo diverso.
 +
-image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-case-management-date-range.png["Una schermata dell'opzione sopra la tabella nella pagina di gestione del caso che consente di scegliere un intervallo di date esatto o gli ultimi 7 giorni, 30 giorni o 3 mesi."]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/screenshot-case-management-date-range.png["Una schermata dell'opzione sopra la tabella nella pagina di gestione del caso che consente di scegliere un intervallo di date esatto o gli ultimi 7 giorni, 30 giorni o 3 mesi."]
 
 ** Filtrare il contenuto delle colonne.
 +
-image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-case-management-filter.png["Schermata dell'opzione di filtro nella colonna Status (Stato) che consente di filtrare i casi che corrispondono a uno stato specifico, ad esempio attivo o chiuso."]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/screenshot-case-management-filter.png["Schermata dell'opzione di filtro nella colonna Status (Stato) che consente di filtrare i casi che corrispondono a uno stato specifico, ad esempio attivo o chiuso."]
 
-** Modificare le colonne visualizzate nella tabella facendo clic su image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-table-columns.png["L'icona più visualizzata nella tabella"] e quindi scegliere le colonne che si desidera visualizzare.
+** Modificare le colonne visualizzate nella tabella facendo clic su image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/icon-table-columns.png["L'icona più visualizzata nella tabella"] e quindi scegliere le colonne che si desidera visualizzare.
 +
-image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-case-management-columns.png["Una schermata che mostra le colonne che è possibile visualizzare nella tabella."]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/screenshot-case-management-columns.png["Una schermata che mostra le colonne che è possibile visualizzare nella tabella."]
 
 
 
-. Gestire un caso esistente facendo clic su image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/icon-table-action.png["Un'icona con tre punti che compare nell'ultima colonna della tabella"] e selezionando una delle opzioni disponibili:
+. Gestire un caso esistente facendo clic su image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/icon-table-action.png["Un'icona con tre punti che compare nell'ultima colonna della tabella"] e selezionando una delle opzioni disponibili:
 +
 ** *Visualizza caso*: Visualizza tutti i dettagli relativi a un caso specifico.
 ** *Aggiorna note sul caso*: Fornisci ulteriori dettagli sul problema oppure seleziona *carica file* per allegare fino a un massimo di cinque file.
@@ -155,6 +155,6 @@ Gli allegati sono limitati a 25 MB per file. Sono supportate le seguenti estensi
 
 
 +
-image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-case-management-actions.png["Una schermata che mostra le azioni che è possibile eseguire dopo aver selezionato il menu nell'ultima colonna della tabella."]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/screenshot-case-management-actions.png["Una schermata che mostra le azioni che è possibile eseguire dopo aver selezionato il menu nell'ultima colonna della tabella."]
 
 

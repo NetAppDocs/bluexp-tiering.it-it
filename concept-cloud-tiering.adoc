@@ -43,7 +43,7 @@ BlueXP Tiering offre automazione, monitoraggio, report e un'interfaccia di gesti
 Per ulteriori informazioni sul valore offerto dal tiering BlueXP, https://bluexp.netapp.com/cloud-tiering["Consulta la pagina di tiering di BlueXP sul sito Web di BlueXP"^].
 
 
-TIP: I sistemi Cloud Volumes ONTAP sono di sola lettura grazie al tiering BlueXP. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html["È possibile impostare il tiering per i sistemi Cloud Volumes ONTAP dall'ambiente di lavoro in BlueXP"^].
+TIP: I sistemi Cloud Volumes ONTAP sono di sola lettura grazie al tiering BlueXP. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["È possibile impostare il tiering per i sistemi Cloud Volumes ONTAP dall'ambiente di lavoro in BlueXP"^].
 
 
 
@@ -205,7 +205,7 @@ Prima di scegliere questa policy di tiering, prendere in considerazione quanto s
 +
 Poiché i dati vengono immediatamente suddivisi in Tier, SnapMirror legge i dati dal Tier cloud piuttosto che dal Tier di performance. Ciò rallenterà le operazioni di SnapMirror, probabilmente rallentando altre operazioni di SnapMirror in un secondo momento in coda, anche se utilizzano policy di tiering diverse.
 
-* Il backup e il ripristino di BlueXP sono influenzati in modo analogo dai volumi impostati con un criterio di tiering. https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-ontap-backup-to-cloud.html#fabricpool-tiering-policy-considerations["Vedi considerazioni sui criteri di tiering con il backup e ripristino di BlueXP"^].
+* Il backup e il ripristino di BlueXP sono influenzati in modo analogo dai volumi impostati con un criterio di tiering. https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html#fabricpool-tiering-policy-considerations["Vedi considerazioni sui criteri di tiering con il backup e ripristino di BlueXP"^].
 
 
 --

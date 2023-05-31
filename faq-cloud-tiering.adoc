@@ -200,7 +200,7 @@ Sì. BlueXP Tiering può essere configurato per tiering volumi ospitati su quals
 
 === E Cloud Volumes ONTAP?
 
-Se disponi di sistemi Cloud Volumes ONTAP, troverai i sistemi nella pagina dei cluster di tiering BlueXP, in modo da ottenere una vista completa del tiering dei dati nella tua infrastruttura di cloud ibrido. Tuttavia, i sistemi Cloud Volumes ONTAP sono di sola lettura dal tiering BlueXP. Non è possibile impostare il tiering dei dati su Cloud Volumes ONTAP dal tiering BlueXP. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html["È possibile impostare il tiering per i sistemi Cloud Volumes ONTAP dall'ambiente di lavoro in BlueXP"^].
+Se disponi di sistemi Cloud Volumes ONTAP, troverai i sistemi nella pagina dei cluster di tiering BlueXP, in modo da ottenere una vista completa del tiering dei dati nella tua infrastruttura di cloud ibrido. Tuttavia, i sistemi Cloud Volumes ONTAP sono di sola lettura dal tiering BlueXP. Non è possibile impostare il tiering dei dati su Cloud Volumes ONTAP dal tiering BlueXP. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["È possibile impostare il tiering per i sistemi Cloud Volumes ONTAP dall'ambiente di lavoro in BlueXP"^].
 
 
 
@@ -362,7 +362,7 @@ Il connettore è un software in esecuzione su un'istanza di calcolo all'interno 
 
 === È possibile implementare il connettore on-premise?
 
-Sì. Il software del connettore può essere scaricato e installato manualmente su un host Linux nella rete. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-on-prem.html["Scopri come installare il connettore nella tua sede"].
+Sì. Il software del connettore può essere scaricato e installato manualmente su un host Linux nella rete. https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Scopri come installare il connettore nella tua sede"].
 
 
 

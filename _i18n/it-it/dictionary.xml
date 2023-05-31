@@ -95,7 +95,6 @@
   <block id="01db98e655413dda68ababa1c977f95c" category="paragraph">Sì. BlueXP Tiering può essere configurato per tiering volumi ospitati su qualsiasi aggregato. La configurazione del tiering dei dati è irrilevante per il tipo di controller utilizzato e se il cluster è eterogeneo o meno.</block>
   <block id="ca9d6825e8e49fc14bc0fe4d1949090e" category="section-title">E Cloud Volumes ONTAP?</block>
   <block id="90d333fba347612ff8ecc43a29a3eed9" category="inline-link">È possibile impostare il tiering per i sistemi Cloud Volumes ONTAP dall'ambiente di lavoro in BlueXP</block>
-  <block id="9dc2eca8b56a6e3320db971a60243c1d" category="paragraph">Se disponi di sistemi Cloud Volumes ONTAP, troverai i sistemi nella pagina dei cluster di tiering BlueXP, in modo da ottenere una vista completa del tiering dei dati nella tua infrastruttura di cloud ibrido. Tuttavia, i sistemi Cloud Volumes ONTAP sono di sola lettura dal tiering BlueXP. Non è possibile impostare il tiering dei dati su Cloud Volumes ONTAP dal tiering BlueXP.<block ref="d841e2ca06a23a295269523a8cf3293d" category="inline-link-rx"></block>.</block>
   <block id="3b12cd959256e1fe1998855f1f4469c7" category="section-title">Quali altri requisiti sono necessari per i cluster ONTAP?</block>
   <block id="8a35952a9fd8375f6367c7e469edb4c8" category="paragraph">Dipende dalla posizione in cui si suddividere i dati cold. Per ulteriori informazioni, fare riferimento ai seguenti collegamenti:</block>
   <block id="83d030b1e01c7afcd4424fd7357db055" category="inline-link-macro">Tiering dei dati su Amazon S3</block>
@@ -172,7 +171,6 @@
   <block id="98dae1b8caf3c488a405b3624212dfe9" category="list-text">Quando si esegue il tiering dei dati a StorageGRID o ad altri provider di storage compatibili con S3, il connettore deve risiedere in sede.</block>
   <block id="d2eea5ad2ae07890452da2aec5cffc98" category="section-title">È possibile implementare il connettore on-premise?</block>
   <block id="b0ccf0f3fa1a27a2fbab1c35ebf8e0f5" category="inline-link">Scopri come installare il connettore nella tua sede</block>
-  <block id="f8fffd3ee443f29d36b65a0e66a5f03a" category="paragraph">Sì. Il software del connettore può essere scaricato e installato manualmente su un host Linux nella rete.<block ref="1b7ddd38e792a03a4b15132910b94d8c" category="inline-link-rx"></block>.</block>
   <block id="371daca43d3f216ec028adfb6f08791a" category="section-title">È necessario un account con un provider di servizi cloud prima di utilizzare il tiering BlueXP?</block>
   <block id="71b5e4019a71131db2052326884d8bbe" category="paragraph">Sì. È necessario disporre di un account prima di poter definire lo storage a oggetti che si desidera utilizzare. Per configurare il connettore nel cloud su un VPC o VNET, è necessario anche un account con un provider di cloud storage.</block>
   <block id="8ca6e099f9e16583824ee8e6a5727c40" category="section-title">Quali sono le implicazioni in caso di guasto del connettore?</block>
@@ -257,7 +255,6 @@
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">Open source</block>
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">I file di avviso forniscono informazioni sul copyright e sulle licenze di terze parti utilizzate nel software NetApp.</block>
   <block id="c95623cd0395d5a6bb6105b9d32f197b" category="inline-link">Avviso per BlueXP</block>
-  <block id="e8a6d0f19a957eac14b9917a6c92899b" category="list-text"><block ref="e8a6d0f19a957eac14b9917a6c92899b" category="inline-link-rx"></block></block>
   <block id="3ba3b9c66dc287b5cb13e6a63f117260" category="inline-link-macro">Avviso per il tiering BlueXP</block>
   <block id="072ac4eafcf075811201623eddbc2488" category="list-text"><block ref="072ac4eafcf075811201623eddbc2488" category="inline-link-macro-rx"></block></block>
   <block id="243263104c829e77835d632f591230d5" category="summary">Prima di aprire un caso di supporto con il supporto tecnico NetApp, è necessario aggiungere un account NetApp Support Site a BlueXP e registrarsi per il supporto.</block>
@@ -266,11 +263,8 @@
   <block id="0375f4855be072c7d856a0233cc21de9" category="section-title">Supporto per le soluzioni cloud provider</block>
   <block id="be845c219bb74b14349ffa6e27e7aef3" category="paragraph">Per il supporto tecnico sulle seguenti soluzioni di cloud provider integrate in BlueXP, fare riferimento alla sezione "Assistenza" nella documentazione BlueXP relativa a tale prodotto.</block>
   <block id="18cf072964a583150dd247485ba75b92" category="inline-link-macro">Amazon FSX per ONTAP</block>
-  <block id="5bf5309465f91318228a7f956b826348" category="list-text"><block ref="5bf5309465f91318228a7f956b826348" category="inline-link-macro-rx"></block></block>
   <block id="7450cfde7058dc5e1f7909d0280fd7ae" category="inline-link-macro">Azure NetApp Files</block>
-  <block id="0e2bc9c853e0af52ead12823c025e58b" category="list-text"><block ref="0e2bc9c853e0af52ead12823c025e58b" category="inline-link-macro-rx"></block></block>
   <block id="b0cee72642f5457a71ddd0b49efb6d93" category="inline-link-macro">Cloud Volumes Service per Google Cloud</block>
-  <block id="02efcbea18b9485a78a41871dce1e64d" category="list-text"><block ref="02efcbea18b9485a78a41871dce1e64d" category="inline-link-macro-rx"></block></block>
   <block id="0b0e252af8897fbe981ec6682d2aa33b" category="section-title">Panoramica sulla registrazione del supporto</block>
   <block id="192054ad7601240a3e8be54cc5cc548e" category="paragraph">Esistono due forme di registrazione per attivare i diritti di supporto:</block>
   <block id="2322ca552c2b0ebe090c8485519246a8" category="list-text">Registrazione dell'abbonamento al supporto per l'ID account BlueXP (il numero di serie a 20 cifre 960xxxxxxxxx nella pagina Support Resources di BlueXP).</block>
@@ -294,7 +288,6 @@
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">Fasi</block>
   <block id="1afe19576f77bb0073c93359ed2cbb18" category="list-text">Nella parte superiore destra della console BlueXP, fare clic sull'icona Guida e selezionare *supporto*.</block>
   <block id="b50f0a46135bcb7083b1f2f82032fc26" category="inline-image-macro">Schermata del menu Help (Guida) in cui Support (Assistenza) è la prima opzione elencata</block>
-  <block id="868d9aa88f16ea923af1d15eac5d2647" category="paragraph"><block ref="868d9aa88f16ea923af1d15eac5d2647" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d17d6b5dafebab6b7659da8850737e70" category="list-text">Fare clic su *Gestione NSS &gt; Aggiungi account NSS*.</block>
   <block id="8aaf101e623c543c7eef3c65f6233366" category="list-text">Quando richiesto, fare clic su *Continue* per essere reindirizzati a una pagina di accesso Microsoft.</block>
   <block id="19d089db572ee6a1e154a0c9c9e57bfd" category="paragraph">NetApp utilizza Microsoft Azure Active Directory come provider di identità per i servizi di autenticazione specifici per il supporto e la concessione di licenze.</block>
@@ -307,8 +300,6 @@
   <block id="a04a3a5322782e8c18d0d64be7e1ccbc" category="paragraph">Lo stesso vale se si dispone di account NSS a livello di cliente preesistenti e si tenta di aggiungere un account a livello di partner.</block>
   <block id="1afe8a81cfddc9fa9559e272bb6b9496" category="list-text">Una volta effettuato l'accesso, NetApp memorizzerà il nome utente NSS.</block>
   <block id="1dcb63fd55c4d22e87cb32275b8cc808" category="inline-image-macro">Un'icona di tre punti orizzontali</block>
-  <block id="452cd4df7b0d5eb1156519a2f3b0206b" category="paragraph">Si tratta di un ID generato dal sistema che viene mappato all'e-mail. Nella pagina *NSS Management*, è possibile visualizzare l'e-mail da <block ref="0d0843f26c0819e5369f690fefbf68b7" category="inline-image-macro-rx" type="image"></block> menu.</block>
-  <block id="fd02e84624a2fdfd58787131aa2820b5" category="list-text">Se è necessario aggiornare i token delle credenziali di accesso, è disponibile anche l'opzione *Update Credentials* (Aggiorna credenziali) in <block ref="0d0843f26c0819e5369f690fefbf68b7" category="inline-image-macro-rx" type="image"></block> menu.</block>
   <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">Questa opzione richiede di effettuare nuovamente l'accesso. Il token per questi account scade dopo 90 giorni. Verrà inviata una notifica per avvisare l'utente.</block>
   <block id="ad56c7289bc13dcf4f78c285f7f03878" category="section-title">Registrati con NetApp</block>
   <block id="f1bac79c2c71fbd93863b9fbd718094c" category="paragraph">La modalità di registrazione al supporto NetApp dipende dal fatto che si disponga già di un account NetApp Support Site (NSS).</block>
@@ -317,7 +308,6 @@
   <block id="25b94e7b58140f12be91fa8fd935fa59" category="list-text">Se non l'hai ancora fatto, Aggiungi il tuo account NSS a BlueXP.</block>
   <block id="819aff12752b7e6a1828e755c7664de7" category="list-text">Nella pagina *risorse*, fare clic su *Registra per il supporto*.</block>
   <block id="e8a3d9970b8fc1d92caaf33d9e116bd4" category="inline-image-macro">Una schermata che mostra il numero di serie di un account e l'opzione Registra per il supporto</block>
-  <block id="113f9cd7bac6f4faa6b8d58e3e099a8e" category="paragraph"><block ref="113f9cd7bac6f4faa6b8d58e3e099a8e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1ff5aefce774ec72a211f2b3bb10b950" category="section-title">Cliente esistente ma nessun account NSS</block>
   <block id="cc1d3c161bcf25e6445c2fc771647849" category="paragraph">Se sei già un cliente NetApp con licenze e numeri di serie esistenti ma _no_ account NSS, devi solo creare un account NSS.</block>
   <block id="5b2b7f628f804bcb786a097c7e45aa41" category="inline-link">Modulo di registrazione per l'utente del sito di supporto NetApp</block>
@@ -327,7 +317,6 @@
   <block id="e9b1f53d6cabb3394833a4e102eb6a69" category="section-title">Novità di NetApp</block>
   <block id="c20c107d0d4eef6351660f3590324232" category="paragraph">Se sei nuovo di NetApp e non disponi di un account NSS, segui i passaggi riportati di seguito.</block>
   <block id="2974170a8b1b5b4a2ac69aacd4c1c9c3" category="list-text">Individuare il numero di serie dell'ID account nella pagina Support Registration (registrazione supporto).</block>
-  <block id="ef5e63bb6b6827440a13cc2ec7e9cf56" category="paragraph"><block ref="ef5e63bb6b6827440a13cc2ec7e9cf56" category="inline-image-macro-rx" type="image"></block></block>
   <block id="dd50e314c18933734174c1156dd9237f" category="inline-link">Sito per la registrazione del supporto NetApp</block>
   <block id="78f94e749b89d69dcbf3baff21ccb958" category="list-text">Selezionare<block ref="e1c4be66250fd76d5c52bfe2cb7daee2" category="inline-link-rx"></block> E selezionare *non sono un cliente NetApp registrato*.</block>
   <block id="d4f633ef130727b2776fa7f45024ca7d" category="list-text">Compilare i campi obbligatori (con asterischi rossi).</block>
@@ -475,7 +464,6 @@
   <block id="874a5fea50f0ef6118e6407f7a38543b" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Preparatevi a eseguire il tiering dei dati su StorageGRID</block>
   <block id="4c6a9048ac276eb9391ebe2abd8e0c0d" category="paragraph">Sono necessari i seguenti elementi:</block>
   <block id="b020365bc471630c977d9fcc2c5ea1d1" category="inline-link">Scopri come individuare un cluster</block>
-  <block id="b559e6916f00df2bc761660cda3f2e0a" category="list-text">Un cluster ONTAP on-premise con ONTAP 9.4 o versione successiva e una connessione a StorageGRID tramite una porta specificata dall'utente.<block ref="afd80128eeaacb8238d3ffdcf8ecd8a8" category="inline-link-rx"></block>.</block>
   <block id="5fce56af1e1158cc023bf250fa9ab688" category="list-text">StorageGRID 10.3 o versione successiva con chiavi di accesso AWS che dispongono delle autorizzazioni S3.</block>
   <block id="576fdb5dd15e14e6977927216a394612" category="list-text">Un connettore installato in sede.</block>
   <block id="02a08db5d0a39ed9c8dcd2ad1853be2e" category="list-text">Rete per il connettore che abilita una connessione HTTPS in uscita al cluster ONTAP, a StorageGRID e al servizio di tiering BlueXP.</block>
@@ -511,7 +499,6 @@
   <block id="2cd89e6f0fcda5b09186fef88391ef89" category="admonition">BlueXP Tiering supporta i volumi FlexGroup, a partire da ONTAP 9.5. Il programma di installazione funziona come qualsiasi altro volume.</block>
   <block id="8141ab52bd695a7c4b2c43e785d8bf58" category="section-title">Rilevamento di un cluster ONTAP</block>
   <block id="115976a072e6ce2f2ab2d16440a6eced" category="paragraph">È necessario creare un ambiente di lavoro ONTAP on-premise in BlueXP Canvas prima di iniziare a tierare i dati cold.</block>
-  <block id="6ff483ff43e1d1341ed8bca213a5d6c2" category="paragraph"><block ref="781159370dedb574e61a716048070385" category="inline-link-rx"></block>.</block>
   <block id="6be12c1b6627a3a9bb2aa4cb185fc866" category="section-title">Preparazione di StorageGRID</block>
   <block id="36fe0b0906c418ae57a5a0bdc228ec2b" category="paragraph">StorageGRID deve soddisfare i seguenti requisiti.</block>
   <block id="793640ee72b7150dff71a288a821c67c" category="list-text">Versioni di StorageGRID supportate</block>
@@ -524,23 +511,18 @@
   <block id="d32e4305e9f04e1cbc37d3e892619ee7" category="section-title">Creazione o commutazione di connettori</block>
   <block id="1c3c05f52f226acac800b43e5ce83b67" category="paragraph">Per eseguire il Tier dei dati nel cloud è necessario un connettore. Quando si esegue il tiering dei dati su StorageGRID, è necessario che un connettore sia disponibile on-premise. È necessario installare un nuovo connettore o assicurarsi che il connettore attualmente selezionato risieda on-premise.</block>
   <block id="e6e80588e9fe7cf89218fea44300f7ca" category="inline-link">Scopri di più sui connettori</block>
-  <block id="da1264a616f156bd6836a85f7dfdea5a" category="list-text"><block ref="da1264a616f156bd6836a85f7dfdea5a" category="inline-link-rx"></block></block>
   <block id="7e3b03fb1795db2dd05995429974e133" category="inline-link">Installazione di un connettore su un host Linux</block>
-  <block id="b911d3b2a309c413ee66b9b771d150de" category="list-text"><block ref="b911d3b2a309c413ee66b9b771d150de" category="inline-link-rx"></block></block>
   <block id="c870531773e82c374eb4125c8029e25e" category="inline-link">Passaggio da un connettore all'altro</block>
-  <block id="74d39f4b6fe0e32c5cfa2ed86891bf44" category="list-text"><block ref="74d39f4b6fe0e32c5cfa2ed86891bf44" category="inline-link-rx"></block></block>
   <block id="a8e8e48001e032c3b5939047d15db5a2" category="section-title">Preparazione del collegamento in rete per il connettore</block>
   <block id="7b16b8b258668ab05a1e5d83e084b477" category="paragraph">Assicurarsi che il connettore disponga delle connessioni di rete richieste.</block>
   <block id="aadbd6cd1f8b4e9deafea8f1d6c8333c" category="list-text">Assicurarsi che la rete in cui è installato il connettore abiliti le seguenti connessioni:</block>
   <block id="2e379f93711508ab69eec06837dd271c" category="inline-link">vedere l'elenco degli endpoint</block>
-  <block id="a3419ebef48cc8ad439612e4e4ca281c" category="list-text">Una connessione HTTPS tramite la porta 443 al servizio di tiering BlueXP <block ref="4a7a4f89081133703af86b4e7832dbdb" category="inline-link-rx"></block>)</block>
   <block id="5bfe7676a3f4e4197bf9f895c6b2fcb4" category="list-text">Una connessione HTTPS tramite la porta 443 al sistema StorageGRID</block>
   <block id="699a71169310a3553bddb7e36ecb8a5c" category="list-text">Una connessione HTTPS sulla porta 443 alla LIF di gestione del cluster ONTAP</block>
   <block id="de9570886e9849852133b61caefd03b2" category="section-title">Tiering dei dati inattivi dal primo cluster a StorageGRID</block>
   <block id="a71f0f53c9824602e78a79bc5fa52d43" category="paragraph">Dopo aver preparato l'ambiente, iniziare a tiering dei dati inattivi dal primo cluster.</block>
   <block id="d59db7846bd10b6d60d21543df9faa9e" category="list-title">Di cosa hai bisogno</block>
   <block id="04e0208908b4c6086bf83c95b22aff8b" category="inline-link">Un ambiente di lavoro on-premise</block>
-  <block id="5b47faa45c60368d15dfdd5dfe93817e" category="list-text"><block ref="05e67941b6656a354bb250fa5965cbfe" category="inline-link-rx"></block>.</block>
   <block id="8763f6e8f73d9edf1525960ebd813b27" category="list-text">L'FQDN del nodo gateway StorageGRID e la porta che verrà utilizzata per le comunicazioni HTTPS.</block>
   <block id="1b8a3756b590cb811f9726f247097028" category="list-text">Chiave di accesso AWS con le autorizzazioni S3 richieste.</block>
   <block id="b2b5aa0c45edd9f1055e515a5bfde8eb" category="list-text">Selezionare l'ambiente di lavoro on-premise ONTAP.</block>
@@ -653,8 +635,6 @@
   <block id="0dca8b35c3815430d139be9a39c2de9e" category="paragraph">Al termine della prova gratuita, è possibile pagare il tiering BlueXP tramite un abbonamento pay-as-you-go, una licenza BYOL per tiering ONTAP BlueXP o una combinazione di entrambi:</block>
   <block id="154756f3451aa7d3c9c0ff18e7159503" category="inline-link">Vai all'offerta BlueXP Marketplace</block>
   <block id="be161e727970da45fa68901ea907f28e" category="list-text">Per iscriversi ad AWS Marketplace,<block ref="39d4482f47ca47b562b106b1d8bbeae0" category="inline-link-rx"></block>, Fare clic su *Subscribe*, quindi seguire le istruzioni.</block>
-  <block id="3fe1a647c6d6e3ecb4beb9fdbf88698a" category="inline-link-macro">Aggiungilo al tuo account da BlueXP Digital Wallet</block>
-  <block id="ced189c6dbe6a08832e2f72a72491e23" category="list-text">Per pagare utilizzando una licenza BlueXP Tiering BYOL, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contattaci se devi acquistarne una], quindi <block ref="17328282f8f552ccfc10816694e542ba" category="inline-link-macro-rx"></block>.</block>
   <block id="75cd84ee546dcf1d1f4a18d8b35fef23" category="section-title">Diagrammi di rete per le opzioni di connessione</block>
   <block id="d01e794dc2a0fbbe0b45a2be721b3f37" category="paragraph">Esistono due metodi di connessione che è possibile utilizzare per la configurazione del tiering da sistemi ONTAP on-premise ad AWS S3.</block>
   <block id="e0e3556797f60e28e9764edb1e90829b" category="list-text">Connessione pubblica - consente di collegare direttamente il sistema ONTAP ad AWS S3 utilizzando un endpoint S3 pubblico.</block>
@@ -670,11 +650,8 @@
   <block id="ffe46224318100d3f7bec7eca2ef7e3f" category="paragraph">BlueXP Connector è il software principale per la funzionalità BlueXP. Per eseguire il Tier dei dati ONTAP inattivi, è necessario un connettore.</block>
   <block id="cc8fa83637def0ab4b26b2c73eaf58b1" category="paragraph">Se si dispone già di un connettore implementato in AWS VPC o on-premise, si è tutti pronti. In caso contrario, sarà necessario creare un connettore in una di queste posizioni per tierare i dati ONTAP allo storage AWS S3. Non puoi utilizzare un connettore implementato in un altro provider cloud.</block>
   <block id="fcb56b02923ad8fee5725ea3ab197730" category="inline-link">Implementazione di un connettore in AWS</block>
-  <block id="aeab24d7d3032243d8637fa1f7ff200c" category="list-text"><block ref="aeab24d7d3032243d8637fa1f7ff200c" category="inline-link-rx"></block></block>
   <block id="929d25665bc92d22cf4a79265248dd36" category="section-title">Requisiti di rete del connettore</block>
-  <block id="bb188fe477e19c259eca9386dbbcbe4d" category="list-text">Una connessione HTTPS tramite la porta 443 al servizio di tiering BlueXP e allo storage a oggetti S3 <block ref="e55fc914b3d027a7a2463283008a8fbf" category="inline-link-rx"></block>)</block>
   <block id="76e709935c290dea4c7b1c0de4918211" category="inline-link">Assicurarsi che il connettore disponga delle autorizzazioni per gestire il bucket S3</block>
-  <block id="4e96d68b20a8c2caa7ac1a77b15169c3" category="list-text"><block ref="4e96d68b20a8c2caa7ac1a77b15169c3" category="inline-link-rx"></block></block>
   <block id="db41e7a8de9567fec002e93320c428ad" category="inline-xref">Scopri come configurare un'interfaccia endpoint VPC.</block>
   <block id="b81793c592727efa905fe3e8a74bbb9d" category="list-text">Se si dispone di una connessione diretta o VPN dal cluster ONTAP al VPC e si desidera che la comunicazione tra il connettore e S3 rimanga nella rete interna AWS (una connessione *privata*), è necessario attivare un'interfaccia endpoint VPC su S3. <block ref="038eee040120b4244a9c2b9d19ca5787" category="inline-xref-macro-rx"></block></block>
   <block id="aa8387a4bff8defdb2d4c5777a1bf540" category="section-title">Preparare il cluster ONTAP</block>
@@ -709,7 +686,6 @@
   <block id="e1e27de3274b6be648bacdf85d89a282" category="list-text">Autorizzazioni per il cluster ONTAP on-premise in modo che possa leggere e scrivere i dati nel bucket S3.</block>
   <block id="b99f1169cc9c4dc4d04df2e1240f99b1" category="inline-link">Queste autorizzazioni S3</block>
   <block id="a6e42fec71384a3a5d77eba684fba2c9" category="inline-link">Documentazione AWS: Modifica delle policy IAM</block>
-  <block id="46c2f3b9e7da21f892e750d164cb2d57" category="list-text">Confermare<block ref="91113a09caa216208c5e3ed063870cfa" category="inline-link-rx"></block> Fanno parte del ruolo IAM che fornisce al connettore le autorizzazioni. Dovrebbero essere stati inclusi per impostazione predefinita al momento della prima implementazione del connettore. In caso contrario, è necessario aggiungere le autorizzazioni mancanti. Vedere<block ref="6d4dc5f0c95117ac550b72968db62911" category="inline-link-rx"></block>.</block>
   <block id="5eb4ef1304848f6f34b1acbfed60cc32" category="list-text">Quando si attiva il servizio, la procedura guidata Tiering richiede di inserire una chiave di accesso e una chiave segreta. Queste credenziali vengono passate al cluster ONTAP in modo che ONTAP possa eseguire il Tier dei dati al bucket S3. A tale scopo, è necessario creare un utente IAM con le seguenti autorizzazioni:</block>
   <block id="b539613501183cf10b8570ed60939fea" category="inline-link">Documentazione AWS: Creazione di un ruolo per delegare le autorizzazioni a un utente IAM</block>
   <block id="5d6d3c39001c5518d516e9053e5363e3" category="paragraph">Vedere<block ref="eb8d2636cc0b0f2875b50c1561ec0060" category="inline-link-rx"></block> per ulteriori informazioni.</block>
@@ -734,7 +710,6 @@
   <block id="51cca00855dd27ddbb729c64d6988680" category="inline-image-macro">Una schermata del nome DNS dell'endpoint VPC dalla console AWS.</block>
   <block id="63c7ff1056127bdaee465b05c7c83d3c" category="paragraph"><block ref="63c7ff1056127bdaee465b05c7c83d3c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="667b744af05e085368d150edc4b8a344" category="inline-link">Accesso alla macchina virtuale che ospita BlueXP Connector</block>
-  <block id="53580765f208bf3a21b9b94ab077bfb1" category="list-text">Ottenere il certificato dall'endpoint VPC S3. Lo fai entro<block ref="baa295d957d2e86c0ec7224e7ed425da" category="inline-link-rx"></block> ed eseguire il seguente comando. Quando si immette il nome DNS dell'endpoint, aggiungere "bucket" all'inizio, sostituendo "*":</block>
   <block id="b11703e578eba56af91d25ee75ec1594" category="list-text">Dall'output di questo comando, copiare i dati per il certificato S3 (tutti i dati compresi tra i tag BEGIN / END CERTIFICATE):</block>
   <block id="042284b067b431d7d21168a5ada6e448" category="list-text">Accedere alla CLI del cluster ONTAP e applicare il certificato copiato utilizzando il seguente comando (sostituire il proprio nome della VM di storage):</block>
   <block id="b5cc03c234fd0b33ad38196195be66b1" category="section-title">Tier dati inattivi dal primo cluster ad Amazon S3</block>
@@ -779,7 +754,6 @@
   <block id="d0693e7bf28b7bbc94287cee0e4b0768" category="section-title">5 marzo 2023</block>
   <block id="b92f2131d3d225c3c3327daaa8862624" category="section-title">Ora è possibile generare un report di tiering per i volumi</block>
   <block id="f86857f0a51fde5819da3a17258b5448" category="inline-link">Scopri come scaricare il report sul tiering</block>
-  <block id="35083b11acbb58293019b38b8f232a5a" category="paragraph">È possibile scaricare un report dalla pagina Tier Volumes per esaminare lo stato di tiering di tutti i volumi nei cluster che si stanno gestendo. BlueXP Tiering genera un file .CSV che è possibile rivedere e inviare ad altre persone dell'azienda in base alle necessità.<block ref="b6be70acd3f28aaa18a7e212c9bc7736" category="inline-link-rx"></block>.</block>
   <block id="5c0fff562b33dc0a5a3acac30ed2d313" category="section-title">6 dicembre 2022</block>
   <block id="433c1ccd6c6d5af5fc78b729975e5f20" category="section-title">Modifiche degli endpoint di accesso a Internet in uscita del connettore</block>
   <block id="8c14896b1d1fc37f02aa2e6dfc06354a" category="paragraph">A causa di una modifica nel tiering BlueXP, è necessario modificare i seguenti endpoint del connettore per eseguire correttamente il tiering BlueXP:</block>
@@ -789,16 +763,13 @@
   <block id="e1095ff19466581c5274f67123c95036" category="cell">https://api.bluexp.netapp.com</block>
   <block id="9e434ddc2ad4b9de005368b77254223d" category="cell">https://*.cloudmanager.cloud.netapp.com</block>
   <block id="37ba276f010f4ea07f1196b487811443" category="cell">https://*.api.bluexp.netapp.com</block>
-  <block id="c395006d6063b66336be768382280c9e" category="paragraph">Consulta l'elenco completo degli endpoint per il<block ref="684a3f4234dd7d8f8b7d90e00da95138" category="inline-link-rx"></block>,<block ref="fd66fc554da543d0f7f94dcde36b2a2f" category="inline-link-rx"></block>, o.<block ref="2484264a704a749bc992bec76f43f13d" category="inline-link-rx"></block> ambiente cloud.</block>
   <block id="5a4346a01828d72104a6540080377b25" category="section-title">6 novembre 2022</block>
   <block id="3afb7cae2b7c3e96c6a4e1df765d3dce" category="section-title">Trascinare e rilasciare per abilitare il tiering BlueXP su Azure Blob, Google Cloud Storage e StorageGRID</block>
   <block id="6586247c64ea3f20421ae518b26fc973" category="paragraph">Se la destinazione Azure Blob, Google Cloud Storage o StorageGRID Tiering esiste come ambiente di lavoro su Canvas, è possibile trascinare l'ambiente di lavoro on-premise ONTAP sulla destinazione per avviare la configurazione guidata del tiering.</block>
   <block id="ab288ae4b4c50ebb9a997e0f0debbd15" category="section-title">19 settembre 2022</block>
   <block id="c3d7ada1f42d9b916dd8624c5b5661c1" category="section-title">La procedura guidata di tiering consente di configurare AWS PrivateLink quando si esegue il tiering sullo storage S3</block>
   <block id="905ecf204d0cf0b2ed497e63ae9324d0" category="inline-link">Configurare il sistema per una connessione privata utilizzando un'interfaccia endpoint VPC</block>
-  <block id="33e030edd0380c3b2d743ec2f989598c" category="paragraph">Nelle release precedenti era molto dispendioso in termini di tempo fornire questo modo sicuro di connettere il cluster a un bucket S3 attraverso un endpoint VPC. A questo punto, è possibile seguire i passaggi richiesti per<block ref="fb4b1250ed3d38b3a9447c7c732436c8" category="inline-link-rx"></block>, Quindi selezionare PrivateLink durante l'installazione guidata del tiering nella pagina rete.</block>
   <block id="883959b6b7ad90936b33d524655bc282" category="inline-link">Consulta i requisiti e i passaggi per il Tier dei dati inattivi su Amazon S3</block>
-  <block id="93d0679385afbe8961d65715ec42ad95" category="paragraph"><block ref="eae517fc6cf18ab5b51a15743d8fba49" category="inline-link-rx"></block>.</block>
   <block id="18cd1c130656412d8089667948bc48a2" category="section-title">Trascinare e rilasciare per abilitare il tiering BlueXP su Amazon S3</block>
   <block id="84b50dc471c57455cf0359ad021a8c58" category="paragraph">Se la destinazione del tiering Amazon S3 esiste come ambiente di lavoro su Canvas, è possibile trascinare l'ambiente di lavoro ONTAP on-premise sulla destinazione per avviare la configurazione guidata del tiering.</block>
   <block id="bf482155aab691ba59a0313f5628cbba" category="section-title">Scegliere il comportamento del tiering quando si rimuove l'archivio di oggetti mirror in una configurazione MetroCluster</block>
@@ -806,17 +777,13 @@
   <block id="1f6fd3301ab6ce127efad422dec03d61" category="section-title">3 agosto 2022</block>
   <block id="059c9f6829260507f53186d7191b058c" category="section-title">Possibilità di configurare archivi di oggetti aggiuntivi per altri aggregati nel cluster</block>
   <block id="aa18b7b04ae6143c1d2f56b72718403e" category="inline-link">Scopri di più sulla nuova funzionalità di storage a oggetti.</block>
-  <block id="e13d7be0c5a4bf2f3e8d1dd04f69dd41" category="paragraph">L'interfaccia utente Cloud Tiering ha aggiunto un nuovo set di pagine per la configurazione dello storage a oggetti. È possibile aggiungere nuovi archivi di oggetti, connettere più archivi di oggetti a un aggregato per il mirroring FabricPool, scambiare gli archivi di oggetti primari e mirror, eliminare le connessioni degli archivi di oggetti agli aggregati e molto altro ancora.<block ref="4f404ee3f4c3295f701ed8b17cef66df" category="inline-link-rx"></block></block>
   <block id="5c10257d843c1a8aa9e46f55d2064835" category="section-title">Supporto delle licenze Cloud Tiering per le configurazioni MetroCluster</block>
   <block id="afacb33ad65bcd63eb15aeba04b4aed0" category="inline-link">Scopri come concedere in licenza e configurare questi tipi di cluster.</block>
-  <block id="add560b5a985ef003a6c14e31a803e74" category="paragraph">Le licenze Cloud Tiering possono ora essere condivise con i cluster che si trovano in configurazioni MetroCluster. Non è più necessario utilizzare le licenze FabricPool obsolete per questi scenari. In questo modo è più semplice utilizzare le licenze di Cloud Tiering "fluttuanti" su più cluster.<block ref="b5f02a07de174e4ad879f9049ab311c1" category="inline-link-rx"></block></block>
   <block id="d3e8cd2e370974f27de1b310b4aa8cb3" category="section-title">3 maggio 2022</block>
   <block id="a74300b6b08791dda4f54d473a58e17a" category="section-title">Supporto della licenza Cloud Tiering per ulteriori configurazioni cluster</block>
-  <block id="51338772de59dc7828409895ae5d0501" category="paragraph">Le licenze Cloud Tiering possono ora essere condivise con i cluster che si trovano nelle configurazioni Tiering Mirror (non incluse le configurazioni MetroCluster) e con i cluster che sono Tiered per lo storage a oggetti cloud IBM. Non è più necessario utilizzare le licenze FabricPool obsolete per questi scenari. In questo modo è più semplice utilizzare le licenze di Cloud Tiering "fluttuanti" su più cluster.<block ref="b5f02a07de174e4ad879f9049ab311c1" category="inline-link-rx"></block></block>
   <block id="ad806d4b803a5aa7358400786d14dec0" category="section-title">4 aprile 2022</block>
   <block id="6cb8333618f00b139da255e7f5a82ea0" category="section-title">È ora disponibile la classe di storage Amazon S3 Glacier Instant Retrieval</block>
   <block id="75ad6cd4979a906c67e27abc9ee1c14e" category="inline-link">Consulta le classi di storage S3 supportate.</block>
-  <block id="d3028cb26dae3dbde1ec068c17d15383" category="paragraph">Quando si imposta il Cloud Tiering, è ora possibile configurare una regola del ciclo di vita in modo che i dati inattivi passino dalla classe di storage _Standard_ a _Glacier Instant Retrieval_ dopo un certo numero di giorni. In questo modo si riducono i costi dell'infrastruttura AWS.<block ref="99f36cc81f33df65a0349e719000fada" category="inline-link-rx"></block></block>
   <block id="199090bb5d58df554b18a5cb68acb0b7" category="section-title">Il cloud tiering è stato pienamente qualificato per i sistemi ONTAP Select</block>
   <block id="a74220a8acc78d1041352afb305af18f" category="paragraph">Oltre al tiering dei dati dai sistemi AFF e FAS, ora puoi tierare i dati inattivi dai sistemi ONTAP Select allo storage cloud.</block>
   <block id="56e7e76078700fc13565626e04d55715" category="summary">Liberare spazio sui cluster ONTAP on-premise eseguendo il tiering dei dati inattivi su qualsiasi servizio di storage a oggetti che utilizza il protocollo S3 (Simple Storage Service).</block>
@@ -826,7 +793,6 @@
   <block id="280cb258925e656482b6dc7f7cb2d1de" category="paragraph">I clienti che desiderano utilizzare archivi di oggetti non ufficialmente supportati come Tier cloud possono farlo seguendo queste istruzioni. I clienti devono verificare e confermare che l'archivio di oggetti soddisfi i propri requisiti.</block>
   <block id="838b026c40657f60dbef105628a74c67" category="paragraph">NetApp non supporta, né è responsabile, per qualsiasi problema derivante da qualsiasi servizio Object Store di terze parti, in particolare se non ha concordato accordi di supporto con la terza parte con cui il prodotto ha avuto origine. Si riconosce e si accetta che NetApp non sarà responsabile per eventuali danni associati o che sia altrimenti tenuta a fornire supporto su quel prodotto di terze parti.</block>
   <block id="a48ebc1daa09857cc47678ad5ad8759f" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Preparatevi a eseguire il tiering dei dati per lo storage a oggetti compatibile con S3</block>
-  <block id="cde18ab8c63e317f54bbc67366c538fb" category="list-text">Un cluster ONTAP di origine on-premise che esegue ONTAP 9.8 o versione successiva e una connessione tramite una porta specificata dall'utente allo storage a oggetti compatibile con S3 di destinazione.<block ref="afd80128eeaacb8238d3ffdcf8ecd8a8" category="inline-link-rx"></block>.</block>
   <block id="3451be8fc6792d6f67247f8a5ef41a6f" category="list-text">L'FQDN, la chiave di accesso e la chiave segreta per il server di storage a oggetti, in modo che il cluster ONTAP possa accedere al bucket.</block>
   <block id="2af8ca26b1bcf00d88a15b8f1992fa35" category="list-text">Rete per il connettore che abilita una connessione HTTPS in uscita al cluster ONTAP di origine, allo storage a oggetti compatibile con S3 e al servizio di tiering BlueXP.</block>
   <block id="985b7d4c5c97b3b1b7b1d93298dbfbe8" category="paragraph">In BlueXP, selezionare un ambiente di lavoro on-premise, fare clic su *Enable* (attiva) per il servizio Tiering e seguire le istruzioni per tiering data to S3-compatible object storage.</block>
@@ -881,7 +847,6 @@
   <block id="19a7096cffff1081298250811a27a2c9" category="list-text">Se disponi di sistemi Cloud Volumes ONTAP, puoi trovarli nella pagina Clusters per ottenere una vista completa del tiering dei dati nella tua infrastruttura di cloud ibrido</block>
   <block id="df6c94bf66394a97d434d11194d194ad" category="inline-link">Consulta la pagina di tiering di BlueXP sul sito Web di BlueXP</block>
   <block id="81c22aed980244c51b17cc4f12778ff7" category="paragraph">Per ulteriori informazioni sul valore offerto dal tiering BlueXP,<block ref="c0febc4c63fa1530e730382939cf4b85" category="inline-link-rx"></block>.</block>
-  <block id="dc2b7e70ea1bc1ef0d9e3e0dfe9388af" category="admonition">I sistemi Cloud Volumes ONTAP sono di sola lettura grazie al tiering BlueXP.<block ref="d841e2ca06a23a295269523a8cf3293d" category="inline-link-rx"></block>.</block>
   <block id="002fca37a5e7d8eb724e874566419716" category="section-title">Provider di storage a oggetti supportati</block>
   <block id="403df42df80267a7b2bc0be8c3e6685d" category="paragraph">È possibile eseguire il tiering dei dati inattivi da un sistema ONTAP on-premise ai seguenti provider di storage a oggetti:</block>
   <block id="2f03d9c18df5cee8e5d8c37bd5ae232f" category="inline-link-macro">La licenza per questo tipo di configurazione viene completata utilizzando il tiering BlueXP.</block>
@@ -961,14 +926,12 @@
   <block id="87f877198480bd1c4489bc28a2335d55" category="list-text">Considerare l'impatto dei trasferimenti SnapMirror prima di assegnare la policy di tiering a volumi di origine nelle relazioni di protezione dei dati.</block>
   <block id="20f9c7a7f1c4f74661fc0727854e46f4" category="paragraph">Poiché i dati vengono immediatamente suddivisi in Tier, SnapMirror legge i dati dal Tier cloud piuttosto che dal Tier di performance. Ciò rallenterà le operazioni di SnapMirror, probabilmente rallentando altre operazioni di SnapMirror in un secondo momento in coda, anche se utilizzano policy di tiering diverse.</block>
   <block id="5a7419c9aa51e2139e939dedaa6171a0" category="inline-link">Vedi considerazioni sui criteri di tiering con il backup e ripristino di BlueXP</block>
-  <block id="17d8fa7a4b309312cebf9b59da9a2365" category="list-text">Il backup e il ripristino di BlueXP sono influenzati in modo analogo dai volumi impostati con un criterio di tiering.<block ref="c38d488619b3038630335754946446ec" category="inline-link-rx"></block>.</block>
   <block id="7f7b8ca64210913a358ddc737b47e16a" category="list-text">Tutti i dati utente DP (backup)</block>
   <block id="3f0d398a1e8248f6bc2bbb8471906f11" category="list-text">Tutti i dati presenti in un volume di protezione dei dati (esclusi i metadati) vengono immediatamente spostati nel Tier cloud. In caso di lettura, i blocchi di dati cold nel livello cloud rimangono freddi e non vengono riscritti nel Tier di performance (a partire da ONTAP 9.4).</block>
   <block id="ed010271127f187e6f11d9a502b5d9d5" category="admonition">Questo criterio è disponibile per ONTAP 9.5 o versioni precedenti. È stato sostituito con la policy di tiering *all* a partire da ONTAP 9.6.</block>
   <block id="588536d1b6de932fbea2c2b22f963d72" category="summary">Una versione di prova gratuita di 30 giorni del tiering BlueXP inizia quando si imposta il tiering dal primo cluster. Al termine della prova gratuita, dovrai pagare il tiering BlueXP tramite un abbonamento pay-as-you-go o annuale dal mercato del tuo cloud provider, una licenza BYOL di NetApp o una combinazione di entrambi.</block>
   <block id="8202299929ccdfe388049a03c2c36d60" category="doc">Impostare le licenze per il tiering BlueXP</block>
   <block id="80186f1230af2267e2c2e4d2ab8c030e" category="paragraph">Alcune note prima di leggere ulteriori informazioni:</block>
-  <block id="cb75eb32a44d8c6565fd938d48a9e7af" category="list-text">Se hai già sottoscritto l'abbonamento BlueXP (PAYGO) nel mercato del tuo cloud provider, sei automaticamente iscritto al tiering BlueXP anche per i sistemi ONTAP on-premise. Verrà visualizzato un abbonamento attivo nella scheda BlueXP Tiering *on-premise dashboard*. Non dovrai più iscriverti. Nel Digital Wallet viene visualizzato un abbonamento attivo.</block>
   <block id="f6013530929ce5c8125f05448da6c33e" category="list-text">La licenza di tiering BYOL BlueXP (precedentemente nota come licenza "Cloud Tiering") è una licenza _floating_ che è possibile utilizzare in più cluster ONTAP on-premise nel proprio account BlueXP. Si tratta di un'operazione diversa (e molto più semplice) rispetto al passato in cui è stata acquistata una licenza _FabricPool_ per ciascun cluster.</block>
   <block id="538632f98286e11da7898a8dd8c5940a" category="list-text">Non sono previsti costi per il tiering dei dati a StorageGRID, pertanto non è richiesta alcuna licenza BYOL o registrazione PAYGO. Questi dati a più livelli non vengono conteggiati in relazione alla capacità acquistata nella licenza.</block>
   <block id="4f38e9048319fde605a07b6a4c99d8f5" category="inline-link-macro">Scopri di più sul funzionamento delle licenze per il tiering BlueXP</block>
@@ -994,14 +957,12 @@
   <block id="2351127acb653fd60dafc73c8efcb79d" category="inline-link">Pagina AWS Marketplace</block>
   <block id="66930a908819d6fce6483de6c770d313" category="paragraph">Quando si esegue il tiering dei dati inattivi su AWS, è possibile sottoscrivere un contratto annuale disponibile su<block ref="7e9391e5068ba3345180f0de3723960c" category="inline-link-rx"></block>. È disponibile in termini di 1, 2 o 3 anni.</block>
   <block id="54b98a81c2ba2da3e9c721b03a4585b5" category="inline-link">Associare l'abbonamento alle credenziali AWS</block>
-  <block id="29b2b8613d3a7ed690246613f8654828" category="paragraph">Se si desidera utilizzare questa opzione, impostare l'abbonamento dalla pagina Marketplace, quindi<block ref="f1f7c973fce685b876017d26d677c721" category="inline-link-rx"></block>.</block>
   <block id="93f26f7b1e47a3f6bebd49a7fa7dd4b6" category="section-title">Utilizzare una licenza BlueXP Tiering BYOL</block>
   <block id="2105bccac1837aa99c46baf38ee1c998" category="paragraph">Le licenze Bring-Your-Own di NetApp offrono termini di 1, 2 o 3 anni. La licenza BYOL *BlueXP Tiering* (precedentemente nota come licenza "Cloud Tiering") è una licenza _mobile_ che è possibile utilizzare su più cluster ONTAP on-premise nel proprio account BlueXP. La capacità di tiering totale definita nella licenza di tiering BlueXP è condivisa tra *tutti* i cluster on-premise, semplificando il rinnovo e la licenza iniziale. La capacità minima per una licenza BYOL tiering inizia a 10 TIB.</block>
   <block id="c2319a35daf2868e6d5793e8fa613108" category="paragraph">Se non disponi di una licenza di tiering BlueXP, contattaci per acquistarne una:</block>
   <block id="7bd914491d17c534e3612cd97579060e" category="list-text">Mailto:ng-cloud-tiering@netapp.com?subject=Licensing[Invia e-mail per acquistare una licenza].</block>
   <block id="6193e62acb4a86204633b2d093e49546" category="list-text">Fare clic sull'icona della chat nell'angolo inferiore destro di BlueXP per richiedere una licenza.</block>
   <block id="6aa300e24ddf3ee5a99bbb1cf5bb4a72" category="inline-link">Fai clic qui per ulteriori informazioni</block>
-  <block id="d24c279c3d050f8132eeb782120e60fe" category="paragraph">Se si dispone di una licenza basata su nodo non assegnata per Cloud Volumes ONTAP che non si intende utilizzare, è possibile convertirla in una licenza di tiering BlueXP con la stessa equivalenza in dollari e la stessa data di scadenza.<block ref="c110e5a4a66d7429a8ced7dc2264a8f5" category="inline-link-rx"></block>.</block>
   <block id="bb987c734075abca5676f20a90739886" category="paragraph">La pagina del portafoglio digitale BlueXP consente di gestire le licenze BYOL di tiering BlueXP. È possibile aggiungere nuove licenze e aggiornare quelle esistenti.</block>
   <block id="feace567e2626d7786ec5e18354a5177" category="section-title">BlueXP Tiering BYOL licensing a partire dal 2021</block>
   <block id="519bd74c1aa3e9805e24269a27ef9b6e" category="paragraph">La nuova licenza *BlueXP Tiering* è stata introdotta nell'agosto 2021 per le configurazioni di tiering supportate in BlueXP utilizzando il servizio di tiering BlueXP. Attualmente BlueXP supporta il tiering per i seguenti storage cloud: Amazon S3, Azure Blob, Google Cloud Storage, NetApp StorageGRID e lo storage a oggetti compatibile con S3.</block>
@@ -1041,7 +1002,6 @@
   <block id="c1b2dc0798d3960e25b8a12c751f53ec" category="list-text">Nella finestra di dialogo _Add License_, inserire le informazioni sulla licenza e fare clic su *Add License*:</block>
   <block id="80b8da08efcb9500667b0fc290bbe1f6" category="list-text">Se si dispone del numero di serie della licenza di tiering e si conosce l'account NSS, selezionare l'opzione *inserire il numero di serie* e immettere le informazioni desiderate.</block>
   <block id="bae190eec3db4a0dd635ae72756acde8" category="inline-link">Aggiungere l'account NSS a BlueXP</block>
-  <block id="fc76651edf85f11e6b8f2a81226ab59d" category="paragraph">Se il tuo account NetApp Support Site non è disponibile nell'elenco a discesa,<block ref="6d9745cd4f1d60b55f06aef4c5cb6ec4" category="inline-link-rx"></block>.</block>
   <block id="4488cc251929ad2c43c07191375ca26e" category="list-text">Se si dispone del file di licenza di tiering, selezionare l'opzione *Upload License file* (carica file di licenza) e seguire le istruzioni per allegare il file.</block>
   <block id="6b4dd8f152b00922385ef0e152554720" category="inline-image-macro">Una schermata che mostra la pagina per aggiungere la licenza BYOL per il tiering BlueXP.</block>
   <block id="0a54431ad29a96ceb71a9ab3f197983c" category="paragraph"><block ref="0a54431ad29a96ceb71a9ab3f197983c" category="inline-image-macro-rx" type="image"></block></block>
@@ -1189,7 +1149,6 @@
   <block id="c7f5c1a75acc58c6f004efc0ce1eba09" category="list-text">*Allegato (opzionale)*: Carica fino a cinque allegati, uno alla volta.</block>
   <block id="bfa80e7aaad6da353b431bff3a0e12d6" category="paragraph">Gli allegati sono limitati a 25 MB per file. Sono supportate le seguenti estensioni di file: Txt, log, pdf, jpg/jpeg, rtf, doc/docx, xls/xlsx e csv.</block>
   <block id="baaf0e61add7d12cf8d12e023d5aef18" category="inline-image-macro">Schermata del modulo Crea un caso che consente di creare un caso con il supporto NetApp.</block>
-  <block id="a2ff30886e1baf1e7d5045b5fc24f5b9" category="paragraph"><block ref="a2ff30886e1baf1e7d5045b5fc24f5b9" category="inline-image-macro-rx" type="image"></block></block>
   <block id="18f487556417bb6d9721a7005ae097c9" category="paragraph">Viene visualizzata una finestra a comparsa con il numero del caso di supporto. Uno specialista del supporto NetApp esaminerà il tuo caso e ti contatterà al più presto.</block>
   <block id="04e15da1deae9568b4dcda64fbb0c8d5" category="paragraph">Per una cronologia dei casi di supporto, fare clic su *Impostazioni &gt; Cronologia* e cercare le azioni denominate "Crea caso di supporto". Un pulsante all'estrema destra consente di espandere l'azione per visualizzare i dettagli.</block>
   <block id="5c56753585e89a84941bb3a78bc681af" category="paragraph">È possibile che venga visualizzato il seguente messaggio di errore quando si tenta di creare un caso:</block>
@@ -1213,25 +1172,18 @@
   <block id="27635a52fe4c34c39ffc6430f4244ec6" category="list-text">In *Organization's Cases* (casi dell'organizzazione), fare clic su *View* (Visualizza) per visualizzare tutti i casi associati alla società.</block>
   <block id="059e856250b59be3069246887b74a23c" category="list-text">Modificare l'intervallo di date scegliendo un intervallo di date esatto o scegliendo un intervallo di tempo diverso.</block>
   <block id="dfb3764bce2548df4e06357403f9c7d0" category="inline-image-macro">Una schermata dell'opzione sopra la tabella nella pagina di gestione del caso che consente di scegliere un intervallo di date esatto o gli ultimi 7 giorni, 30 giorni o 3 mesi.</block>
-  <block id="7fcba8aeefa9960d3fc3fa08b360ba2e" category="paragraph"><block ref="7fcba8aeefa9960d3fc3fa08b360ba2e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a1bb576be9e5a356290f231efb51b3f5" category="list-text">Filtrare il contenuto delle colonne.</block>
   <block id="3753f10a59e21f58b30e3e67d416453e" category="inline-image-macro">Schermata dell'opzione di filtro nella colonna Status (Stato) che consente di filtrare i casi che corrispondono a uno stato specifico, ad esempio attivo o chiuso.</block>
-  <block id="37709be3a43df07d5975287545d0ba12" category="paragraph"><block ref="37709be3a43df07d5975287545d0ba12" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1c6ea5ef583389e18e7d7bda70beaa71" category="inline-image-macro">L'icona più visualizzata nella tabella</block>
-  <block id="1614dc8e47c0492434152c990d6c1040" category="list-text">Modificare le colonne visualizzate nella tabella facendo clic su <block ref="effeab06130cddc8360822b2b706805b" category="inline-image-macro-rx" type="image"></block> e quindi scegliere le colonne che si desidera visualizzare.</block>
   <block id="370b44009f1b82d0b6b178bb80cc62fa" category="inline-image-macro">Una schermata che mostra le colonne che è possibile visualizzare nella tabella.</block>
-  <block id="5de408d7cbad49634fb25f9047498132" category="paragraph"><block ref="5de408d7cbad49634fb25f9047498132" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ad0ae9ea1f2e8d973a9a0f6bb169f494" category="inline-image-macro">Un'icona con tre punti che compare nell'ultima colonna della tabella</block>
-  <block id="98efef1c8a47ed5791b41944e8ff4ec2" category="list-text">Gestire un caso esistente facendo clic su <block ref="a0b152b50a56901a75affebabc26ed61" category="inline-image-macro-rx" type="image"></block> e selezionando una delle opzioni disponibili:</block>
   <block id="6d9dd74e7709ef802d299966f7898f6b" category="list-text">*Visualizza caso*: Visualizza tutti i dettagli relativi a un caso specifico.</block>
   <block id="8e6b52a532a4fbbfc98dca3ebfa5f1e6" category="list-text">*Aggiorna note sul caso*: Fornisci ulteriori dettagli sul problema oppure seleziona *carica file* per allegare fino a un massimo di cinque file.</block>
   <block id="f791bc685c526af8296381acff10f6a0" category="list-text">*Chiudi caso*: Fornisci i dettagli sul motivo per cui stai chiudendo il caso e fai clic su *Chiudi caso*.</block>
   <block id="e93217b2f709a398ce3c0fb753beb05f" category="inline-image-macro">Una schermata che mostra le azioni che è possibile eseguire dopo aver selezionato il menu nell'ultima colonna della tabella.</block>
-  <block id="e9a5c374fb47ed2ae5cc6108fb36d829" category="paragraph"><block ref="e9a5c374fb47ed2ae5cc6108fb36d829" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7f07b498da08e19eda2c8c1c5ee2c27e" category="summary">Liberare spazio sui cluster ONTAP on-premise eseguendo il tiering dei dati inattivi sullo storage Azure Blob.</block>
   <block id="f7b28901adf8c67d01732b27eac78bee" category="doc">Tiering dei dati dai cluster ONTAP on-premise allo storage Azure Blob</block>
   <block id="afef51d18777eb361a20c2043d35b3c7" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Preparatevi a eseguire il tiering dei dati sullo storage Azure Blob</block>
-  <block id="d2f518b275848356f172ff6ae0c10fa8" category="list-text">Cluster ONTAP on-premise con ONTAP 9.4 o versione successiva e connessione HTTPS allo storage Azure Blob.<block ref="afd80128eeaacb8238d3ffdcf8ecd8a8" category="inline-link-rx"></block>.</block>
   <block id="cd11b29aa1a96b5a94f154af73328fa6" category="list-text">Un connettore installato in Azure VNET o on-premise.</block>
   <block id="8c191e41bb84293885ce2b93e583e6d9" category="list-text">Rete per un connettore che abilita una connessione HTTPS in uscita al cluster ONTAP nel data center, allo storage Azure e al servizio di tiering BlueXP.</block>
   <block id="6b97c869d129075dc99119cc6c266fd4" category="paragraph">In BlueXP, selezionare un ambiente di lavoro ONTAP on-premise, fare clic su *Enable* (attiva) per il servizio Tiering e seguire le istruzioni per eseguire il tiering dei dati sullo storage Azure Blob.</block>
@@ -1246,14 +1198,11 @@
   <block id="6f7498318061ab9585a9a930576417e9" category="paragraph">È necessario creare un ambiente di lavoro ONTAP on-premise in BlueXP prima di iniziare a tierare i dati cold.</block>
   <block id="8d69c6a87500bfb8cb04a6182b6d844b" category="paragraph">Per eseguire il Tier dei dati nel cloud è necessario un connettore. Quando si esegue il tiering dei dati nello storage Azure Blob, è possibile utilizzare un connettore che si trova in un Azure VNET o nelle proprie sedi. Sarà necessario creare un nuovo connettore o assicurarsi che il connettore attualmente selezionato risieda in Azure o on-premise.</block>
   <block id="bda2a863882afc8f61b71a756b1ea690" category="inline-link">Implementazione di un connettore in Azure</block>
-  <block id="d94cbfae2c85d4e68e18566207dbca79" category="list-text"><block ref="d94cbfae2c85d4e68e18566207dbca79" category="inline-link-rx"></block></block>
   <block id="b1e389999fc3500ff74c433071c6f3d0" category="section-title">Verificare di disporre delle autorizzazioni necessarie per il connettore</block>
   <block id="5354529f47c862f65799910961248e94" category="inline-link">autorizzazioni di ruolo personalizzate richieste</block>
   <block id="7e90ca09e19c98a8ada0376d5e199bcf" category="inline-link">Autorizzazioni specifiche richieste per il tiering BlueXP</block>
-  <block id="4a27ef316df72b61c98a70b1b30b2491" category="paragraph">Se il connettore è stato creato utilizzando BlueXP versione 3.9.25 o successiva, l'impostazione è completa. Il ruolo personalizzato che fornisce le autorizzazioni necessarie a un connettore per gestire le risorse e i processi all'interno della rete Azure verrà impostato per impostazione predefinita. Vedere<block ref="2e92f9b7c581d4f70c6be4a7886872e3" category="inline-link-rx"></block> e a.<block ref="0f9cc71f13eb0da695b7328d01b25aa8" category="inline-link-rx"></block>.</block>
   <block id="93319d1fbdd154c5602c392140110702" category="paragraph">Se il connettore è stato creato utilizzando una versione precedente di BlueXP, sarà necessario modificare l'elenco delle autorizzazioni per l'account Azure per aggiungere eventuali autorizzazioni mancanti.</block>
   <block id="8d553e78e79ca1abdf2ffdd1714a7698" category="paragraph">Assicurarsi che il connettore disponga delle connessioni di rete richieste. Un connettore può essere installato on-premise o in Azure.</block>
-  <block id="309682b59f90fcab2a762b6d4846bafd" category="list-text">Una connessione HTTPS tramite la porta 443 al servizio di tiering BlueXP e allo storage a oggetti Azure Blob <block ref="5bf1914e1013b2901a1aed42fbd7a1ac" category="inline-link-rx"></block>)</block>
   <block id="400985d5d8ad47af48b13e9fe604a6fe" category="list-text">Se necessario, abilitare un endpoint del servizio VNET allo storage Azure.</block>
   <block id="0eb60239b46482f7f72a4986fa40c73a" category="paragraph">Si consiglia di utilizzare un endpoint del servizio VNET per lo storage Azure se si dispone di una connessione ExpressRoute o VPN dal cluster ONTAP a VNET e si desidera che la comunicazione tra il connettore e lo storage Blob rimanga nella rete privata virtuale.</block>
   <block id="256fb1d2776e7f3b364ce4414a65b2cd" category="section-title">Preparazione dello storage Azure Blob</block>
@@ -1280,7 +1229,6 @@
   <block id="636acfcaa9d346397b4061f29f7518bd" category="summary">Liberare spazio sui cluster ONTAP on-premise eseguendo il tiering dei dati inattivi su Google Cloud Storage.</block>
   <block id="be0b62dd35badd1c098da00c97d5157d" category="doc">Tiering dei dati dai cluster ONTAP on-premise allo storage cloud Google</block>
   <block id="8788b0cdf4f12f86e295a59a91c1f90a" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Preparatevi a eseguire il tiering dei dati su Google Cloud Storage</block>
-  <block id="c1cea5d4273001cc861a8845f88e0a7b" category="list-text">Un cluster ONTAP on-premise che esegue ONTAP 9.6 o versione successiva e dispone di una connessione HTTPS allo storage cloud Google.<block ref="afd80128eeaacb8238d3ffdcf8ecd8a8" category="inline-link-rx"></block>.</block>
   <block id="2deaed2300671ee7d90104d75a9f9c41" category="list-text">Account di servizio con il ruolo Storage Admin predefinito e le chiavi di accesso allo storage.</block>
   <block id="e020f6db5f627706b6bc9c4d66d7c52f" category="list-text">Un connettore installato in un VPC della piattaforma Google Cloud.</block>
   <block id="07702d7eda621b95dd9a2353b7d4e568" category="list-text">Rete per il connettore che abilita una connessione HTTPS in uscita al cluster ONTAP nel data center, allo storage cloud Google e al servizio di tiering BlueXP.</block>
@@ -1296,9 +1244,7 @@
   <block id="9745617da3b0ea1d5c4d84af9c3f7900" category="admonition">Il tiering BlueXP supporta i volumi FlexGroup. Il programma di installazione funziona come qualsiasi altro volume.</block>
   <block id="6f8de70a130cd2e986950accf1528a82" category="paragraph">Per eseguire il Tier dei dati nel cloud è necessario un connettore. Quando si esegue il tiering dei dati su Google Cloud Storage, un connettore deve essere disponibile in un VPC Google Cloud Platform. Sarà necessario creare un nuovo connettore o assicurarsi che il connettore attualmente selezionato risieda in GCP.</block>
   <block id="da67ca84863fc0110febe22c08877274" category="inline-link">Implementazione di un connettore in GCP</block>
-  <block id="99d3ed1cc58df8ac52e23dd69320374b" category="list-text"><block ref="99d3ed1cc58df8ac52e23dd69320374b" category="inline-link-rx"></block></block>
   <block id="499449d439c0676b8921b5ff6e0ca806" category="list-text">Assicurarsi che il VPC su cui è installato il connettore consenta i seguenti collegamenti:</block>
-  <block id="e9a4dfb8797d9ce3ea78389c0224a40f" category="list-text">Una connessione HTTPS tramite la porta 443 al servizio di tiering BlueXP e allo storage Google Cloud <block ref="d9defc1077847b67f008853c06990134" category="inline-link-rx"></block>)</block>
   <block id="bad85e9654b782928f6763c3008e8dd4" category="list-text">Facoltativo: Abilitare l'accesso privato a Google sulla subnet in cui si intende implementare il connettore.</block>
   <block id="b092138563f7b68473c3bf2a6a23a434" category="inline-link">Accesso privato a Google</block>
   <block id="f4daaef45bd7d11ebf3a4c8dc607eaa4" category="paragraph"><block ref="d1ea0c6b3f95b3376607c57ca3a4265e" category="inline-link-rx"></block> È consigliabile se si dispone di una connessione diretta dal cluster ONTAP al VPC e si desidera che la comunicazione tra il connettore e lo storage cloud di Google rimanga nella rete privata virtuale. Si noti che Private Google Access funziona con istanze di macchine virtuali che hanno solo indirizzi IP interni (privati) (non indirizzi IP esterni).</block>
@@ -1377,4 +1323,58 @@
   <block id="4c7d5d7dfde4a7bd82b54348182043d3" category="sidebar">Altre risorse</block>
   <block id="e4f8a35ee8df8b5c247f6e3286e42891" category="sidebar">Casi di utilizzo di BlueXP</block>
   <block id="7a45e6298bb69116e2c6db653fb88884" category="sidebar">Tutta la documentazione BlueXP</block>
+  <block id="2a55981be73b31d0de477ebba4506a52" category="paragraph">Se disponi di sistemi Cloud Volumes ONTAP, troverai i sistemi nella pagina dei cluster di tiering BlueXP, in modo da ottenere una vista completa del tiering dei dati nella tua infrastruttura di cloud ibrido. Tuttavia, i sistemi Cloud Volumes ONTAP sono di sola lettura dal tiering BlueXP. Non è possibile impostare il tiering dei dati su Cloud Volumes ONTAP dal tiering BlueXP.<block ref="f5b25cbfd89581108090437b49ead269" category="inline-link-rx"></block>.</block>
+  <block id="e5831ab9170c5d74ab9db937a5339edb" category="paragraph">Sì. Il software del connettore può essere scaricato e installato manualmente su un host Linux nella rete.<block ref="9e153516b147795eda775664f3a83ec4" category="inline-link-rx"></block>.</block>
+  <block id="52ba8ac12050d2494572b940a0d65b25" category="list-text"><block ref="52ba8ac12050d2494572b940a0d65b25" category="inline-link-rx"></block></block>
+  <block id="9d06990508d25d367d9158c6558eb9c8" category="list-text"><block ref="9d06990508d25d367d9158c6558eb9c8" category="inline-link-macro-rx"></block></block>
+  <block id="2e0c742f4616eb27b5b7646aa790edfe" category="list-text"><block ref="2e0c742f4616eb27b5b7646aa790edfe" category="inline-link-macro-rx"></block></block>
+  <block id="cf14bff66a8b72d3675db8ffe0f02ee3" category="list-text"><block ref="cf14bff66a8b72d3675db8ffe0f02ee3" category="inline-link-macro-rx"></block></block>
+  <block id="e8d4092baef6680c6a35d5228ae31de2" category="paragraph"><block ref="e8d4092baef6680c6a35d5228ae31de2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0dfcbbbe02d3e96f8ad78782e8772587" category="paragraph">Si tratta di un ID generato dal sistema che viene mappato all'e-mail. Nella pagina *NSS Management*, è possibile visualizzare l'e-mail da <block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block> menu.</block>
+  <block id="fc79de85a483938f72fbcb9822ec0ae3" category="list-text">Se è necessario aggiornare i token delle credenziali di accesso, è disponibile anche l'opzione *Update Credentials* (Aggiorna credenziali) in <block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block> menu.</block>
+  <block id="1bb5620ed3998fd776980cad36e22c9a" category="paragraph"><block ref="1bb5620ed3998fd776980cad36e22c9a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="379f9cd57d97013f3f7fdd24f692a0b1" category="paragraph"><block ref="379f9cd57d97013f3f7fdd24f692a0b1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4171af878f04da4d606e87790b8753c5" category="list-text">Un cluster ONTAP on-premise con ONTAP 9.4 o versione successiva e una connessione a StorageGRID tramite una porta specificata dall'utente.<block ref="37a771554b6d226a7c4eb146e900f0b4" category="inline-link-rx"></block>.</block>
+  <block id="c306b081efdd6935cb1a3b72cedef051" category="paragraph"><block ref="ae9eece53d3424b3b3c2b5d7aaae5ba2" category="inline-link-rx"></block>.</block>
+  <block id="02156a4727415877195dc5302fa69275" category="list-text"><block ref="02156a4727415877195dc5302fa69275" category="inline-link-rx"></block></block>
+  <block id="bb61f2215683dbbd011cae7281f378e7" category="list-text"><block ref="bb61f2215683dbbd011cae7281f378e7" category="inline-link-rx"></block></block>
+  <block id="2aeeba0020a7848f7902186fbd8cb9e8" category="list-text"><block ref="2aeeba0020a7848f7902186fbd8cb9e8" category="inline-link-rx"></block></block>
+  <block id="e02dbf2c003ebdce76fe8d8f23c8cd81" category="list-text">Una connessione HTTPS tramite la porta 443 al servizio di tiering BlueXP <block ref="391228c0fd8ae5f276f519fba0168635" category="inline-link-rx"></block>)</block>
+  <block id="1c98944c12ba85ed964bb170facc908b" category="list-text"><block ref="d2c059274b0f8c8c22488502fa71ff00" category="inline-link-rx"></block>.</block>
+  <block id="14995f4b9e52d1c9842620dd299a9491" category="inline-link-macro">Aggiungilo al tuo account dal portafoglio digitale BlueXP</block>
+  <block id="e3f4f14b998671c888f456a0ad08183b" category="list-text">Per pagare utilizzando una licenza BlueXP Tiering BYOL, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contattaci se devi acquistarne una], quindi <block ref="c9b41d67bb59cbbda05a3d1ddac8d600" category="inline-link-macro-rx"></block>.</block>
+  <block id="7f197277fe853547357eb08c4f5f1cd0" category="list-text"><block ref="7f197277fe853547357eb08c4f5f1cd0" category="inline-link-rx"></block></block>
+  <block id="906825ff52dd59d45d29306547f559a5" category="list-text">Una connessione HTTPS tramite la porta 443 al servizio di tiering BlueXP e allo storage a oggetti S3 <block ref="63b337bf4559a585c3373707ecfcc413" category="inline-link-rx"></block>)</block>
+  <block id="736e7ce42afd814f93d6a6f0d3b53286" category="list-text"><block ref="736e7ce42afd814f93d6a6f0d3b53286" category="inline-link-rx"></block></block>
+  <block id="1764559644f64bef1e8af47a8af05e27" category="list-text">Confermare<block ref="ad6b8247344a64d2ff735d66aa901246" category="inline-link-rx"></block> Fanno parte del ruolo IAM che fornisce al connettore le autorizzazioni. Dovrebbero essere stati inclusi per impostazione predefinita al momento della prima implementazione del connettore. In caso contrario, è necessario aggiungere le autorizzazioni mancanti. Vedere<block ref="6d4dc5f0c95117ac550b72968db62911" category="inline-link-rx"></block>.</block>
+  <block id="a6b673d310713aa4bdd09f8fd19acf66" category="list-text">Ottenere il certificato dall'endpoint VPC S3. Lo fai entro<block ref="bee792b855389ef4e6c81f6aa6136d00" category="inline-link-rx"></block> ed eseguire il seguente comando. Quando si immette il nome DNS dell'endpoint, aggiungere "bucket" all'inizio, sostituendo "*":</block>
+  <block id="af39bae06861b3074eed6e997f9a3ebf" category="paragraph">È possibile scaricare un report dalla pagina Tier Volumes per esaminare lo stato di tiering di tutti i volumi nei cluster che si stanno gestendo. BlueXP Tiering genera un file .CSV che è possibile rivedere e inviare ad altre persone dell'azienda in base alle necessità.<block ref="aaab920374e84f87020f8ba8578ab877" category="inline-link-rx"></block>.</block>
+  <block id="fa2934d386823619966e2cc6e222496c" category="paragraph">Consulta l'elenco completo degli endpoint per il<block ref="42eb7f749d4ba3adb326aa0a5756ba02" category="inline-link-rx"></block>,<block ref="96a9d4916fc49c8f082f1cb217b818c4" category="inline-link-rx"></block>, o.<block ref="4f16be4d60318c8ffb97ef574631956d" category="inline-link-rx"></block> ambiente cloud.</block>
+  <block id="0da74d536582f557c39085b5441ca38a" category="paragraph">Nelle release precedenti era molto dispendioso in termini di tempo fornire questo modo sicuro di connettere il cluster a un bucket S3 attraverso un endpoint VPC. A questo punto, è possibile seguire i passaggi richiesti per<block ref="f21e3ca279bfe71063fdc96c67a3b5b9" category="inline-link-rx"></block>, Quindi selezionare PrivateLink durante l'installazione guidata del tiering nella pagina rete.</block>
+  <block id="b2917ea80501e4e266fb196a8938fa14" category="paragraph"><block ref="60aeda1e87e3285e814ff97260256aa7" category="inline-link-rx"></block>.</block>
+  <block id="97102364d27cfa2b371b04954f8509a5" category="paragraph">L'interfaccia utente Cloud Tiering ha aggiunto un nuovo set di pagine per la configurazione dello storage a oggetti. È possibile aggiungere nuovi archivi di oggetti, connettere più archivi di oggetti a un aggregato per il mirroring FabricPool, scambiare gli archivi di oggetti primari e mirror, eliminare le connessioni degli archivi di oggetti agli aggregati e molto altro ancora.<block ref="beab3aba355fc6cb093ce3f5ab5dae37" category="inline-link-rx"></block></block>
+  <block id="8988a1e5f033eb9ad9a8652cec24f2d1" category="paragraph">Le licenze Cloud Tiering possono ora essere condivise con i cluster che si trovano in configurazioni MetroCluster. Non è più necessario utilizzare le licenze FabricPool obsolete per questi scenari. In questo modo è più semplice utilizzare le licenze di Cloud Tiering "fluttuanti" su più cluster.<block ref="034dee4c81b485ee26e8054e04588c81" category="inline-link-rx"></block></block>
+  <block id="9f6052fbd8e40798fd43c9c396d5cc95" category="paragraph">Le licenze Cloud Tiering possono ora essere condivise con i cluster che si trovano nelle configurazioni Tiering Mirror (non incluse le configurazioni MetroCluster) e con i cluster che sono Tiered per lo storage a oggetti cloud IBM. Non è più necessario utilizzare le licenze FabricPool obsolete per questi scenari. In questo modo è più semplice utilizzare le licenze di Cloud Tiering "fluttuanti" su più cluster.<block ref="034dee4c81b485ee26e8054e04588c81" category="inline-link-rx"></block></block>
+  <block id="566cb438311fb3d1dc8b0eda5337ffb1" category="paragraph">Quando si imposta il Cloud Tiering, è ora possibile configurare una regola del ciclo di vita in modo che i dati inattivi passino dalla classe di storage _Standard_ a _Glacier Instant Retrieval_ dopo un certo numero di giorni. In questo modo si riducono i costi dell'infrastruttura AWS.<block ref="92f8f9f14153fe87119c57701f059ae7" category="inline-link-rx"></block></block>
+  <block id="f9cbaeb3412c248528eeb5b316882c2f" category="list-text">Un cluster ONTAP di origine on-premise che esegue ONTAP 9.8 o versione successiva e una connessione tramite una porta specificata dall'utente allo storage a oggetti compatibile con S3 di destinazione.<block ref="37a771554b6d226a7c4eb146e900f0b4" category="inline-link-rx"></block>.</block>
+  <block id="0e3e175aa7efdfc360dab27c51b6fc80" category="admonition">I sistemi Cloud Volumes ONTAP sono di sola lettura grazie al tiering BlueXP.<block ref="f5b25cbfd89581108090437b49ead269" category="inline-link-rx"></block>.</block>
+  <block id="994f1fa9f6b6f6276b10a9c8a8f18a8c" category="list-text">Il backup e il ripristino di BlueXP sono influenzati in modo analogo dai volumi impostati con un criterio di tiering.<block ref="2db919f88216e9376af16eec91019e18" category="inline-link-rx"></block>.</block>
+  <block id="5f6fdb8f4b29baeb552fcdad9078be66" category="list-text">Se hai già sottoscritto l'abbonamento BlueXP (PAYGO) nel mercato del tuo cloud provider, sei automaticamente iscritto al tiering BlueXP anche per i sistemi ONTAP on-premise. Verrà visualizzato un abbonamento attivo nella scheda BlueXP Tiering *on-premise dashboard*. Non dovrai più iscriverti. Nel portafoglio digitale BlueXP viene visualizzato un abbonamento attivo.</block>
+  <block id="7e1d9a12a6617957d93e562480c58a19" category="paragraph">Se si desidera utilizzare questa opzione, impostare l'abbonamento dalla pagina Marketplace, quindi<block ref="3e7d826ab39799649c48f6e2f8f11222" category="inline-link-rx"></block>.</block>
+  <block id="1ba2cc4758ef6d9270d73cfc36a18caa" category="paragraph">Se si dispone di una licenza basata su nodo non assegnata per Cloud Volumes ONTAP che non si intende utilizzare, è possibile convertirla in una licenza di tiering BlueXP con la stessa equivalenza in dollari e la stessa data di scadenza.<block ref="f4c32a82791cf9fc58c736c0aed05092" category="inline-link-rx"></block>.</block>
+  <block id="30fc689a9c3cd4222329fe3a4c818a33" category="paragraph">Se il tuo account NetApp Support Site non è disponibile nell'elenco a discesa,<block ref="06a3bc9d474b5d4e44d1a2733cac785a" category="inline-link-rx"></block>.</block>
+  <block id="509259be6d5e15d8959f705cbe0cbcc1" category="paragraph"><block ref="509259be6d5e15d8959f705cbe0cbcc1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0972db30d942fdb65d1732e6e84bde99" category="paragraph"><block ref="0972db30d942fdb65d1732e6e84bde99" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cb6a777dd3c6e43b0dc441d38519d219" category="paragraph"><block ref="cb6a777dd3c6e43b0dc441d38519d219" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0f6cac2f77150840994f84044fc1b12b" category="list-text">Modificare le colonne visualizzate nella tabella facendo clic su <block ref="b574dd55d604ddb721d869a0fc302007" category="inline-image-macro-rx" type="image"></block> e quindi scegliere le colonne che si desidera visualizzare.</block>
+  <block id="e65065c4fd326b9f3a1eeb9453c30d73" category="paragraph"><block ref="e65065c4fd326b9f3a1eeb9453c30d73" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6ba7d68d8b3ef0f3398afb9d3ea96172" category="list-text">Gestire un caso esistente facendo clic su <block ref="566c029d89e7d5421080767a37bf443e" category="inline-image-macro-rx" type="image"></block> e selezionando una delle opzioni disponibili:</block>
+  <block id="2ea260929e27ffcb623c8aa35689bd18" category="paragraph"><block ref="2ea260929e27ffcb623c8aa35689bd18" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b62a489db7d21470a588af3757360c8f" category="list-text">Cluster ONTAP on-premise con ONTAP 9.4 o versione successiva e connessione HTTPS allo storage Azure Blob.<block ref="37a771554b6d226a7c4eb146e900f0b4" category="inline-link-rx"></block>.</block>
+  <block id="3cf7465ae7f5c20ed45abc7161a7193a" category="list-text"><block ref="3cf7465ae7f5c20ed45abc7161a7193a" category="inline-link-rx"></block></block>
+  <block id="54c9e3b2a440566ab71486abe4df899a" category="paragraph">Se il connettore è stato creato utilizzando BlueXP versione 3.9.25 o successiva, l'impostazione è completa. Il ruolo personalizzato che fornisce le autorizzazioni necessarie a un connettore per gestire le risorse e i processi all'interno della rete Azure verrà impostato per impostazione predefinita. Vedere<block ref="ae3b48d48c05b567196be1134d253020" category="inline-link-rx"></block> e a.<block ref="756a6d5fe62b6d963741b55b73ffa635" category="inline-link-rx"></block>.</block>
+  <block id="49d63f176acd1bb80a648752a4321494" category="list-text">Una connessione HTTPS tramite la porta 443 al servizio di tiering BlueXP e allo storage a oggetti Azure Blob <block ref="73abec29c95edc01ed78226396cb9d9e" category="inline-link-rx"></block>)</block>
+  <block id="024cdb5b88e4353db8a9cf2173c17bdd" category="list-text">Un cluster ONTAP on-premise che esegue ONTAP 9.6 o versione successiva e dispone di una connessione HTTPS allo storage cloud Google.<block ref="37a771554b6d226a7c4eb146e900f0b4" category="inline-link-rx"></block>.</block>
+  <block id="6f13dcb9921df6d965fb4e7d649107d7" category="list-text"><block ref="6f13dcb9921df6d965fb4e7d649107d7" category="inline-link-rx"></block></block>
+  <block id="005bd5c50af49ea11282dc0a853c69b6" category="list-text">Una connessione HTTPS tramite la porta 443 al servizio di tiering BlueXP e allo storage Google Cloud <block ref="e228b87eff1d3a92b4544cd5652fc5ad" category="inline-link-rx"></block>)</block>
 </blocks>

@@ -27,7 +27,7 @@ Inizia subito seguendo questi passaggi o scorri verso il basso fino alle sezioni
 Sono necessari i seguenti elementi:
 
 [role="quick-margin-list"]
-* Un cluster ONTAP on-premise con ONTAP 9.4 o versione successiva e una connessione a StorageGRID tramite una porta specificata dall'utente. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
+* Un cluster ONTAP on-premise con ONTAP 9.4 o versione successiva e una connessione a StorageGRID tramite una porta specificata dall'utente. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
 * StorageGRID 10.3 o versione successiva con chiavi di accesso AWS che dispongono delle autorizzazioni S3.
 * Un connettore installato in sede.
 * Rete per il connettore che abilita una connessione HTTPS in uscita al cluster ONTAP, a StorageGRID e al servizio di tiering BlueXP.
@@ -96,7 +96,7 @@ NOTE: BlueXP Tiering supporta i volumi FlexGroup, a partire da ONTAP 9.5. Il pro
 
 È necessario creare un ambiente di lavoro ONTAP on-premise in BlueXP Canvas prima di iniziare a tierare i dati cold.
 
-https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
 
 
 
@@ -129,9 +129,9 @@ Versione degli oggetti:: Non è necessario attivare la versione degli oggetti St
 
 Per eseguire il Tier dei dati nel cloud è necessario un connettore. Quando si esegue il tiering dei dati su StorageGRID, è necessario che un connettore sia disponibile on-premise. È necessario installare un nuovo connettore o assicurarsi che il connettore attualmente selezionato risieda on-premise.
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Scopri di più sui connettori"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["Installazione di un connettore su un host Linux"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html["Passaggio da un connettore all'altro"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Scopri di più sui connettori"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["Installazione di un connettore su un host Linux"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html["Passaggio da un connettore all'altro"^]
 
 
 
@@ -143,7 +143,7 @@ Assicurarsi che il connettore disponga delle connessioni di rete richieste.
 .Fasi
 . Assicurarsi che la rete in cui è installato il connettore abiliti le seguenti connessioni:
 +
-** Una connessione HTTPS tramite la porta 443 al servizio di tiering BlueXP (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-on-prem.html#endpoints-contacted-for-day-to-day-operations["vedere l'elenco degli endpoint"^])
+** Una connessione HTTPS tramite la porta 443 al servizio di tiering BlueXP (https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-on-prem.html#endpoints-contacted-for-day-to-day-operations["vedere l'elenco degli endpoint"^])
 ** Una connessione HTTPS tramite la porta 443 al sistema StorageGRID
 ** Una connessione HTTPS sulla porta 443 alla LIF di gestione del cluster ONTAP
 
@@ -157,7 +157,7 @@ Assicurarsi che il connettore disponga delle connessioni di rete richieste.
 Dopo aver preparato l'ambiente, iniziare a tiering dei dati inattivi dal primo cluster.
 
 .Di cosa hai bisogno
-* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Un ambiente di lavoro on-premise"^].
+* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Un ambiente di lavoro on-premise"^].
 * L'FQDN del nodo gateway StorageGRID e la porta che verrà utilizzata per le comunicazioni HTTPS.
 * Chiave di accesso AWS con le autorizzazioni S3 richieste.
 

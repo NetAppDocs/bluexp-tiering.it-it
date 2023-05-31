@@ -27,7 +27,7 @@ Inizia subito seguendo questi passaggi o scorri verso il basso fino alle sezioni
 Sono necessari i seguenti elementi:
 
 [role="quick-margin-list"]
-* Cluster ONTAP on-premise con ONTAP 9.4 o versione successiva e connessione HTTPS allo storage Azure Blob. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
+* Cluster ONTAP on-premise con ONTAP 9.4 o versione successiva e connessione HTTPS allo storage Azure Blob. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
 * Un connettore installato in Azure VNET o on-premise.
 * Rete per un connettore che abilita una connessione HTTPS in uscita al cluster ONTAP nel data center, allo storage Azure e al servizio di tiering BlueXP.
 
@@ -42,7 +42,7 @@ Al termine della prova gratuita, è possibile pagare il tiering BlueXP tramite u
 
 [role="quick-margin-list"]
 * Per iscriversi a Azure Marketplace, https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Vai all'offerta BlueXP Marketplace"^], Fare clic su *Subscribe*, quindi seguire le istruzioni.
-* Per pagare utilizzando una licenza BlueXP Tiering BYOL, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contattaci se devi acquistarne una], quindi link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account["Aggiungilo al tuo account da BlueXP Digital Wallet"].
+* Per pagare utilizzando una licenza BlueXP Tiering BYOL, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contattaci se devi acquistarne una], quindi link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account["Aggiungilo al tuo account dal portafoglio digitale BlueXP"].
 
 
 
@@ -106,7 +106,7 @@ NOTE: BlueXP Tiering supporta i volumi FlexGroup, a partire da ONTAP 9.5. Il pro
 
 È necessario creare un ambiente di lavoro ONTAP on-premise in BlueXP prima di iniziare a tierare i dati cold.
 
-https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
 
 
 
@@ -114,16 +114,16 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 
 Per eseguire il Tier dei dati nel cloud è necessario un connettore. Quando si esegue il tiering dei dati nello storage Azure Blob, è possibile utilizzare un connettore che si trova in un Azure VNET o nelle proprie sedi. Sarà necessario creare un nuovo connettore o assicurarsi che il connettore attualmente selezionato risieda in Azure o on-premise.
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Scopri di più sui connettori"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html["Implementazione di un connettore in Azure"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["Installazione di un connettore su un host Linux"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Scopri di più sui connettori"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["Implementazione di un connettore in Azure"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["Installazione di un connettore su un host Linux"^]
 
 
 
 
 === Verificare di disporre delle autorizzazioni necessarie per il connettore
 
-Se il connettore è stato creato utilizzando BlueXP versione 3.9.25 o successiva, l'impostazione è completa. Il ruolo personalizzato che fornisce le autorizzazioni necessarie a un connettore per gestire le risorse e i processi all'interno della rete Azure verrà impostato per impostazione predefinita. Vedere https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html#custom-role-permissions["autorizzazioni di ruolo personalizzate richieste"^] e a. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html#cloud-tiering["Autorizzazioni specifiche richieste per il tiering BlueXP"^].
+Se il connettore è stato creato utilizzando BlueXP versione 3.9.25 o successiva, l'impostazione è completa. Il ruolo personalizzato che fornisce le autorizzazioni necessarie a un connettore per gestire le risorse e i processi all'interno della rete Azure verrà impostato per impostazione predefinita. Vedere https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html#custom-role-permissions["autorizzazioni di ruolo personalizzate richieste"^] e a. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html#cloud-tiering["Autorizzazioni specifiche richieste per il tiering BlueXP"^].
 
 Se il connettore è stato creato utilizzando una versione precedente di BlueXP, sarà necessario modificare l'elenco delle autorizzazioni per l'account Azure per aggiungere eventuali autorizzazioni mancanti.
 
@@ -136,7 +136,7 @@ Assicurarsi che il connettore disponga delle connessioni di rete richieste. Un c
 .Fasi
 . Assicurarsi che la rete in cui è installato il connettore abiliti le seguenti connessioni:
 +
-** Una connessione HTTPS tramite la porta 443 al servizio di tiering BlueXP e allo storage a oggetti Azure Blob (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["vedere l'elenco degli endpoint"^])
+** Una connessione HTTPS tramite la porta 443 al servizio di tiering BlueXP e allo storage a oggetti Azure Blob (https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["vedere l'elenco degli endpoint"^])
 ** Una connessione HTTPS sulla porta 443 alla LIF di gestione del cluster ONTAP
 
 
@@ -166,7 +166,7 @@ NOTE: Se si prevede di configurare il tiering BlueXP per utilizzare un livello d
 Dopo aver preparato l'ambiente Azure, inizia a tiering dei dati inattivi dal primo cluster.
 
 .Di cosa hai bisogno
-https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Un ambiente di lavoro on-premise"^].
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Un ambiente di lavoro on-premise"^].
 
 .Fasi
 . Selezionare l'ambiente di lavoro on-premise ONTAP.

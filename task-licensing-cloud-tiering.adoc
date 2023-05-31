@@ -18,7 +18,7 @@ Una versione di prova gratuita di 30 giorni del tiering BlueXP inizia quando si 
 
 Alcune note prima di leggere ulteriori informazioni:
 
-* Se hai già sottoscritto l'abbonamento BlueXP (PAYGO) nel mercato del tuo cloud provider, sei automaticamente iscritto al tiering BlueXP anche per i sistemi ONTAP on-premise. Verrà visualizzato un abbonamento attivo nella scheda BlueXP Tiering *on-premise dashboard*. Non dovrai più iscriverti. Nel Digital Wallet viene visualizzato un abbonamento attivo.
+* Se hai già sottoscritto l'abbonamento BlueXP (PAYGO) nel mercato del tuo cloud provider, sei automaticamente iscritto al tiering BlueXP anche per i sistemi ONTAP on-premise. Verrà visualizzato un abbonamento attivo nella scheda BlueXP Tiering *on-premise dashboard*. Non dovrai più iscriverti. Nel portafoglio digitale BlueXP viene visualizzato un abbonamento attivo.
 * La licenza di tiering BYOL BlueXP (precedentemente nota come licenza "Cloud Tiering") è una licenza _floating_ che è possibile utilizzare in più cluster ONTAP on-premise nel proprio account BlueXP. Si tratta di un'operazione diversa (e molto più semplice) rispetto al passato in cui è stata acquistata una licenza _FabricPool_ per ciascun cluster.
 * Non sono previsti costi per il tiering dei dati a StorageGRID, pertanto non è richiesta alcuna licenza BYOL o registrazione PAYGO. Questi dati a più livelli non vengono conteggiati in relazione alla capacità acquistata nella licenza.
 
@@ -93,7 +93,7 @@ Pagare il tiering BlueXP ogni anno acquistando un contratto annuale.
 
 Quando si esegue il tiering dei dati inattivi su AWS, è possibile sottoscrivere un contratto annuale disponibile su https://aws.amazon.com/marketplace/pp/B086PDWSS8["Pagina AWS Marketplace"^]. È disponibile in termini di 1, 2 o 3 anni.
 
-Se si desidera utilizzare questa opzione, impostare l'abbonamento dalla pagina Marketplace, quindi https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["Associare l'abbonamento alle credenziali AWS"^].
+Se si desidera utilizzare questa opzione, impostare l'abbonamento dalla pagina Marketplace, quindi https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["Associare l'abbonamento alle credenziali AWS"^].
 
 I contratti annuali non sono attualmente supportati quando si esegue il tiering con Azure o GCP.
 
@@ -109,7 +109,7 @@ Se non disponi di una licenza di tiering BlueXP, contattaci per acquistarne una:
 * Fare clic sull'icona della chat nell'angolo inferiore destro di BlueXP per richiedere una licenza.
 
 
-Se si dispone di una licenza basata su nodo non assegnata per Cloud Volumes ONTAP che non si intende utilizzare, è possibile convertirla in una licenza di tiering BlueXP con la stessa equivalenza in dollari e la stessa data di scadenza. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["Fai clic qui per ulteriori informazioni"^].
+Se si dispone di una licenza basata su nodo non assegnata per Cloud Volumes ONTAP che non si intende utilizzare, è possibile convertirla in una licenza di tiering BlueXP con la stessa equivalenza in dollari e la stessa data di scadenza. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["Fai clic qui per ulteriori informazioni"^].
 
 La pagina del portafoglio digitale BlueXP consente di gestire le licenze BYOL di tiering BlueXP. È possibile aggiungere nuove licenze e aggiornare quelle esistenti.
 
@@ -183,7 +183,7 @@ Dopo aver acquistato una licenza di tiering BlueXP per l'account BlueXP, è nece
 +
 ** Se si dispone del numero di serie della licenza di tiering e si conosce l'account NSS, selezionare l'opzione *inserire il numero di serie* e immettere le informazioni desiderate.
 +
-Se il tuo account NetApp Support Site non è disponibile nell'elenco a discesa, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html["Aggiungere l'account NSS a BlueXP"^].
+Se il tuo account NetApp Support Site non è disponibile nell'elenco a discesa, https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html["Aggiungere l'account NSS a BlueXP"^].
 
 ** Se si dispone del file di licenza di tiering, selezionare l'opzione *Upload License file* (carica file di licenza) e seguire le istruzioni per allegare il file.
 +
