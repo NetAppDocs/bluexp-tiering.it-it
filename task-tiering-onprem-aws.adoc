@@ -206,7 +206,7 @@ NOTE: Se si prevede di configurare il tiering BlueXP per utilizzare una classe d
 
 
 .Fasi
-. Confermare https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html#cloud-tiering["Queste autorizzazioni S3"^] Fanno parte del ruolo IAM che fornisce al connettore le autorizzazioni. Dovrebbero essere stati inclusi per impostazione predefinita al momento della prima implementazione del connettore. In caso contrario, è necessario aggiungere le autorizzazioni mancanti. Vedere https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["Documentazione AWS: Modifica delle policy IAM"^].
+. Confermare https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html#iam-policies["Queste autorizzazioni S3"^] Fanno parte del ruolo IAM che fornisce al connettore le autorizzazioni. Dovrebbero essere stati inclusi per impostazione predefinita al momento della prima implementazione del connettore. In caso contrario, è necessario aggiungere le autorizzazioni mancanti. Vedere https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["Documentazione AWS: Modifica delle policy IAM"^].
 . Quando si attiva il servizio, la procedura guidata Tiering richiede di inserire una chiave di accesso e una chiave segreta. Queste credenziali vengono passate al cluster ONTAP in modo che ONTAP possa eseguire il Tier dei dati al bucket S3. A tale scopo, è necessario creare un utente IAM con le seguenti autorizzazioni:
 +
 [source, json]
@@ -307,14 +307,14 @@ image:screenshot_setup_tiering_onprem.png["Una schermata che mostra l'opzione En
 +
 image:screenshot_tiering_aws_s3_bucket.png["Una schermata che mostra i dati che devono essere forniti per impostare il tiering su un bucket S3."]
 
-. Completare le sezioni della pagina *Create Object Storage*:
+. Completare le sezioni della pagina *Tiering Setup*:
 +
-.. *S3 bucket*: Aggiungere un nuovo bucket S3 o selezionare un bucket S3 esistente che inizia con il prefisso _fabric-pool_, selezionare l'area bucket e fare clic su *continua*.
+.. *S3 bucket*: Aggiungere un nuovo bucket S3 o selezionare un bucket S3 esistente che inizia con il prefisso definito "fabric-pool", selezionare l'area bucket e fare clic su *continua*.
 +
 Quando si utilizza un connettore on-premise, è necessario inserire l'ID account AWS che fornisce l'accesso al bucket S3 esistente o al nuovo bucket S3 che verrà creato.
 
 +
-Il prefisso _fabric-pool_ è necessario perché il criterio IAM per il connettore consente all'istanza di eseguire azioni S3 sui bucket denominati con quel prefisso esatto. Ad esempio, è possibile chiamare il bucket S3 _fabric-pool-AFF1_, dove AFF1 è il nome del cluster.
+Il prefisso _fabric-pool_ viene utilizzato per impostazione predefinita perché il criterio IAM per il connettore consente all'istanza di eseguire azioni S3 sui bucket denominati con quel prefisso esatto. Ad esempio, è possibile chiamare il bucket S3 _fabric-pool-AFF1_, dove AFF1 è il nome del cluster.
 
 .. *Storage Class*: BlueXP Tiering gestisce le transizioni del ciclo di vita dei dati a più livelli. I dati iniziano nella classe _Standard_, ma è possibile creare una regola per spostare i dati in un'altra classe dopo un certo numero di giorni.
 +
@@ -338,10 +338,10 @@ L'utente IAM deve trovarsi nello stesso account AWS del bucket selezionato o cre
 Selezionare l'IPSpace nel cluster ONTAP in cui risiedono i volumi che si desidera raggruppare. Le LIF di intercluster per questo IPSpace devono disporre di accesso a Internet in uscita in modo che possano connettersi allo storage a oggetti del provider di cloud.
 
 +
-Se si desidera, scegliere se utilizzare un AWS PrivateLink precedentemente configurato. <<Configurare il sistema per una connessione privata utilizzando un'interfaccia endpoint VPC,Consultare le informazioni di configurazione riportate sopra.>>
+Se si desidera, scegliere se utilizzare un AWS PrivateLink precedentemente configurato. <<Configurare il sistema per una connessione privata utilizzando un'interfaccia endpoint VPC,Consultare le informazioni di configurazione riportate sopra.>> Viene visualizzata una finestra di dialogo che aiuta a configurare l'endpoint.
 
 +
-Viene visualizzata una finestra di dialogo che aiuta a configurare l'endpoint.
+È inoltre possibile impostare la larghezza di banda della rete disponibile per caricare i dati inattivi nello storage a oggetti definendo la "velocità di trasferimento massima". Selezionare il pulsante di opzione *limitato* e immettere la larghezza di banda massima utilizzabile oppure selezionare *illimitato* per indicare che non esiste alcun limite.
 
 
 

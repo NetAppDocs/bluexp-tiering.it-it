@@ -493,6 +493,8 @@ In caso di guasto alla rete, il Tier di performance locale rimane online e i dat
 
 La latenza di lettura della tecnologia di tiering FabricPool sottostante dipende dalla connettività al Tier cloud. Sebbene il tiering funzioni su qualsiasi larghezza di banda, si consiglia di posizionare le LIF di intercluster su porte a 10 Gbps per fornire performance adeguate. Non esistono raccomandazioni o limitazioni di larghezza di banda per il connettore.
 
+Inoltre, è possibile ridurre la larghezza di banda della rete utilizzata durante il trasferimento di dati inattivi dal volume allo storage a oggetti. L'impostazione _Maximum transfer rate_ è disponibile quando si configura il cluster per il tiering e successivamente dalla pagina *Clusters*.
+
 
 
 === C'è latenza quando un utente tenta di accedere ai dati a più livelli?

@@ -4,7 +4,7 @@ permalink: task-managing-tiering.html
 keywords: discover, volumes, report, hot, cold, inactive, active, capacity, used capacity, savings, health, failed 
 summary: Ora che hai impostato il tiering dei dati dai cluster ONTAP on-premise, puoi tierare i dati da volumi aggiuntivi, modificare la policy di tiering di un volume, scoprire cluster aggiuntivi e molto altro ancora. 
 ---
-= Gestione del tiering dei dati dai cluster
+= Gestione del tiering dei dati per i cluster
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -15,6 +15,33 @@ summary: Ora che hai impostato il tiering dei dati dai cluster ONTAP on-premise,
 
 [role="lead"]
 Ora che hai impostato il tiering dei dati dai cluster ONTAP on-premise, puoi tierare i dati da volumi aggiuntivi, modificare la policy di tiering di un volume, scoprire cluster aggiuntivi e molto altro ancora.
+
+
+
+== Revisione delle informazioni di tiering per un cluster
+
+Potresti voler vedere la quantità di dati nel Tier cloud e la quantità di dati presenti sui dischi. In alternativa, è possibile visualizzare la quantità di dati hot e cold sui dischi del cluster. BlueXP Tiering fornisce queste informazioni per ogni cluster.
+
+.Fasi
+. Dal menu di navigazione a sinistra, selezionare *mobilità > Tiering*.
+. Nella pagina *Clusters*, fare clic sull'icona del menu image:icon-action.png["Icona delle azioni"] Per un cluster e selezionare *Cluster info*.
++
+image:screenshot_tiering_cluster_info_button.png["Schermata che mostra la selezione del pulsante Cluster Info (informazioni cluster) dalla pagina Clusters (Clusters)."]
+
+. Esaminare i dettagli del cluster.
++
+Ecco un esempio:
+
++
+image:screenshot_tiering_cluster_info.png["Una schermata che mostra la capacità totale dei dati utilizzati del cluster, la capacità utilizzata dal cluster e le informazioni sul cluster."]
+
+
+
+Si noti che il display è diverso per i sistemi Cloud Volumes ONTAP. Anche se i volumi Cloud Volumes ONTAP possono avere dati a più livelli nel cloud, non utilizzano il servizio di tiering BlueXP. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["Scopri come eseguire il tiering dei dati inattivi dai sistemi Cloud Volumes ONTAP allo storage a oggetti a basso costo"^].
+
+Puoi anche farlo https://docs.netapp.com/us-en/active-iq/task-informed-decisions-based-on-cloud-recommendations.html#tiering["Visualizzazione delle informazioni di tiering per un cluster di Digital Advisor"^] Se hai familiarità con questo prodotto NetApp. Seleziona *Cloud Recommendations* dal riquadro di navigazione a sinistra.
+
+image:screenshot_tiering_aiq_fabricpool_info.png["Una schermata che mostra le informazioni FabricPool per un cluster utilizzando FabricPool Advisor di Digital Advisor."]
 
 
 
@@ -75,6 +102,25 @@ image:screenshot_tiering_policy_settings.png["Una schermata che mostra le impost
 
 .Risultato
 La policy di tiering viene modificata e i dati iniziano a essere tierati in base alla nuova policy.
+
+
+
+== Modifica della larghezza di banda della rete disponibile per caricare i dati inattivi nello storage a oggetti
+
+Quando si attiva il tiering BlueXP per un cluster, per impostazione predefinita, ONTAP può utilizzare una quantità illimitata di larghezza di banda per trasferire i dati inattivi dai volumi nell'ambiente di lavoro allo storage a oggetti. Se si nota che il traffico di tiering influisce sui normali carichi di lavoro degli utenti, è possibile ridurre la larghezza di banda della rete utilizzata durante il trasferimento. È possibile scegliere un valore compreso tra 1 e 10,000 Mbps come velocità di trasferimento massima.
+
+. Dal menu di navigazione a sinistra, selezionare *mobilità > Tiering*.
+. Nella pagina *Clusters*, fare clic sull'icona del menu image:icon-action.png["Icona delle azioni"] Per un cluster e selezionare *velocità di trasferimento massima*.
++
+image:screenshot_tiering_transfer_rate_button.png["Schermata che mostra la selezione del pulsante Maximum Transfer Rate (velocità di trasferimento massima) dalla pagina Clusters (Clusters)."]
+
+. Nella pagina _Maximum transfer rate_, selezionare il pulsante di opzione *Limited* e immettere la larghezza di banda massima utilizzabile oppure selezionare *Unlimited* per indicare che non vi sono limiti. Quindi fare clic su *Apply* (Applica).
++
+image:screenshot_tiering_transfer_rate.png["Schermata della finestra di dialogo Maximum Transfer Rate (velocità di trasferimento massima) per un cluster."]
+
+
+
+Questa impostazione non influisce sulla larghezza di banda allocata ad altri cluster che eseguono il tiering dei dati.
 
 
 
@@ -157,28 +203,6 @@ image:screenshot_tiering_modify_aggregate.png["Una schermata che mostra un dispo
 
 . Fare clic su *Apply* (Applica).
 
-
-
-
-== Revisione delle informazioni di tiering per un cluster
-
-Potresti voler vedere la quantità di dati nel Tier cloud e la quantità di dati presenti sui dischi. In alternativa, è possibile visualizzare la quantità di dati hot e cold sui dischi del cluster. BlueXP Tiering fornisce queste informazioni per ogni cluster.
-
-.Fasi
-. Dal menu di navigazione a sinistra, selezionare *mobilità > Tiering*.
-. Dalla pagina *Clusters*, fare clic sull'icona del menu di un cluster e selezionare *Cluster info*.
-. Esaminare i dettagli del cluster.
-+
-Ecco un esempio:
-
-+
-image:screenshot_tiering_cluster_info.png["Una schermata che mostra il report del cluster, in cui sono indicate le informazioni relative alla capacità totale utilizzata, alla capacità utilizzata dal cluster, alle informazioni sul cluster e allo storage a oggetti."]
-
-
-
-Puoi anche farlo https://docs.netapp.com/us-en/active-iq/task-informed-decisions-based-on-cloud-recommendations.html#tiering["Visualizzazione delle informazioni di tiering per un cluster di Digital Advisor"^] Se hai familiarità con questo prodotto NetApp. Seleziona *Cloud Recommendations* dal riquadro di navigazione a sinistra.
-
-image:screenshot_tiering_aiq_fabricpool_info.png["Una schermata che mostra le informazioni FabricPool per un cluster utilizzando FabricPool Advisor di Digital Advisor."]
 
 
 

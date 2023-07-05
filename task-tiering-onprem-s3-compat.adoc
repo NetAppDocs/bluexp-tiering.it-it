@@ -186,6 +186,9 @@ image:screenshot_setup_tiering_onprem.png["Una schermata che mostra l'opzione Ti
 +
 La selezione dell'IPSpace corretto garantisce che il tiering BlueXP possa impostare una connessione da ONTAP allo storage a oggetti compatibile con S3.
 
++
+È inoltre possibile impostare la larghezza di banda della rete disponibile per caricare i dati inattivi nello storage a oggetti definendo la "velocità di trasferimento massima". Selezionare il pulsante di opzione *limitato* e immettere la larghezza di banda massima utilizzabile oppure selezionare *illimitato* per indicare che non esiste alcun limite.
+
 
 
 . Nella pagina _Success_ fare clic su *Continue* per configurare i volumi.
