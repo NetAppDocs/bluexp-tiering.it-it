@@ -83,7 +83,7 @@
       head.appendChild(onetrustScript);
     }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
     addAdobeLaunch("launch-e9ff3acac59f");
-    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+    addGoogleAnalytics("G-KYN6T440WN");function OptanonWrapper() { }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -436,6 +436,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -664,6 +666,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-tiering/task-tiering-onprem-overview.html">
         Visualizza la panoramica del tiering per tutti i cluster
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitorare lo stato degli avvisi di tiering"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-tiering/task-monitor-tiering-alerts.html">
+        Monitorare lo stato degli avvisi di tiering
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Riferimento"
@@ -773,21 +782,21 @@
   </div>
 </div>
 
-      <div class="ie-nmt-disclaimer">
-  <span>
-    <div class="ie-nmt-disclaimer-container">
-      <div class="ie-nmt-disclaimer-icon">
-        <svg class="luci-icon" aria-hidden="true">
-          <use xlink:href="/it-it/bluexp-tiering/images/sprite.svg#circle-info">
-        </svg>
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <svg class="luci-icon" aria-hidden="true">
+            <use xlink:href="/it-it/bluexp-tiering/images/sprite.svg#circle-info">
+          </svg>
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
+        </div>
+        <div style="clear:both;"></div>
       </div>
-      <div class="ie-nmt-disclaimer-content">
-        <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
-      </div>
-      <div style="clear:both;"></div>
-    </div>
-  </span>
-</div><div class="n-doc__component-detail-heading-wrap">
+    </span>
+  </div><div class="n-doc__component-detail-heading-wrap">
   <h1 class="n-doc__component-detail-heading">Novità del tiering BlueXP</h1>
 </div>
 
@@ -795,7 +804,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-31 14:33:54 +0000">05/31/2023</time>
+    <time datetime="2023-07-05 15:58:37 +0000">07/05/2023</time>
     
   
 
@@ -811,6 +820,26 @@
 <div class="sectionbody">
 <div class="paragraph lead">
 <p>Scopri le novità di BlueXP Tiering.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="4-luglio-2023">4 luglio 2023</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="ora-è-possibile-regolare-la-larghezza-di-banda-utilizzata-per-caricare-i-dati-inattivi-nello-storage-a-oggetti">Ora è possibile regolare la larghezza di banda utilizzata per caricare i dati inattivi nello storage a oggetti</h3>
+<div class="paragraph">
+<p>Quando si attiva il tiering BlueXP, ONTAP può utilizzare una quantità illimitata di larghezza di banda di rete per trasferire i dati inattivi dai volumi nel cluster allo storage a oggetti. Se si nota che il traffico di tiering influisce sui normali carichi di lavoro degli utenti, è possibile ridurre la quantità di larghezza di banda che può essere utilizzata durante il trasferimento. <a href="https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#changing-the-network-bandwidth-available-to-upload-inactive-data-to-object-storage">"Scopri di più"</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="levento-di-tiering-per-tiering-basso-viene-visualizzato-nel-centro-notifiche">L&#8217;evento di tiering per "tiering basso" viene visualizzato nel Centro notifiche</h3>
+<div class="paragraph">
+<p>L&#8217;evento di tiering "Tiering additional data from cluster &lt;name&gt; to object storage to aumento your storage efficiency" viene ora visualizzato come notifica quando un cluster tiering meno del 20% dei suoi dati cold - compresi i cluster che non tierano dati.</p>
+</div>
+<div class="paragraph">
+<p>Questa notifica è un "consiglio" per rendere i sistemi più efficienti e risparmiare sui costi di storage. Fornisce un collegamento a <a href="https://bluexp.netapp.com/cloud-tiering-service-tco" target="_blank" rel="noopener">"Calcolo del costo totale di proprietà e del risparmio di BlueXP Tiering"</a> per aiutarti a calcolare i risparmi sui costi.</p>
+</div>
 </div>
 </div>
 </div>
@@ -939,23 +968,6 @@
 <h3 id="supporto-della-licenza-cloud-tiering-per-ulteriori-configurazioni-cluster">Supporto della licenza Cloud Tiering per ulteriori configurazioni cluster</h3>
 <div class="paragraph">
 <p>Le licenze Cloud Tiering possono ora essere condivise con i cluster che si trovano nelle configurazioni Tiering Mirror (non incluse le configurazioni MetroCluster) e con i cluster che sono Tiered per lo storage a oggetti cloud IBM. Non è più necessario utilizzare le licenze FabricPool obsolete per questi scenari. In questo modo è più semplice utilizzare le licenze di Cloud Tiering "fluttuanti" su più cluster. <a href="https://docs.netapp.com/us-en/bluexp-tiering/task-licensing-cloud-tiering.html#apply-bluexp-tiering-licenses-to-clusters-in-special-configurations">"Scopri come concedere in licenza e configurare questi tipi di cluster."</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="4-aprile-2022">4 aprile 2022</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="è-ora-disponibile-la-classe-di-storage-amazon-s3-glacier-instant-retrieval">È ora disponibile la classe di storage Amazon S3 Glacier Instant Retrieval</h3>
-<div class="paragraph">
-<p>Quando si imposta il Cloud Tiering, è ora possibile configurare una regola del ciclo di vita in modo che i dati inattivi passino dalla classe di storage <em>Standard</em> a <em>Glacier Instant Retrieval</em> dopo un certo numero di giorni. In questo modo si riducono i costi dell&#8217;infrastruttura AWS. <a href="https://docs.netapp.com/us-en/bluexp-tiering/reference-aws-support.html">"Consulta le classi di storage S3 supportate."</a></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="il-cloud-tiering-è-stato-pienamente-qualificato-per-i-sistemi-ontap-select">Il cloud tiering è stato pienamente qualificato per i sistemi ONTAP Select</h3>
-<div class="paragraph">
-<p>Oltre al tiering dei dati dai sistemi AFF e FAS, ora puoi tierare i dati inattivi dai sistemi ONTAP Select allo storage cloud.</p>
 </div>
 </div>
 </div>

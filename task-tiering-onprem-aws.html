@@ -83,7 +83,7 @@
       head.appendChild(onetrustScript);
     }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
     addAdobeLaunch("launch-e9ff3acac59f");
-    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+    addGoogleAnalytics("G-KYN6T440WN");function OptanonWrapper() { }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -436,6 +436,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -664,6 +666,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-tiering/task-tiering-onprem-overview.html">
         Visualizza la panoramica del tiering per tutti i cluster
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitorare lo stato degli avvisi di tiering"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-tiering/task-monitor-tiering-alerts.html">
+        Monitorare lo stato degli avvisi di tiering
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Riferimento"
@@ -773,21 +782,21 @@
   </div>
 </div>
 
-      <div class="ie-nmt-disclaimer">
-  <span>
-    <div class="ie-nmt-disclaimer-container">
-      <div class="ie-nmt-disclaimer-icon">
-        <svg class="luci-icon" aria-hidden="true">
-          <use xlink:href="/it-it/bluexp-tiering/images/sprite.svg#circle-info">
-        </svg>
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <svg class="luci-icon" aria-hidden="true">
+            <use xlink:href="/it-it/bluexp-tiering/images/sprite.svg#circle-info">
+          </svg>
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
+        </div>
+        <div style="clear:both;"></div>
       </div>
-      <div class="ie-nmt-disclaimer-content">
-        <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
-      </div>
-      <div style="clear:both;"></div>
-    </div>
-  </span>
-</div><div class="n-doc__component-detail-heading-wrap">
+    </span>
+  </div><div class="n-doc__component-detail-heading-wrap">
   <h1 class="n-doc__component-detail-heading">Tiering dei dati dai cluster ONTAP on-premise ad Amazon S3</h1>
 </div>
 
@@ -795,7 +804,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-31 14:33:54 +0000">05/31/2023</time>
+    <time datetime="2023-07-05 15:58:37 +0000">07/05/2023</time>
     
   
 
@@ -1115,7 +1124,7 @@ Se si prevede di configurare il tiering BlueXP per utilizzare una classe di stor
 <div class="title">Fasi</div>
 <ol class="arabic">
 <li>
-<p>Confermare <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html#cloud-tiering" target="_blank" rel="noopener">"Queste autorizzazioni S3"</a> Fanno parte del ruolo IAM che fornisce al connettore le autorizzazioni. Dovrebbero essere stati inclusi per impostazione predefinita al momento della prima implementazione del connettore. In caso contrario, è necessario aggiungere le autorizzazioni mancanti. Vedere <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html" target="_blank" rel="noopener">"Documentazione AWS: Modifica delle policy IAM"</a>.</p>
+<p>Confermare <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html#iam-policies" target="_blank" rel="noopener">"Queste autorizzazioni S3"</a> Fanno parte del ruolo IAM che fornisce al connettore le autorizzazioni. Dovrebbero essere stati inclusi per impostazione predefinita al momento della prima implementazione del connettore. In caso contrario, è necessario aggiungere le autorizzazioni mancanti. Vedere <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html" target="_blank" rel="noopener">"Documentazione AWS: Modifica delle policy IAM"</a>.</p>
 </li>
 <li>
 <p>Quando si attiva il servizio, la procedura guidata Tiering richiede di inserire una chiave di accesso e una chiave segreta. Queste credenziali vengono passate al cluster ONTAP in modo che ONTAP possa eseguire il Tier dei dati al bucket S3. A tale scopo, è necessario creare un utente IAM con le seguenti autorizzazioni:</p>
@@ -1256,16 +1265,16 @@ Please enter Certificate: Press &lt;Enter&gt; when done</code></pre>
 </div>
 </li>
 <li>
-<p>Completare le sezioni della pagina <strong>Create Object Storage</strong>:</p>
+<p>Completare le sezioni della pagina <strong>Tiering Setup</strong>:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><strong>S3 bucket</strong>: Aggiungere un nuovo bucket S3 o selezionare un bucket S3 esistente che inizia con il prefisso <em>fabric-pool</em>, selezionare l&#8217;area bucket e fare clic su <strong>continua</strong>.</p>
+<p><strong>S3 bucket</strong>: Aggiungere un nuovo bucket S3 o selezionare un bucket S3 esistente che inizia con il prefisso definito "fabric-pool", selezionare l&#8217;area bucket e fare clic su <strong>continua</strong>.</p>
 <div class="paragraph">
 <p>Quando si utilizza un connettore on-premise, è necessario inserire l&#8217;ID account AWS che fornisce l&#8217;accesso al bucket S3 esistente o al nuovo bucket S3 che verrà creato.</p>
 </div>
 <div class="paragraph">
-<p>Il prefisso <em>fabric-pool</em> è necessario perché il criterio IAM per il connettore consente all&#8217;istanza di eseguire azioni S3 sui bucket denominati con quel prefisso esatto. Ad esempio, è possibile chiamare il bucket S3 <em>fabric-pool-AFF1</em>, dove AFF1 è il nome del cluster.</p>
+<p>Il prefisso <em>fabric-pool</em> viene utilizzato per impostazione predefinita perché il criterio IAM per il connettore consente all&#8217;istanza di eseguire azioni S3 sui bucket denominati con quel prefisso esatto. Ad esempio, è possibile chiamare il bucket S3 <em>fabric-pool-AFF1</em>, dove AFF1 è il nome del cluster.</p>
 </div>
 </li>
 <li>
@@ -1295,13 +1304,13 @@ Please enter Certificate: Press &lt;Enter&gt; when done</code></pre>
 <p>Selezionare l&#8217;IPSpace nel cluster ONTAP in cui risiedono i volumi che si desidera raggruppare. Le LIF di intercluster per questo IPSpace devono disporre di accesso a Internet in uscita in modo che possano connettersi allo storage a oggetti del provider di cloud.</p>
 </div>
 <div class="paragraph">
-<p>Se si desidera, scegliere se utilizzare un AWS PrivateLink precedentemente configurato. <a href="#configurare-il-sistema-per-una-connessione-privata-utilizzando-uninterfaccia-endpoint-vpc">Consultare le informazioni di configurazione riportate sopra.</a></p>
+<p>Se si desidera, scegliere se utilizzare un AWS PrivateLink precedentemente configurato. <a href="#configurare-il-sistema-per-una-connessione-privata-utilizzando-uninterfaccia-endpoint-vpc">Consultare le informazioni di configurazione riportate sopra.</a> Viene visualizzata una finestra di dialogo che aiuta a configurare l&#8217;endpoint.</p>
 </div>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Viene visualizzata una finestra di dialogo che aiuta a configurare l&#8217;endpoint.</p>
+<p>È inoltre possibile impostare la larghezza di banda della rete disponibile per caricare i dati inattivi nello storage a oggetti definendo la "velocità di trasferimento massima". Selezionare il pulsante di opzione <strong>limitato</strong> e immettere la larghezza di banda massima utilizzabile oppure selezionare <strong>illimitato</strong> per indicare che non esiste alcun limite.</p>
 </div>
 </li>
 <li>

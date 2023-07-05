@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="it">
   <head class="at-element-marker">
-  <title>Gestione del tiering dei dati dai cluster | NetApp Documentation</title>
+  <title>Gestione del tiering dei dati per i cluster | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Gestione del tiering dei dati dai cluster | NetApp Documentation" />
+  <meta property="og:title" content="Gestione del tiering dei dati per i cluster | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/it-it/bluexp-tiering/task-managing-tiering.html" />
 	<meta property="og:description" content="Ora che hai impostato il tiering dei dati dai cluster ONTAP on-premise, puoi tierare i dati da volumi aggiuntivi, modificare la policy di tiering di un volum..." />
@@ -83,7 +83,7 @@
       head.appendChild(onetrustScript);
     }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
     addAdobeLaunch("launch-e9ff3acac59f");
-    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+    addGoogleAnalytics("G-KYN6T440WN");function OptanonWrapper() { }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -177,7 +177,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/bluexp-tiering.it-it/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/it-it/bluexp-tiering/task-managing-tiering.html&page-title=Gestione del tiering dei dati dai cluster" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-tiering/images/discuss-sm.svg" alt="" class="github-icon" />Richiedi modifiche alla documentazione</a><a target="_blank" href="https://github.com/NetAppDocs/bluexp-tiering/blob/main/task-managing-tiering.adoc" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-tiering/images/edit-sm.svg" alt="" class="github-icon" />Modifica questa pagina</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/it-it/bluexp-tiering/images/article-sm.svg" alt="" class="github-icon" />Scopri come collaborare</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/bluexp-tiering.it-it/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/it-it/bluexp-tiering/task-managing-tiering.html&page-title=Gestione del tiering dei dati per i cluster" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-tiering/images/discuss-sm.svg" alt="" class="github-icon" />Richiedi modifiche alla documentazione</a><a target="_blank" href="https://github.com/NetAppDocs/bluexp-tiering/blob/main/task-managing-tiering.adoc" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-tiering/images/edit-sm.svg" alt="" class="github-icon" />Modifica questa pagina</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/it-it/bluexp-tiering/images/article-sm.svg" alt="" class="github-icon" />Scopri come collaborare</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">IN QUESTA PAGINA</div>
@@ -436,6 +436,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -664,6 +666,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-tiering/task-tiering-onprem-overview.html">
         Visualizza la panoramica del tiering per tutti i cluster
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitorare lo stato degli avvisi di tiering"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-tiering/task-monitor-tiering-alerts.html">
+        Monitorare lo stato degli avvisi di tiering
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Riferimento"
@@ -773,29 +782,29 @@
   </div>
 </div>
 
-      <div class="ie-nmt-disclaimer">
-  <span>
-    <div class="ie-nmt-disclaimer-container">
-      <div class="ie-nmt-disclaimer-icon">
-        <svg class="luci-icon" aria-hidden="true">
-          <use xlink:href="/it-it/bluexp-tiering/images/sprite.svg#circle-info">
-        </svg>
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <svg class="luci-icon" aria-hidden="true">
+            <use xlink:href="/it-it/bluexp-tiering/images/sprite.svg#circle-info">
+          </svg>
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
+        </div>
+        <div style="clear:both;"></div>
       </div>
-      <div class="ie-nmt-disclaimer-content">
-        <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
-      </div>
-      <div style="clear:both;"></div>
-    </div>
-  </span>
-</div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Gestione del tiering dei dati dai cluster</h1>
+    </span>
+  </div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Gestione del tiering dei dati per i cluster</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2023-05-23 21:06:40 +0000">05/23/2023</time>
+    <time datetime="2023-07-05 15:58:37 +0000">07/05/2023</time>
     
   
 
@@ -809,6 +818,46 @@
 <div class="sectionbody">
 <div class="paragraph lead">
 <p>Ora che hai impostato il tiering dei dati dai cluster ONTAP on-premise, puoi tierare i dati da volumi aggiuntivi, modificare la policy di tiering di un volume, scoprire cluster aggiuntivi e molto altro ancora.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="revisione-delle-informazioni-di-tiering-per-un-cluster">Revisione delle informazioni di tiering per un cluster</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Potresti voler vedere la quantità di dati nel Tier cloud e la quantità di dati presenti sui dischi. In alternativa, è possibile visualizzare la quantità di dati hot e cold sui dischi del cluster. BlueXP Tiering fornisce queste informazioni per ogni cluster.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Dal menu di navigazione a sinistra, selezionare <strong>mobilità &gt; Tiering</strong>.</p>
+</li>
+<li>
+<p>Nella pagina <strong>Clusters</strong>, fare clic sull&#8217;icona del menu <span class="image"><img src="./media/icon-action.png" alt="Icona delle azioni"></span> Per un cluster e selezionare <strong>Cluster info</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_cluster_info_button.png" alt="Schermata che mostra la selezione del pulsante Cluster Info (informazioni cluster) dalla pagina Clusters (Clusters)."></span></p>
+</div>
+</li>
+<li>
+<p>Esaminare i dettagli del cluster.</p>
+<div class="paragraph">
+<p>Ecco un esempio:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_cluster_info.png" alt="Una schermata che mostra la capacità totale dei dati utilizzati del cluster, la capacità utilizzata dal cluster e le informazioni sul cluster."></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Si noti che il display è diverso per i sistemi Cloud Volumes ONTAP. Anche se i volumi Cloud Volumes ONTAP possono avere dati a più livelli nel cloud, non utilizzano il servizio di tiering BlueXP. <a href="https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html" target="_blank" rel="noopener">"Scopri come eseguire il tiering dei dati inattivi dai sistemi Cloud Volumes ONTAP allo storage a oggetti a basso costo"</a>.</p>
+</div>
+<div class="paragraph">
+<p>Puoi anche farlo <a href="https://docs.netapp.com/us-en/active-iq/task-informed-decisions-based-on-cloud-recommendations.html#tiering" target="_blank" rel="noopener">"Visualizzazione delle informazioni di tiering per un cluster di Digital Advisor"</a> Se hai familiarità con questo prodotto NetApp. Seleziona <strong>Cloud Recommendations</strong> dal riquadro di navigazione a sinistra.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_aiq_fabricpool_info.png" alt="Una schermata che mostra le informazioni FabricPool per un cluster utilizzando FabricPool Advisor di Digital Advisor."></span></p>
 </div>
 </div>
 </div>
@@ -910,6 +959,36 @@ Non è necessario configurare lo storage a oggetti perché è già stato configu
 <div class="paragraph">
 <div class="title">Risultato</div>
 <p>La policy di tiering viene modificata e i dati iniziano a essere tierati in base alla nuova policy.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="modifica-della-larghezza-di-banda-della-rete-disponibile-per-caricare-i-dati-inattivi-nello-storage-a-oggetti">Modifica della larghezza di banda della rete disponibile per caricare i dati inattivi nello storage a oggetti</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Quando si attiva il tiering BlueXP per un cluster, per impostazione predefinita, ONTAP può utilizzare una quantità illimitata di larghezza di banda per trasferire i dati inattivi dai volumi nell&#8217;ambiente di lavoro allo storage a oggetti. Se si nota che il traffico di tiering influisce sui normali carichi di lavoro degli utenti, è possibile ridurre la larghezza di banda della rete utilizzata durante il trasferimento. È possibile scegliere un valore compreso tra 1 e 10,000 Mbps come velocità di trasferimento massima.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dal menu di navigazione a sinistra, selezionare <strong>mobilità &gt; Tiering</strong>.</p>
+</li>
+<li>
+<p>Nella pagina <strong>Clusters</strong>, fare clic sull&#8217;icona del menu <span class="image"><img src="./media/icon-action.png" alt="Icona delle azioni"></span> Per un cluster e selezionare <strong>velocità di trasferimento massima</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_transfer_rate_button.png" alt="Schermata che mostra la selezione del pulsante Maximum Transfer Rate (velocità di trasferimento massima) dalla pagina Clusters (Clusters)."></span></p>
+</div>
+</li>
+<li>
+<p>Nella pagina <em>Maximum transfer rate</em>, selezionare il pulsante di opzione <strong>Limited</strong> e immettere la larghezza di banda massima utilizzabile oppure selezionare <strong>Unlimited</strong> per indicare che non vi sono limiti. Quindi fare clic su <strong>Apply</strong> (Applica).</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_transfer_rate.png" alt="Schermata della finestra di dialogo Maximum Transfer Rate (velocità di trasferimento massima) per un cluster."></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Questa impostazione non influisce sulla larghezza di banda allocata ad altri cluster che eseguono il tiering dei dati.</p>
 </div>
 </div>
 </div>
@@ -1066,40 +1145,6 @@ In base alla quantità di dati trasferiti fuori dal cloud, il tuo cloud potrebbe
 <p>Fare clic su <strong>Apply</strong> (Applica).</p>
 </li>
 </ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="revisione-delle-informazioni-di-tiering-per-un-cluster">Revisione delle informazioni di tiering per un cluster</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Potresti voler vedere la quantità di dati nel Tier cloud e la quantità di dati presenti sui dischi. In alternativa, è possibile visualizzare la quantità di dati hot e cold sui dischi del cluster. BlueXP Tiering fornisce queste informazioni per ogni cluster.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Fasi</div>
-<ol class="arabic">
-<li>
-<p>Dal menu di navigazione a sinistra, selezionare <strong>mobilità &gt; Tiering</strong>.</p>
-</li>
-<li>
-<p>Dalla pagina <strong>Clusters</strong>, fare clic sull&#8217;icona del menu di un cluster e selezionare <strong>Cluster info</strong>.</p>
-</li>
-<li>
-<p>Esaminare i dettagli del cluster.</p>
-<div class="paragraph">
-<p>Ecco un esempio:</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_tiering_cluster_info.png" alt="Una schermata che mostra il report del cluster, in cui sono indicate le informazioni relative alla capacità totale utilizzata, alla capacità utilizzata dal cluster, alle informazioni sul cluster e allo storage a oggetti."></span></p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Puoi anche farlo <a href="https://docs.netapp.com/us-en/active-iq/task-informed-decisions-based-on-cloud-recommendations.html#tiering" target="_blank" rel="noopener">"Visualizzazione delle informazioni di tiering per un cluster di Digital Advisor"</a> Se hai familiarità con questo prodotto NetApp. Seleziona <strong>Cloud Recommendations</strong> dal riquadro di navigazione a sinistra.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_tiering_aiq_fabricpool_info.png" alt="Una schermata che mostra le informazioni FabricPool per un cluster utilizzando FabricPool Advisor di Digital Advisor."></span></p>
 </div>
 </div>
 </div>
