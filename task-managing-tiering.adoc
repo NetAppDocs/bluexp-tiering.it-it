@@ -256,3 +256,21 @@ Tenere presente che l'indirizzo IP di gestione del cluster viene compilato in ba
 BlueXP rileva il cluster e lo aggiunge a un ambiente di lavoro in Canvas utilizzando il nome del cluster come nome dell'ambiente di lavoro.
 
 È possibile attivare il servizio di tiering o altri servizi per questo cluster nel pannello di destra.
+
+
+
+== Cerca un cluster in tutti i connettori BlueXP
+
+Se si utilizzano più connettori per gestire tutto lo storage nel proprio ambiente, alcuni cluster in cui si desidera implementare la creazione di livelli potrebbero trovarsi in un altro connettore. Se non sai con certezza quale connettore gestisce un determinato cluster, puoi cercare in tutti i connettori utilizzando il tiering BlueXP.
+
+.Fasi
+. Nella barra dei menu del tiering BlueXP, fai clic sul menu azione e seleziona *Cerca cluster in tutti i connettori*.
++
+image:screenshot_tiering_search for_cluster.png["Uno screenshot che mostra come cercare un cluster che potrebbe trovarsi in uno dei tuoi connettori BlueXP."]
+
+. Nella finestra di dialogo Ricerca visualizzata, immettere il nome del cluster e fare clic su *Cerca*.
++
+Il tiering di BlueXP visualizza il nome del connettore, se riesce a trovare il cluster.
+
+. https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#switch-between-connectors["Passare al connettore e configurare il tiering per il cluster"^].
+

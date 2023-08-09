@@ -198,7 +198,7 @@ La selezione dell'IPSpace corretto garantisce che il tiering BlueXP possa impost
 ** Per selezionare più volumi, selezionare la casella relativa a ciascun volume (image:button_backup_1_volume.png[""]) E fare clic su *Configure Volumes* (Configura volumi).
 ** Per selezionare un singolo volume, fare clic sulla riga (o. image:screenshot_edit_icon.gif["icona modifica matita"] ) per il volume.
 +
-image:screenshot_tiering_tier_volumes.png["Una schermata che mostra come selezionare un singolo volume, più volumi o tutti i volumi e il pulsante Modify Selected Volumes (Modifica volumi selezionati)."]
+image:screenshot_tiering_initial_volumes.png["Una schermata che mostra come selezionare un singolo volume, più volumi o tutti i volumi e il pulsante Modify Selected Volumes (Modifica volumi selezionati)."]
 
 
 
@@ -207,7 +207,7 @@ image:screenshot_tiering_tier_volumes.png["Una schermata che mostra come selezio
 link:concept-cloud-tiering.html#volume-tiering-policies["Scopri di più sulle policy di tiering dei volumi e sui giorni di raffreddamento"].
 
 +
-image:screenshot_tiering_policy_settings.png["Una schermata che mostra le impostazioni dei criteri di tiering configurabili."]
+image:screenshot_tiering_initial_policy_settings.png["Una schermata che mostra le impostazioni dei criteri di tiering configurabili."]
 
 
 
