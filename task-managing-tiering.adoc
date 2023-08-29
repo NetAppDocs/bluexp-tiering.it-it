@@ -154,7 +154,7 @@ Sono disponibili due opzioni:
 NOTE: In base alla quantità di dati trasferiti fuori dal cloud, il tuo cloud potrebbe addebitare un costo.
 
 .Fasi
-Assicurati di disporre di spazio sufficiente nel Tier di performance per tutti i dati che vengono spostati dal cloud.
+Assicurarsi di disporre di spazio sufficiente nel Tier delle performance per tutti i dati spostati di nuovo dal cloud.
 
 . Dal menu di navigazione a sinistra, selezionare *mobilità > Tiering*.
 . Dalla pagina *Clusters*, fare clic su *Tier Volumes* per il cluster.

@@ -157,7 +157,7 @@ BlueXP Tiering supporta il tiering per qualsiasi account storage in qualsiasi re
 BlueXP Tiering supporta solo i tipi di account storage General Purpose v2 e Premium Block Blob.
 
 
-NOTE: Se si prevede di configurare il tiering BlueXP per utilizzare un livello di accesso a costo inferiore in cui i dati a più livelli passeranno dopo un certo numero di giorni, non è necessario selezionare alcuna regola del ciclo di vita durante la configurazione del container nell'account Azure. BlueXP Tiering gestisce le transizioni del ciclo di vita.
+NOTE: Se stai pensando di configurare il tiering BlueXP per utilizzare un Tier di accesso a costi inferiori a cui passeranno i dati in Tier dopo un determinato numero di giorni, non devi selezionare alcuna regola per il ciclo di vita durante la configurazione del container nell'account Azure. Il tiering di BlueXP gestisce le transizioni del ciclo di vita.
 
 
 
@@ -189,18 +189,18 @@ Quando si utilizza un connettore on-premise, è necessario inserire l'abbonament
 +
 Gli account e i contenitori di storage visualizzati in questa fase appartengono al gruppo di risorse selezionato nella fase precedente.
 
-.. *Access Tier Life Cycle*: BlueXP Tiering gestisce le transizioni del ciclo di vita dei dati a più livelli. I dati iniziano nella classe _Hot_, ma è possibile creare una regola per spostare i dati nella classe _Cool_ dopo un certo numero di giorni.
+.. *Ciclo di vita dei livelli di accesso*: Il tiering BlueXP gestisce le transizioni del ciclo di vita dei dati a più livelli. I dati iniziano nella classe _Hot_, ma è possibile creare una regola per applicare la classe _Cool_ ai dati dopo un certo numero di giorni.
 +
-Selezionare il livello di accesso a cui si desidera trasferire i dati a più livelli e il numero di giorni prima che i dati vengano spostati, quindi fare clic su *continua*. Ad esempio, la schermata seguente mostra che i dati a più livelli vengono spostati dalla classe _Hot_ alla classe _Cool_ dopo 45 giorni di storage a oggetti.
+Selezionare il livello di accesso a cui si desidera trasferire i dati suddivisi in livelli e il numero di giorni prima dell'assegnazione dei dati a tale livello, quindi fare clic su *continua*. Ad esempio, la schermata riportata di seguito mostra che i dati a livelli vengono assegnati alla classe _Cool_ dalla classe _Hot_ dopo 45 giorni di archiviazione degli oggetti.
 
 +
 Se si sceglie *Mantieni i dati in questo Tier di accesso*, i dati rimangono nel Tier di accesso _Hot_ e non vengono applicate regole. link:reference-azure-support.html["Vedere livelli di accesso supportati"^].
 
 +
-image:screenshot_tiering_lifecycle_selection_azure.png["Una schermata che mostra come selezionare un altro livello di accesso in cui i dati vengono spostati dopo un certo numero di giorni."]
+image:screenshot_tiering_lifecycle_selection_azure.png["Uno screenshot che mostra come selezionare un altro livello di accesso dove viene assegnato ai tuoi dati dopo un certo numero di giorni."]
 
 +
-Si noti che la regola del ciclo di vita viene applicata a tutti i contenitori blob nell'account storage selezionato.
+Si noti che la regola del ciclo di vita viene applicata a tutti i contenitori BLOB nell'account di archiviazione selezionato.
 
 .. *Rete cluster*: Selezionare l'IPSpace che ONTAP deve utilizzare per connettersi allo storage a oggetti e fare clic su *continua*.
 +

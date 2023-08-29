@@ -282,9 +282,9 @@ BlueXP Tiering supporta il tiering dei dati per le classi di storage _Standard_,
 
 
 
-=== Il tiering BlueXP supporta l'utilizzo di policy di gestione del ciclo di vita?
+=== Il tiering di BlueXP supporta l'utilizzo delle policy di Lifecycle management?
 
-Sì. È possibile attivare la gestione del ciclo di vita in modo che il tiering BlueXP possa eseguire la transizione dei dati dalla classe di storage predefinita/Tier di accesso a un Tier più conveniente dopo un certo numero di giorni. La regola del ciclo di vita viene applicata a tutti gli oggetti nel bucket selezionato per lo storage Amazon S3 e Google Cloud e a tutti i container nell'account di storage selezionato per Azure Blob.
+Sì. Puoi abilitare il Lifecycle management in modo che il tiering di BlueXP sposti i dati dalla classe di storage/Tier di accesso predefinito a un Tier più conveniente dopo un determinato numero di giorni. La regola del ciclo di vita viene applicata a tutti gli oggetti nel bucket selezionato per lo storage Amazon S3 e Google Cloud e a tutti i container nell'account di storage selezionato per BLOB di Azure.
 
 
 

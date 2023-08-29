@@ -147,7 +147,7 @@ Quando si imposta il tiering, è necessario fornire le chiavi di accesso allo st
 I bucket di cloud storage devono trovarsi in una link:reference-google-support.html#supported-google-cloud-regions["Regione che supporta il tiering BlueXP"].
 
 
-NOTE: Se si prevede di configurare il tiering BlueXP per utilizzare classi di storage a basso costo in cui i dati a più livelli passeranno dopo un certo numero di giorni, non è necessario selezionare alcuna regola del ciclo di vita durante la configurazione del bucket nell'account GCP. BlueXP Tiering gestisce le transizioni del ciclo di vita.
+NOTE: Se stai pensando di configurare il tiering BlueXP per utilizzare classi di storage a costi inferiori su cui passeranno i dati in Tier dopo un determinato numero di giorni, non devi selezionare alcuna regola per il ciclo di vita durante la configurazione del bucket nell'account GCP. Il tiering di BlueXP gestisce le transizioni del ciclo di vita.
 
 .Fasi
 . https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["Creare un account di servizio con il ruolo di amministratore dello storage predefinito"^].
@@ -187,15 +187,15 @@ image:screenshot_setup_tiering_onprem.png["Una schermata che mostra l'opzione En
 . Completare la procedura riportata nelle pagine *Create Object Storage*:
 +
 .. *Bucket*: Aggiungi un nuovo bucket di storage Google Cloud o seleziona un bucket esistente.
-.. *Storage Class Life Cycle*: Il tiering BlueXP gestisce le transizioni del ciclo di vita dei dati a più livelli. I dati iniziano nella classe _Standard_, ma è possibile creare regole per spostare i dati in altre classi dopo un certo numero di giorni.
+.. *Storage Class Lifecycle*: Il tiering BlueXP gestisce le transizioni del ciclo di vita dei dati a più livelli. I dati iniziano nella classe _Standard_, ma è possibile creare regole per applicare classi di archiviazione diverse dopo un certo numero di giorni.
 +
-Selezionare la classe di storage Google Cloud a cui si desidera trasferire i dati a più livelli e il numero di giorni prima che i dati vengano spostati, quindi fare clic su *continua*. Ad esempio, la schermata seguente mostra che i dati a più livelli vengono spostati dalla classe _Standard_ alla classe _Nearline_ dopo 30 giorni di storage a oggetti, quindi alla classe _Coldline_ dopo 60 giorni di storage a oggetti.
+Selezionare la classe di archiviazione Google Cloud a cui si desidera trasferire i dati in tiering e il numero di giorni prima dell'assegnazione dei dati a tale classe, quindi fare clic su *continua*. Ad esempio, lo screenshot seguente mostra che i dati in tiering vengono assegnati alla classe _Nearline_ dalla classe _Standard_ dopo 30 giorni di archiviazione a oggetti e quindi alla classe _Coldline_ dopo 60 giorni di archiviazione a oggetti.
 
 +
 Se si sceglie *Mantieni i dati in questa classe di storage*, i dati rimangono nella classe di storage selezionata. link:reference-google-support.html["Vedere classi di storage supportate"^].
 
 +
-image:screenshot_tiering_lifecycle_selection_gcp.png["Una schermata che mostra come selezionare ulteriori classi di storage in cui i dati vengono spostati dopo un certo numero di giorni."]
+image:screenshot_tiering_lifecycle_selection_gcp.png["Uno screenshot che mostra come selezionare classi di archiviazione aggiuntive assegnate ai dati dopo un determinato numero di giorni."]
 
 +
 Si noti che la regola del ciclo di vita viene applicata a tutti gli oggetti nel bucket selezionato.

@@ -31,7 +31,7 @@ https://bluexp.netapp.com/cloud-tiering-service-tco["Utilizza il calcolatore del
 BlueXP Tiering offre automazione, monitoraggio, report e un'interfaccia di gestione comune:
 
 * L'automazione semplifica la configurazione e la gestione del tiering dei dati dai cluster ONTAP on-premise al cloud
-* Puoi scegliere la classe di storage/il Tier di accesso del cloud provider predefinito oppure utilizzare la gestione del ciclo di vita per spostare i dati più vecchi su più livelli a un livello più conveniente
+* È possibile scegliere la classe di accesso/il Tier di storage di cloud provider predefiniti oppure utilizzare il Lifecycle management per assegnare un Tier più conveniente ai dati meno recenti
 * È possibile creare connessioni ad archivi di oggetti aggiuntivi che possono essere utilizzati per altri aggregati nel cluster
 * Utilizzando l'interfaccia utente è possibile trascinare gli archivi di oggetti in un aggregato per il tiering e per il mirroring FabricPool
 * Un singolo pannello di controllo elimina la necessità di gestire in modo indipendente FabricPool in diversi cluster
@@ -159,7 +159,7 @@ Ad un livello elevato, il tiering BlueXP funziona come segue:
 . BlueXP configura ONTAP per l'utilizzo del provider di storage a oggetti e rileva la quantità di dati attivi e inattivi nel cluster.
 . È possibile scegliere i volumi da tiering e il criterio di tiering da applicare a tali volumi.
 . ONTAP avvia il tiering dei dati inattivi nell'archivio di oggetti non appena i dati raggiungono le soglie da considerare inattivi (vedere <<Policy di tiering dei volumi>>).
-. Se è stata applicata una regola del ciclo di vita ai dati a più livelli (disponibile solo per alcuni provider), i dati a più livelli meno recenti vengono spostati in un livello più conveniente dopo un certo numero di giorni.
+. Se è stata applicata una regola del ciclo di vita ai dati a livelli (disponibile solo per alcuni provider), i dati a livelli precedenti vengono assegnati a un livello più conveniente dopo un determinato numero di giorni.
 
 
 
