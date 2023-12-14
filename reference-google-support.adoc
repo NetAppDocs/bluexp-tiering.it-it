@@ -20,7 +20,7 @@ BlueXP Tiering supporta diverse classi di storage Google Cloud e la maggior part
 
 == Classi di storage GCP supportate
 
-Quando si imposta il tiering dei dati su GCP, il tiering BlueXP utilizza automaticamente la classe di storage _Standard_ per i dati inattivi. BlueXP Tiering può applicare una regola del ciclo di vita in modo che i dati transitino dalla classe di storage _Standard_ ad altre classi di storage dopo un certo numero di giorni. È possibile scegliere tra le seguenti classi di storage:
+Quando imposti il tiering dei dati su GCP dai sistemi ONTAP on-premise, il tiering di BlueXP utilizza automaticamente la classe di storage _Standard_ per i dati inattivi. BlueXP Tiering può applicare una regola del ciclo di vita in modo che i dati transitino dalla classe di storage _Standard_ ad altre classi di storage dopo un certo numero di giorni. È possibile scegliere tra le seguenti classi di storage:
 
 * Nearline
 * Coldline

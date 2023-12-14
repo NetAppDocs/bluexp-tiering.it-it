@@ -20,7 +20,7 @@ BlueXP Tiering supporta diverse classi di storage S3 e la maggior parte delle re
 
 == Classi di storage S3 supportate
 
-Quando si imposta il tiering dei dati su AWS, il tiering BlueXP utilizza automaticamente la classe di storage _Standard_ per i dati inattivi. BlueXP Tiering può applicare una regola del ciclo di vita in modo che i dati transitino dalla classe di storage _Standard_ a un'altra classe di storage dopo un certo numero di giorni. È possibile scegliere tra le seguenti classi di storage:
+Quando configuri il tiering dei dati in AWS dai sistemi ONTAP on-premise, il tiering di BlueXP utilizza automaticamente la classe di storage _Standard_ per i dati inattivi. BlueXP Tiering può applicare una regola del ciclo di vita in modo che i dati transitino dalla classe di storage _Standard_ a un'altra classe di storage dopo un certo numero di giorni. È possibile scegliere tra le seguenti classi di storage:
 
 * Accesso standard non frequente (S3 Standard-IA)
 * Accesso non frequente in una zona (S3 one zone-IA)

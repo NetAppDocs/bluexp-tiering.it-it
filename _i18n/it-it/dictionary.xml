@@ -512,7 +512,6 @@
   <block id="a0396859c016deff163331729e87c6cf" category="summary">BlueXP Tiering supporta diverse classi di storage Google Cloud e la maggior parte delle regioni.</block>
   <block id="f1a3ad895aa06bd9c76af0c86381f4cf" category="doc">Classi e regioni di storage Google Cloud supportate</block>
   <block id="8f2228fce8c23a4fe2e7622bc8a9d4ea" category="section-title">Classi di storage GCP supportate</block>
-  <block id="e9885ff472161e4c48f508f106c6ad36" category="paragraph">Quando si imposta il tiering dei dati su GCP, il tiering BlueXP utilizza automaticamente la classe di storage _Standard_ per i dati inattivi. BlueXP Tiering può applicare una regola del ciclo di vita in modo che i dati transitino dalla classe di storage _Standard_ ad altre classi di storage dopo un certo numero di giorni. È possibile scegliere tra le seguenti classi di storage:</block>
   <block id="aba972473e7cea22067fcd1e1e01bcd1" category="list-text">Nearline</block>
   <block id="1d5397c0580f85c400887096d12c133e" category="list-text">Coldline</block>
   <block id="e727b00944f81e1d0a95c12886ac4641" category="list-text">Archiviare</block>
@@ -546,7 +545,6 @@
   <block id="2b29c5739ec4158573c66d2124e2c7e9" category="list-text">Zurigo</block>
   <block id="be097470e9ac90369332a05c045a9742" category="summary">BlueXP Tiering supporta diverse classi di storage S3 e la maggior parte delle regioni.</block>
   <block id="ddc0d211eedc82ce253724f39188a145" category="doc">Classi e regioni di storage S3 supportate</block>
-  <block id="9febe911a8cef93d7919b4e705d2af96" category="paragraph">Quando si imposta il tiering dei dati su AWS, il tiering BlueXP utilizza automaticamente la classe di storage _Standard_ per i dati inattivi. BlueXP Tiering può applicare una regola del ciclo di vita in modo che i dati transitino dalla classe di storage _Standard_ a un'altra classe di storage dopo un certo numero di giorni. È possibile scegliere tra le seguenti classi di storage:</block>
   <block id="cb6793246bf8a1d9872b2f128304ed8c" category="list-text">Glacier Instant Retrieval</block>
   <block id="b48e3a08ac6bdb2960ebbf7583060d5c" category="paragraph">Quando si configura una regola del ciclo di vita del tiering BlueXP, non è necessario configurare alcuna regola del ciclo di vita quando si imposta il bucket nell'account AWS.</block>
   <block id="c84f9bdf2de63c378b4a57466b3e08bc" category="inline-link">Scopri le classi di storage S3</block>
@@ -1178,7 +1176,6 @@
   <block id="635253659dacfccaf41ba250260189aa" category="paragraph">Hai configurato correttamente il tiering dei dati dai volumi del cluster allo storage a oggetti Google Cloud.</block>
   <block id="5853c8a054007c0c99bbc9662a53c4fb" category="summary">BlueXP Tiering supporta due livelli di accesso e la maggior parte delle regioni.</block>
   <block id="fa62afbf244eb2e9a07f57b1803fe0e6" category="doc">Aree e livelli di accesso supportati da Azure Blob</block>
-  <block id="e8823c938290b3df1d69b5821a4bbbb8" category="paragraph">Quando si imposta il tiering dei dati su Azure, il tiering BlueXP utilizza automaticamente il Tier di accesso _Hot_ per i dati inattivi. BlueXP Tiering può applicare una regola del ciclo di vita in modo che i dati transitino dal Tier di accesso _Hot_ al Tier di accesso _Cool_ dopo un certo numero di giorni.</block>
   <block id="6c02b1bd844652e850bc128a20e71bc7" category="paragraph">Se non si sceglie il livello di accesso _Cool_, i dati rimangono nel livello di accesso _Hot_ e non vengono applicate regole.</block>
   <block id="95d5445b66336b61fe8c176426e3cb6b" category="paragraph">Quando si configura una regola del ciclo di vita del tiering BlueXP, non è necessario configurare alcuna regola del ciclo di vita durante la configurazione del container nell'account Azure.</block>
   <block id="07e61ccfcb604b4d08fc03603677751d" category="inline-link">Scopri i Tier di accesso di Azure Blob</block>
@@ -1440,4 +1437,7 @@
   <block id="77d720d97cc99bdd67ce50e58655dc3f" category="paragraph">Al momento, i contratti annuali non sono supportati in caso di tiering in Google Cloud.</block>
   <block id="74369b8ae005333b4dd61fb93f495946" category="paragraph">Il tiering di BlueXP offre un contratto annuale con il tiering dei dati inattivi su Amazon S3 o Azure. È disponibile in termini di 1, 2 o 3 anni.</block>
   <block id="8a2304319d2e68c914c95280f8d1b529" category="paragraph">Al momento, i contratti annuali non sono supportati in fase di tiering nel cloud Google.</block>
+  <block id="a6946f1b4a14c4860d7cb9b918379334" category="paragraph">Quando imposti il tiering dei dati su GCP dai sistemi ONTAP on-premise, il tiering di BlueXP utilizza automaticamente la classe di storage _Standard_ per i dati inattivi. BlueXP Tiering può applicare una regola del ciclo di vita in modo che i dati transitino dalla classe di storage _Standard_ ad altre classi di storage dopo un certo numero di giorni. È possibile scegliere tra le seguenti classi di storage:</block>
+  <block id="90fd6199eed378ef0bf6c4f8d3ed5ebc" category="paragraph">Quando configuri il tiering dei dati in Azure dai sistemi ONTAP on-premise, il tiering di BlueXP utilizza automaticamente il Tier di accesso _Hot_ per i dati inattivi. BlueXP Tiering può applicare una regola del ciclo di vita in modo che i dati transitino dal Tier di accesso _Hot_ al Tier di accesso _Cool_ dopo un certo numero di giorni.</block>
+  <block id="17c353c0dd208c819d731350ef2b1300" category="paragraph">Quando configuri il tiering dei dati in AWS dai sistemi ONTAP on-premise, il tiering di BlueXP utilizza automaticamente la classe di storage _Standard_ per i dati inattivi. BlueXP Tiering può applicare una regola del ciclo di vita in modo che i dati transitino dalla classe di storage _Standard_ a un'altra classe di storage dopo un certo numero di giorni. È possibile scegliere tra le seguenti classi di storage:</block>
 </blocks>
