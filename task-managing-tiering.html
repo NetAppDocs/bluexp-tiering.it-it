@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head class="at-element-marker">
+  <title>Gestione del tiering dei dati per i cluster | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Gestione del tiering dei dati per i cluster | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/it-it/bluexp-tiering/task-managing-tiering.html" />
+	<meta property="og:description" content="Ora che hai impostato il tiering dei dati dai cluster ONTAP on-premise, puoi tierare i dati da volumi aggiuntivi, modificare la policy di tiering di un volum..." />
+  <meta property="og:image" content="https://docs.netapp.com/it-it/bluexp-tiering/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Ora che hai impostato il tiering dei dati dai cluster ONTAP on-premise, puoi tierare i dati da volumi aggiuntivi, modificare la policy di tiering di un volum...">
+  <meta name="keywords" content=" discover, volumes, report, hot, cold, inactive, active, capacity, used capacity, savings, health, failed"><!-- Icons -->
+  <link rel="icon" href="/it-it/bluexp-tiering/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/it-it/bluexp-tiering/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/it-it/bluexp-tiering/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/it-it/bluexp-tiering/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/it-it/bluexp-tiering/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/it-it/bluexp-tiering/task-managing-tiering.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/bluexp-tiering/task-managing-tiering.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/bluexp-tiering/task-managing-tiering.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/bluexp-tiering/task-managing-tiering.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/bluexp-tiering/task-managing-tiering.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/bluexp-tiering/task-managing-tiering.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/bluexp-tiering/task-managing-tiering.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/bluexp-tiering/task-managing-tiering.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/bluexp-tiering/task-managing-tiering.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/it-it/bluexp-tiering/js/na-search.js'></script><script src='/it-it/bluexp-tiering/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/it-it/bluexp-tiering/js/custom-dropdown.js'></script>
+  <script src='/it-it/bluexp-tiering/js/FileSaver.min.js'></script>
+  <script src='/it-it/bluexp-tiering/js/jszip-utils.min.js'></script>
+  <script src='/it-it/bluexp-tiering/js/jszip.min.js'></script><script src='/it-it/bluexp-tiering/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor="">
+    <div class="skip-to-main">
+      <a href="#main" >Skip to main content</a>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/it-it/bluexp-tiering/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/it">
+                <image id="ie-header-logo" src="/it-it/bluexp-tiering/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/it/support-and-training/documentation/">Documenti</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/it-it/bluexp-tiering/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">Italiano</span>
+                    <img src="/it-it/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/it-it/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/it-it/bluexp-tiering/task-managing-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ja-jp/bluexp-tiering/task-managing-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ko-kr/bluexp-tiering/task-managing-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/bluexp-tiering/task-managing-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-tw/bluexp-tiering/task-managing-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/bluexp-tiering/task-managing-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/bluexp-tiering/task-managing-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/bluexp-tiering/task-managing-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/it-it/bluexp-tiering/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">Tutto NetApp</span>
+                    <img src="/it-it/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/it-it/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">Supporto</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">Knowledge Base</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/it/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">Training</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/it-it/bluexp-tiering/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/it-it/bluexp-tiering/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">Tutti i documenti</a>
+    </li>
+    
+    
+    <li class="">
+      <a href="https://docs.netapp.com/us-en/cloud/">Documentazione Cloud</a>
+    </li>
+    
+
+    
+    <li class="">
+      <a href="https://docs.netapp.com/it-it/bluexp-family/">
+        BlueXP
+      </a>
+    </li>
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/it-it/bluexp-tiering/">-->
+      BlueXP tiering
+    <!--</a>-->
+  </div>
+</div>
+
+            
+
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/it-it/bluexp-tiering/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/it-it/bluexp-tiering/search.html" 
+        data-type="widget"
+        data-placeholder="Esplora la documentazione"
+        data-no-results-found="Nessun risultato per {query}"
+        data-did-you-mean="Cerca {suggestion}."
+        data-no-results-found-did-you-mean="Nessun risultato per {query}. Intendi {suggestion}?"
+        data-results-found="{hitCount} risultati trovati"
+        data-error-message="Si è verificato un errore. Riprova."
+        data-error-reset="Reimposta ricerca"
+        data-sk-es-pf-indexes="" 
+        data-flavor="">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Documenti di tiering BlueXP"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/it-it/bluexp-tiering/index.html">
+        Documenti di tiering BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Note di rilascio"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/whats-new.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/it-it/bluexp-tiering/whats-new.html">
+        Note di rilascio
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Inizia subito"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-tiering/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-tiering/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Inizia subito</div>-->
+         Inizia subito
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Scopri di più sul tiering BlueXP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/concept-cloud-tiering.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-tiering/concept-cloud-tiering.html">
+        Scopri di più sul tiering BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tiering on-premise dei dati nel cloud"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-tiering/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-tiering/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Tiering on-premise dei dati nel cloud</div>-->
+         Tiering on-premise dei dati nel cloud
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to Amazon S3"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/task-tiering-onprem-aws.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-tiering/task-tiering-onprem-aws.html">
+        Tier to Amazon S3
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to Azure Blob storage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/task-tiering-onprem-azure.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-tiering/task-tiering-onprem-azure.html">
+        Tier to Azure Blob storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to Google Cloud Storage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/task-tiering-onprem-gcp.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-tiering/task-tiering-onprem-gcp.html">
+        Tier to Google Cloud Storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to StorageGRID"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/task-tiering-onprem-storagegrid.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-tiering/task-tiering-onprem-storagegrid.html">
+        Tier to StorageGRID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier allo storage a oggetti S3"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/task-tiering-onprem-s3-compat.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-tiering/task-tiering-onprem-s3-compat.html">
+        Tier allo storage a oggetti S3
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Impostare la licenza"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/task-licensing-cloud-tiering.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-tiering/task-licensing-cloud-tiering.html">
+        Impostare la licenza
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="FAQ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/faq-cloud-tiering.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-tiering/faq-cloud-tiering.html">
+        FAQ
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Utilizza il tiering BlueXP"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-tiering/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-tiering/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Utilizza il tiering BlueXP</div>-->
+         Utilizza il tiering BlueXP
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire il tiering dei dati"
+      data-li-level="2#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/task-managing-tiering.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-tiering/task-managing-tiering.html">
+        Gestire il tiering dei dati
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire lo storage a oggetti"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/task-managing-object-storage.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-tiering/task-managing-object-storage.html">
+        Gestire lo storage a oggetti
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Test delle performance del cloud"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/task-tiering-test.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-tiering/task-tiering-test.html">
+        Test delle performance del cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Visualizza la panoramica del tiering per tutti i cluster"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/task-tiering-onprem-overview.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-tiering/task-tiering-onprem-overview.html">
+        Visualizza la panoramica del tiering per tutti i cluster
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitorare lo stato degli avvisi di tiering"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/task-monitor-tiering-alerts.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-tiering/task-monitor-tiering-alerts.html">
+        Monitorare lo stato degli avvisi di tiering
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Riferimento"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-tiering/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-tiering/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Riferimento</div>-->
+         Riferimento
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Classi e regioni di storage Amazon S3 supportate"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/reference-aws-support.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-tiering/reference-aws-support.html">
+        Classi e regioni di storage Amazon S3 supportate
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Aree geografiche e livelli di accesso Azure supportati"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/reference-azure-support.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-tiering/reference-azure-support.html">
+        Aree geografiche e livelli di accesso Azure supportati
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Classi e regioni di storage Google Cloud supportate"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/reference-google-support.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-tiering/reference-google-support.html">
+        Classi e regioni di storage Google Cloud supportate
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Conoscenza e supporto"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-tiering/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-tiering/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Conoscenza e supporto</div>-->
+         Conoscenza e supporto
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Registrati per ricevere assistenza"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/task-support-registration.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-tiering/task-support-registration.html">
+        Registrati per ricevere assistenza
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Richiedi assistenza"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/task-get-help.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-tiering/task-get-help.html">
+        Richiedi assistenza
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Note legali"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-managing-tiering.html" 
+      dale-entry-url="/legal-notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/it-it/bluexp-tiering/legal-notices.html">
+        Note legali
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/it-it/bluexp-tiering"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/it-it/bluexp-tiering"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <img src="/it-it/bluexp-tiering/images/notification-icons.svg" class="luci-icon" alt="" />
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+    </span>
+  </div><div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">Gestione del tiering dei dati per i cluster</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2023-08-29 15:27:17 +0000">08/29/2023</time>
+        
+    
+    
+        <span>Collaboratori
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/it-it/bluexp-tiering/images/discuss-sm.svg" alt="" class="github-icon" />Suggerisci modifiche</span>
+        <img src="/it-it/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/it-it/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/bluexp-tiering.it-it/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/it-it/bluexp-tiering/task-managing-tiering.html&page-title=Gestione del tiering dei dati per i cluster" class="page-nav-contribute-link" role="button">Richiedi modifiche alla documentazione</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/bluexp-tiering/blob/main/task-managing-tiering.adoc" class="page-nav-contribute-link" role="button">Modifica questa pagina</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >Scopri come collaborare</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/it-it/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>PDF<img src="/it-it/bluexp-tiering/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/it-it/bluexp-tiering/pdfs/fullsite-sidebar/Documentazione_sui_tiering_BlueXP.pdf" >
+                    <img src="/it-it/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>PDF del sito di questa documentazione</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-tiering/pdfs/sidebar/Inizia_subito.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Inizia subito
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-tiering/pdfs/sidebar/Tiering_on_premise_dei_dati_nel_cloud.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Tiering on-premise dei dati nel cloud
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-tiering/pdfs/sidebar/Utilizza_il_tiering_BlueXP.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Utilizza il tiering BlueXP
+          </a>
+          
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-tiering/pdfs/sidebar/Riferimento.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Riferimento
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-tiering/pdfs/sidebar/Conoscenza_e_supporto.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Conoscenza e supporto
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/it-it/bluexp-tiering/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>Raccolta di documenti PDF separati<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+
+
+
+<div class="content-to-index">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Ora che hai impostato il tiering dei dati dai cluster ONTAP on-premise, puoi tierare i dati da volumi aggiuntivi, modificare la policy di tiering di un volume, scoprire cluster aggiuntivi e molto altro ancora.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="revisione-delle-informazioni-di-tiering-per-un-cluster">Revisione delle informazioni di tiering per un cluster</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Potresti voler vedere la quantità di dati nel Tier cloud e la quantità di dati presenti sui dischi. In alternativa, è possibile visualizzare la quantità di dati hot e cold sui dischi del cluster. BlueXP Tiering fornisce queste informazioni per ogni cluster.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Dal menu di navigazione a sinistra, selezionare <strong>mobilità &gt; Tiering</strong>.</p>
+</li>
+<li>
+<p>Nella pagina <strong>Clusters</strong>, fare clic sull'icona del menu <span class="image"><img src="./media/icon-action.png" alt="Icona delle azioni"></span> Per un cluster e selezionare <strong>Cluster info</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_cluster_info_button.png" alt="Schermata che mostra la selezione del pulsante Cluster Info (informazioni cluster) dalla pagina Clusters (Clusters)."></span></p>
+</div>
+</li>
+<li>
+<p>Esaminare i dettagli del cluster.</p>
+<div class="paragraph">
+<p>Ecco un esempio:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_cluster_info.png" alt="Una schermata che mostra la capacità totale dei dati utilizzati del cluster, la capacità utilizzata dal cluster e le informazioni sul cluster."></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Si noti che il display è diverso per i sistemi Cloud Volumes ONTAP. Anche se i volumi Cloud Volumes ONTAP possono avere dati a più livelli nel cloud, non utilizzano il servizio di tiering BlueXP. <a href="https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html" target="_blank" rel="noopener">"Scopri come eseguire il tiering dei dati inattivi dai sistemi Cloud Volumes ONTAP allo storage a oggetti a basso costo"</a>.</p>
+</div>
+<div class="paragraph">
+<p>Puoi anche farlo <a href="https://docs.netapp.com/us-en/active-iq/task-informed-decisions-based-on-cloud-recommendations.html#tiering" target="_blank" rel="noopener">"Visualizzazione delle informazioni di tiering per un cluster di Digital Advisor"</a> Se hai familiarità con questo prodotto NetApp. Seleziona <strong>Cloud Recommendations</strong> dal riquadro di navigazione a sinistra.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_aiq_fabricpool_info.png" alt="Una schermata che mostra le informazioni FabricPool per un cluster utilizzando FabricPool Advisor di Digital Advisor."></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tiering-dei-dati-da-volumi-aggiuntivi">Tiering dei dati da volumi aggiuntivi</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Impostare il tiering dei dati per volumi aggiuntivi in qualsiasi momento, ad esempio dopo la creazione di un nuovo volume.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-tiering/images/tip.svg" alt="Suggerimento">
+</td>
+<td class="content">
+Non è necessario configurare lo storage a oggetti perché è già stato configurato durante la configurazione iniziale del tiering per il cluster. ONTAP eseguirà il tiering dei dati inattivi da eventuali volumi aggiuntivi nello stesso archivio di oggetti.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Dal menu di navigazione a sinistra, selezionare <strong>mobilità &gt; Tiering</strong>.</p>
+</li>
+<li>
+<p>Dalla pagina <strong>Clusters</strong>, fare clic su <strong>Tier Volumes</strong> per il cluster.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_tier_volumes_button.png" alt="Una schermata che mostra come selezionare il pulsante Tier Volumes per un cluster."></span></p>
+</div>
+</li>
+<li>
+<p>Nella pagina <em>Tier Volumes</em>, selezionare i volumi per i quali si desidera configurare il tiering e avviare la pagina Tiering Policy:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Per selezionare tutti i volumi, selezionare la casella nella riga del titolo (<span class="image"><img src="./media/button_backup_all_volumes.png" alt=""></span>) E fare clic su <strong>Configure Volumes</strong> (Configura volumi).</p>
+</li>
+<li>
+<p>Per selezionare più volumi, selezionare la casella relativa a ciascun volume (<span class="image"><img src="./media/button_backup_1_volume.png" alt=""></span>) E fare clic su <strong>Configure Volumes</strong> (Configura volumi).</p>
+</li>
+<li>
+<p>Per selezionare un singolo volume, fare clic sulla riga (o. <span class="image"><img src="./media/screenshot_edit_icon.gif" alt="icona modifica matita"></span> ) per il volume.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_tier_volumes.png" alt="Una schermata che mostra come selezionare un singolo volume, più volumi o tutti i volumi e il pulsante Modify Selected Volumes (Modifica volumi selezionati)."></span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Nella finestra di dialogo <em>Tiering Policy</em>, selezionare una policy di tiering, regolare i giorni di raffreddamento per i volumi selezionati e fare clic su <strong>Apply</strong> (Applica).</p>
+<div class="paragraph">
+<p><a href="concept-cloud-tiering.html#volume-tiering-policies">"Scopri di più sulle policy di tiering dei volumi e sui giorni di raffreddamento"</a>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_policy_settings.png" alt="Una schermata che mostra le impostazioni dei criteri di tiering configurabili."></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Risultato</div>
+<p>I volumi selezionati iniziano a disporre dei dati su più livelli nel cloud.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="modifica-della-policy-di-tiering-di-un-volume">Modifica della policy di tiering di un volume</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La modifica del criterio di tiering per un volume modifica il modo in cui ONTAP esegue il tiering dei dati cold in storage a oggetti. La modifica inizia dal momento in cui si modifica la policy. Cambia solo il comportamento di tiering successivo per il volume, non sposta retroattivamente i dati nel Tier cloud.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Dal menu di navigazione a sinistra, selezionare <strong>mobilità &gt; Tiering</strong>.</p>
+</li>
+<li>
+<p>Dalla pagina <strong>Clusters</strong>, fare clic su <strong>Tier Volumes</strong> per il cluster.</p>
+</li>
+<li>
+<p>Fare clic sulla riga di un volume, selezionare una policy di tiering, regolare i giorni di raffreddamento e fare clic su <strong>Apply</strong> (Applica).</p>
+<div class="paragraph">
+<p><a href="concept-cloud-tiering.html#volume-tiering-policies">"Scopri di più sulle policy di tiering dei volumi e sui giorni di raffreddamento"</a>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_policy_settings.png" alt="Una schermata che mostra le impostazioni dei criteri di tiering configurabili."></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Nota:</strong> se vengono visualizzate le opzioni per il "Retrieve Tiered Data", vedere <a href="#migrazione-dei-dati-dal-livello-cloud-al-livello-di-performance">Migrazione dei dati dal livello cloud al livello di performance</a> per ulteriori informazioni.</p>
+</div>
+<div class="paragraph">
+<div class="title">Risultato</div>
+<p>La policy di tiering viene modificata e i dati iniziano a essere tierati in base alla nuova policy.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="modifica-della-larghezza-di-banda-della-rete-disponibile-per-caricare-i-dati-inattivi-nello-storage-a-oggetti">Modifica della larghezza di banda della rete disponibile per caricare i dati inattivi nello storage a oggetti</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Quando si attiva il tiering BlueXP per un cluster, per impostazione predefinita, ONTAP può utilizzare una quantità illimitata di larghezza di banda per trasferire i dati inattivi dai volumi nell'ambiente di lavoro allo storage a oggetti. Se si nota che il traffico di tiering influisce sui normali carichi di lavoro degli utenti, è possibile ridurre la larghezza di banda della rete utilizzata durante il trasferimento. È possibile scegliere un valore compreso tra 1 e 10,000 Mbps come velocità di trasferimento massima.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dal menu di navigazione a sinistra, selezionare <strong>mobilità &gt; Tiering</strong>.</p>
+</li>
+<li>
+<p>Nella pagina <strong>Clusters</strong>, fare clic sull'icona del menu <span class="image"><img src="./media/icon-action.png" alt="Icona delle azioni"></span> Per un cluster e selezionare <strong>velocità di trasferimento massima</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_transfer_rate_button.png" alt="Schermata che mostra la selezione del pulsante Maximum Transfer Rate (velocità di trasferimento massima) dalla pagina Clusters (Clusters)."></span></p>
+</div>
+</li>
+<li>
+<p>Nella pagina <em>Maximum transfer rate</em>, selezionare il pulsante di opzione <strong>Limited</strong> e immettere la larghezza di banda massima utilizzabile oppure selezionare <strong>Unlimited</strong> per indicare che non vi sono limiti. Quindi fare clic su <strong>Apply</strong> (Applica).</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_transfer_rate.png" alt="Schermata della finestra di dialogo Maximum Transfer Rate (velocità di trasferimento massima) per un cluster."></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Questa impostazione non influisce sulla larghezza di banda allocata ad altri cluster che eseguono il tiering dei dati.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="scarica-un-report-di-tiering-per-i-tuoi-volumi">Scarica un report di tiering per i tuoi volumi</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>È possibile scaricare un report della pagina Tier Volumes per esaminare lo stato di tiering di tutti i volumi nei cluster che si stanno gestendo. Fare clic su <span class="image"><img src="./media/button_download.png" alt="Scarica"></span> pulsante. BlueXP Tiering genera un file .CSV che è possibile rivedere e inviare ad altri gruppi in base alle necessità. Il file .CSV include fino a 10,000 righe di dati.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_report_download.png" alt="Una schermata che mostra come generare un file CSV che elenca lo stato di tiering di tutti i volumi."></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="migrazione-dei-dati-dal-livello-cloud-al-livello-di-performance">Migrazione dei dati dal livello cloud al livello di performance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I dati a più livelli accessibili dal cloud possono essere "ripristinati" e spostati di nuovo al livello di performance. Tuttavia, se si desidera promuovere in modo proattivo i dati nel Tier di performance dal Tier cloud, è possibile farlo nella finestra di dialogo <em>Tiering Policy</em>. Questa funzionalità è disponibile quando si utilizza ONTAP 9.8 e versioni successive.</p>
+</div>
+<div class="paragraph">
+<p>È possibile farlo se si desidera interrompere l'utilizzo del tiering su un volume o se si decide di mantenere tutti i dati utente sul Tier di performance, mantenendo le copie Snapshot sul Tier cloud.</p>
+</div>
+<div class="paragraph">
+<p>Sono disponibili due opzioni:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 21.5686%;">
+<col style="width: 44.1176%;">
+<col style="width: 34.3138%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Opzione</th>
+<th class="tableblock halign-left valign-top">Descrizione</th>
+<th class="tableblock halign-left valign-top">Influenza sulla policy di tiering</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Riportare tutti i dati</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recupera tutti i dati dei volumi e le copie Snapshot a più livelli nel cloud e li promuove al livello di performance.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La policy di tiering viene modificata in "No policy".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ripristinare il file system attivo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recupera solo i dati del file system attivi a più livelli nel cloud e li promuove al livello di performance (le copie Snapshot rimangono nel cloud).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La policy di tiering viene modificata in "Cold Snapshot".</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-tiering/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+In base alla quantità di dati trasferiti fuori dal cloud, il tuo cloud potrebbe addebitare un costo.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<div class="title">Fasi</div>
+<p>Assicurarsi di disporre di spazio sufficiente nel Tier delle performance per tutti i dati spostati di nuovo dal cloud.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dal menu di navigazione a sinistra, selezionare <strong>mobilità &gt; Tiering</strong>.</p>
+</li>
+<li>
+<p>Dalla pagina <strong>Clusters</strong>, fare clic su <strong>Tier Volumes</strong> per il cluster.</p>
+</li>
+<li>
+<p>Fare clic su <span class="image"><img src="./media/screenshot_edit_icon.gif" alt="icona di modifica che viene visualizzata alla fine di ogni riga della tabella per i volumi di tiering"></span> Per il volume, scegliere l'opzione di recupero che si desidera utilizzare e fare clic su <strong>Apply</strong> (Applica).</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_policy_settings_with_retrieve.png" alt="Una schermata che mostra le impostazioni dei criteri di tiering configurabili."></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Risultato</div>
+<p>La policy di tiering viene modificata e i dati a più livelli iniziano a essere trasferiti di nuovo al Tier di performance. A seconda della quantità di dati nel cloud, il processo di trasferimento potrebbe richiedere del tempo.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="gestione-delle-impostazioni-di-tiering-sugli-aggregati">Gestione delle impostazioni di tiering sugli aggregati</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ogni aggregato dei sistemi ONTAP on-premise dispone di due impostazioni che è possibile regolare: La soglia di fullness del tiering e l'attivazione del reporting dei dati inattivi.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Soglia di fullness tiering</dt>
+<dd>
+<p>Impostando la soglia su un numero inferiore, si riduce la quantità di dati da memorizzare nel Tier di performance prima di eseguire il tiering. Questo potrebbe essere utile per grandi aggregati che contengono pochi dati attivi.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Impostando la soglia su un numero più elevato, si aumenta la quantità di dati da memorizzare nel Tier di performance prima di eseguire il tiering. Questo potrebbe essere utile per le soluzioni progettate per il Tier solo quando gli aggregati sono quasi alla capacità massima.</p>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Reporting dei dati inattivi</dt>
+<dd>
+<p>Il reporting dei dati inattivi (IDR) utilizza un periodo di raffreddamento di 31 giorni per determinare quali dati sono considerati inattivi. La quantità di dati cold a più livelli dipende dalle policy di tiering impostate sui volumi. Questa quantità potrebbe essere diversa dalla quantità di dati cold rilevata dall'IDR utilizzando un periodo di raffreddamento di 31 giorni.</p>
+<div class="openblock">
+<div class="content">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-tiering/images/tip.svg" alt="Suggerimento">
+</td>
+<td class="content">
+È meglio mantenere l'IDR abilitato perché aiuta a identificare i dati inattivi e le opportunità di risparmio. IDR deve rimanere abilitato se il tiering dei dati è stato attivato su un aggregato.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Dalla pagina <strong>Clusters</strong>, fare clic su <strong>Advanced setup</strong> (Configurazione avanzata) per il cluster selezionato.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_advanced_setup_button.png" alt="Una schermata che mostra il pulsante Advanced Setup (Configurazione avanzata) per un cluster."></span></p>
+</div>
+</li>
+<li>
+<p>Dalla pagina Advanced Setup (Configurazione avanzata), fare clic sull'icona del menu dell'aggregato e selezionare <strong>Modify aggregate</strong> (Modifica aggregato).</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_modify_aggr.png" alt="Una schermata che mostra l'opzione Modify aggregate (Modifica aggregato) per un aggregato."></span></p>
+</div>
+</li>
+<li>
+<p>Nella finestra di dialogo visualizzata, modificare la soglia di fullness e scegliere se attivare o disattivare il reporting dei dati inattivi.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_modify_aggregate.png" alt="Una schermata che mostra un dispositivo di scorrimento per modificare la soglia di fullness del tiering e un pulsante per attivare o disattivare il reporting dei dati inattivi."></span></p>
+</div>
+</li>
+<li>
+<p>Fare clic su <strong>Apply</strong> (Applica).</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="correzione-dello-stato-operativo">Correzione dello stato operativo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Possono verificarsi errori. Quando lo fanno, il tiering BlueXP visualizza uno stato di integrità operativo "non riuscito" sul pannello di controllo del cluster. Lo stato di salute riflette lo stato del sistema ONTAP e di BlueXP.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Identificare tutti i cluster con stato operativo "Failed" (guasto).</p>
+</li>
+<li>
+<p>Passare il mouse sull'icona informativa "i" per visualizzare il motivo del guasto.</p>
+</li>
+<li>
+<p>Correggere il problema:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Verificare che il cluster ONTAP sia operativo e che disponga di una connessione in entrata e in uscita con il provider di storage a oggetti.</p>
+</li>
+<li>
+<p>Verificare che BlueXP disponga di connessioni in uscita al servizio di tiering BlueXP, all'archivio di oggetti e ai cluster ONTAP che rileva.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rilevamento-di-cluster-aggiuntivi-da-bluexp-tiering">Rilevamento di cluster aggiuntivi da BlueXP Tiering</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>È possibile aggiungere i cluster ONTAP on-premise non rilevati a BlueXP dalla pagina <em>cluster</em> di tiering in modo da abilitare il tiering per il cluster.</p>
+</div>
+<div class="paragraph">
+<p>Si noti che i pulsanti vengono visualizzati anche nella pagina _dashboard on-Prem di Tiering per individuare altri cluster.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Da BlueXP Tiering, fare clic sulla scheda <strong>Clusters</strong>.</p>
+</li>
+<li>
+<p>Per visualizzare i cluster non rilevati, fare clic su <strong>Mostra cluster non rilevati</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_show_undiscovered_cluster.png" alt="Una schermata che mostra il pulsante Show Undiscovered Clusters (Mostra cluster non rilevati) nella dashboard di tiering."></span></p>
+</div>
+<div class="paragraph">
+<p>Se le credenziali NSS vengono salvate in BlueXP, i cluster dell'account vengono visualizzati nell'elenco.</p>
+</div>
+<div class="paragraph">
+<p>Se le credenziali NSS non vengono salvate in BlueXP, viene richiesto di aggiungere le credenziali prima di visualizzare i cluster non rilevati.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_discover_cluster.png" alt="Una schermata che mostra come individuare un cluster esistente da aggiungere a BlueXP e alla dashboard di tiering."></span></p>
+</div>
+</li>
+<li>
+<p>Fare clic su <strong>Discover Cluster</strong> per il cluster che si desidera gestire tramite BlueXP e implementare il tiering dei dati.</p>
+</li>
+<li>
+<p>Nella pagina <em>Cluster Details</em>, inserire la password per l'account utente admin e fare clic su <strong>Discover</strong>.</p>
+<div class="paragraph">
+<p>Tenere presente che l'indirizzo IP di gestione del cluster viene compilato in base alle informazioni dell'account NSS.</p>
+</div>
+</li>
+<li>
+<p>Nella pagina <em>Dettagli e credenziali</em> il nome del cluster viene aggiunto come nome dell'ambiente di lavoro, quindi fare clic su <strong>Go</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Risultato</div>
+<p>BlueXP rileva il cluster e lo aggiunge a un ambiente di lavoro in Canvas utilizzando il nome del cluster come nome dell'ambiente di lavoro.</p>
+</div>
+<div class="paragraph">
+<p>È possibile attivare il servizio di tiering o altri servizi per questo cluster nel pannello di destra.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cerca-un-cluster-in-tutti-i-connettori-bluexp">Cerca un cluster in tutti i connettori BlueXP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Se si utilizzano più connettori per gestire tutto lo storage nel proprio ambiente, alcuni cluster in cui si desidera implementare la creazione di livelli potrebbero trovarsi in un altro connettore. Se non sai con certezza quale connettore gestisce un determinato cluster, puoi cercare in tutti i connettori utilizzando il tiering BlueXP.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Nella barra dei menu del tiering BlueXP, fai clic sul menu azione e seleziona <strong>Cerca cluster in tutti i connettori</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_search%20for_cluster.png" alt="Uno screenshot che mostra come cercare un cluster che potrebbe trovarsi in uno dei tuoi connettori BlueXP."></span></p>
+</div>
+</li>
+<li>
+<p>Nella finestra di dialogo Ricerca visualizzata, immettere il nome del cluster e fare clic su <strong>Cerca</strong>.</p>
+<div class="paragraph">
+<p>Il tiering di BlueXP visualizza il nome del connettore, se riesce a trovare il cluster.</p>
+</div>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#switch-between-connectors" target="_blank" rel="noopener">"Passare al connettore e configurare il tiering per il cluster"</a>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/it-it/bluexp-tiering/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/it-it/bluexp-tiering/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">In questa pagina</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2024 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Condizioni per l'utilizzo</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Direttiva sulla privacy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Direttiva sui cookie</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Impostazioni cookie</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">Invia feedback su questa pagina</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/it-it/bluexp-tiering/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/it-it/bluexp-tiering/js/prism.js'></script>
+      <script type="text/javascript" src='/it-it/bluexp-tiering/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/it-it/bluexp-tiering/js/ie-tabbed-blocks.js'></script>
+    <script src='/it-it/bluexp-tiering/js/ie-sidebar.js'></script>
+  </body>
+
+</html>
