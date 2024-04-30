@@ -1416,4 +1416,26 @@
   <block id="17c353c0dd208c819d731350ef2b1300" category="paragraph">Quando configuri il tiering dei dati in AWS dai sistemi ONTAP on-premise, il tiering di BlueXP utilizza automaticamente la classe di storage _Standard_ per i dati inattivi. BlueXP Tiering può applicare una regola del ciclo di vita in modo che i dati transitino dalla classe di storage _Standard_ a un'altra classe di storage dopo un certo numero di giorni. È possibile scegliere tra le seguenti classi di storage:</block>
   <block id="d59e0b46782e48a01966e5c7ccc38d17" category="paragraph">NetApp utilizza Microsoft Entra ID come provider di identità per i servizi di autenticazione specifici per il supporto e la licenza.</block>
   <block id="36a7f0d732c9746e546a6bf227b6a550" category="summary">Il tiering di BlueXP estende il data center nel cloud eseguendo automaticamente il tiering dei dati inattivi dai cluster ONTAP on-premise allo storage a oggetti.</block>
+  <block id="91770f038cd944a1d3b9b347edeb2b10" category="sidebar">Novità</block>
+  <block id="2081f1ce1d1b21d487730d917f2fc133" category="sidebar">Eseguire il Tier on-premise dei dati ONTAP nel cloud</block>
+  <block id="9c24075097cef2efbfa6d34acbbb775d" category="sidebar">Tier to Azure Blob</block>
+  <block id="a62425c23786654b084b1fbadf9c41f1" category="sidebar">Tier to Google Cloud</block>
+  <block id="932b49a2d53968bfae607cb915ef9ec2" category="sidebar">Tier to generic S3</block>
+  <block id="6efa402b5baeb2ad1984997697bc2d7b" category="sidebar">Gestire le impostazioni di tiering</block>
+  <block id="4f5b5f1d13dfc896b9f5faa0807d8a6c" category="sidebar">Modificare la policy di tiering di un volume</block>
+  <block id="00e64b31a7ad3617adbda7547414223a" category="sidebar">Esaminare le informazioni di tiering per un cluster</block>
+  <block id="34698ad735e6046f93fbdd61cb2d3804" category="sidebar">Dati Tier da volumi aggiuntivi</block>
+  <block id="e1c9950bf8922ee7b7ee2dc803696a6a" category="sidebar">Modificare la larghezza di banda per caricare i dati inattivi nello storage a oggetti</block>
+  <block id="004509d192f15716a8c5185cda0cc0da" category="sidebar">Spostare di nuovo i dati dal cloud al Tier di performance</block>
+  <block id="b19237098460d786516168b98687becc" category="sidebar">Gestire le impostazioni di tiering sugli aggregati</block>
+  <block id="44e298753e2ff93996d0e8ffa928a922" category="sidebar">Aggiungere un nuovo archivio di oggetti per un cluster</block>
+  <block id="f479e40bc5b0a3dc9ce1b1c43ebdec89" category="sidebar">Aggiungere un secondo archivio di oggetti a un aggregato per il mirroring</block>
+  <block id="07ed437d90cdfd3243fc6c8fa8ddacff" category="sidebar">Sostituire l'archivio di oggetti primario e mirror</block>
+  <block id="500c3424a2151541a2d7783c7e308bb5" category="sidebar">Rimuovere un archivio di oggetti mirror</block>
+  <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">Blog e community</block>
+  <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">Community NetApp</block>
+  <block id="10fd54f4214c20c0fb0c8174413e67e6" category="sidebar">Blog BlueXP Tiering</block>
+  <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">Webinar sul cloud</block>
+  <block id="4c7d5d7dfde4a7bd82b54348182043d3" category="sidebar">Altre risorse</block>
+  <block id="e4f8a35ee8df8b5c247f6e3286e42891" category="sidebar">Casi di utilizzo di BlueXP</block>
 </blocks>
