@@ -272,5 +272,5 @@ image:screenshot_tiering_search for_cluster.png["Uno screenshot che mostra come 
 +
 Il tiering di BlueXP visualizza il nome del connettore, se riesce a trovare il cluster.
 
-. https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#switch-between-connectors["Passare al connettore e configurare il tiering per il cluster"^].
+. https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors["Passare al connettore e configurare il tiering per il cluster"^].
 

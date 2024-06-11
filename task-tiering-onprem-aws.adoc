@@ -272,7 +272,7 @@ Se si utilizza la porta 443 (HTTPS) per la comunicazione con l'endpoint privato,
 +
 image:screenshot_endpoint_dns_aws_console.png["Una schermata del nome DNS dell'endpoint VPC dalla console AWS."]
 
-. Ottenere il certificato dall'endpoint VPC S3. Lo fai entro https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["Accesso alla macchina virtuale che ospita BlueXP Connector"^] ed eseguire il seguente comando. Quando si immette il nome DNS dell'endpoint, aggiungere "bucket" all'inizio, sostituendo "*":
+. Ottenere il certificato dall'endpoint VPC S3. Lo fai entro https://docs.netapp.com/us-en/bluexp-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm["Accesso alla macchina virtuale che ospita BlueXP Connector"^] ed eseguire il seguente comando. Quando si immette il nome DNS dell'endpoint, aggiungere "bucket" all'inizio, sostituendo "*":
 +
 [source, text]
 ----

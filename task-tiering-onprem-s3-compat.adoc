@@ -138,8 +138,8 @@ Queste chiavi di accesso devono essere associate a un utente che dispone delle s
 Per eseguire il Tier dei dati nel cloud è necessario un connettore. Quando si esegue il tiering dei dati su storage a oggetti compatibile con S3, è necessario che un connettore sia disponibile in sede. È necessario installare un nuovo connettore o assicurarsi che il connettore attualmente selezionato risieda on-premise.
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Scopri di più sui connettori"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["Installazione di un connettore su un host Linux"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html["Passaggio da un connettore all'altro"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Installazione e configurazione di un connettore on-premise"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors["Passare da un connettore all'altro"^]
 
 
 
