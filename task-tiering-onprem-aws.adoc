@@ -211,7 +211,7 @@ NOTE: Se stai pensando di configurare il tiering BlueXP per utilizzare una class
 ** Confermare https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html#iam-policies["Queste autorizzazioni S3"^] Fanno parte del ruolo IAM che fornisce al connettore le autorizzazioni. Dovrebbero essere stati inclusi per impostazione predefinita al momento della prima implementazione del connettore. In caso contrario, è necessario aggiungere eventuali autorizzazioni mancanti. Vedere https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["Documentazione AWS: Modifica delle policy IAM"^] per istruzioni.
 ** Il bucket predefinito creato dal tiering di BlueXP ha un prefisso di "fabric-pool". Se si desidera utilizzare un prefisso diverso per il bucket, è necessario personalizzare le autorizzazioni con il nome che si desidera utilizzare. Nelle autorizzazioni S3 viene visualizzata una riga `"Resource": ["arn:aws:s3:::fabric-pool*"]`. Sarà necessario modificare "fabric-pool" con il prefisso che si desidera utilizzare. Ad esempio, se si desidera utilizzare "tiering-1" come prefisso per i bucket, si modificherà questa riga in `"Resource": ["arn:aws:s3:::tiering-1*"]`.
 +
-Se vuoi utilizzare un prefisso diverso per i bucket che userai per cluster aggiuntivi in questo stesso account BlueXP, puoi aggiungere un'altra linea con il prefisso per gli altri bucket. Ad esempio:
+Se si desidera utilizzare un prefisso diverso per i bucket da utilizzare per cluster aggiuntivi in questa stessa organizzazione BlueXP , è possibile aggiungere un'altra riga con il prefisso per altri bucket. Ad esempio:
 
 +
 `"Resource": ["arn:aws:s3:::tiering-1*"]`

@@ -19,7 +19,7 @@ Una versione di prova gratuita di 30 giorni del tiering BlueXP inizia quando si 
 Alcune note prima di leggere ulteriori informazioni:
 
 * Se hai già sottoscritto l'abbonamento BlueXP (PAYGO) nel mercato del tuo cloud provider, sei automaticamente iscritto al tiering BlueXP anche per i sistemi ONTAP on-premise. Verrà visualizzato un abbonamento attivo nella scheda BlueXP Tiering *on-premise dashboard*. Non dovrai più iscriverti. Nel portafoglio digitale BlueXP viene visualizzato un abbonamento attivo.
-* La licenza di tiering BYOL BlueXP (precedentemente nota come licenza "Cloud Tiering") è una licenza _floating_ che è possibile utilizzare in più cluster ONTAP on-premise nel proprio account BlueXP. Si tratta di un'operazione diversa (e molto più semplice) rispetto al passato in cui è stata acquistata una licenza _FabricPool_ per ciascun cluster.
+* La licenza di tiering BYOL BlueXP  (precedentemente nota come licenza "Tiering cloud") è una licenza _fluttuante_ che puoi utilizzare su più cluster ONTAP on-premise nella tua organizzazione BlueXP . Si tratta di un'operazione diversa (e molto più semplice) rispetto al passato in cui è stata acquistata una licenza _FabricPool_ per ciascun cluster.
 * Non sono previsti costi per il tiering dei dati a StorageGRID, pertanto non è richiesta alcuna licenza BYOL o registrazione PAYGO. Questi dati a più livelli non vengono conteggiati in relazione alla capacità acquistata nella licenza.
 
 
@@ -109,7 +109,7 @@ Al momento, i contratti annuali non sono supportati in caso di tiering in Google
 
 == Utilizzare una licenza BlueXP Tiering BYOL
 
-Le licenze Bring-Your-Own di NetApp offrono termini di 1, 2 o 3 anni. La licenza BYOL *BlueXP Tiering* (precedentemente nota come licenza "Cloud Tiering") è una licenza _mobile_ che è possibile utilizzare su più cluster ONTAP on-premise nel proprio account BlueXP. La capacità di tiering totale definita nella licenza di tiering BlueXP è condivisa tra *tutti* i cluster on-premise, semplificando il rinnovo e la licenza iniziale. La capacità minima per una licenza BYOL tiering inizia a 10 TIB.
+Le licenze Bring-Your-Own di NetApp offrono termini di 1, 2 o 3 anni. La licenza BYOL *BlueXP  Tiering* (precedentemente nota come licenza Cloud Tiering) è una licenza _floating_ che puoi utilizzare su più cluster ONTAP on-premise nella tua organizzazione BlueXP . La capacità di tiering totale definita nella licenza di tiering BlueXP è condivisa tra *tutti* i cluster on-premise, semplificando il rinnovo e la licenza iniziale. La capacità minima per una licenza BYOL tiering inizia a 10 TIB.
 
 Se non disponi di una licenza di tiering BlueXP, contattaci per acquistarne una:
 
@@ -163,26 +163,37 @@ Di seguito sono riportate alcune informazioni sulle due licenze:
 Dopo aver acquistato la licenza di tiering BlueXP, si attiva la licenza in BlueXP inserendo il numero di serie del tiering BlueXP e l'account NSS o caricando il file di licenza NLF. Se si prevede di utilizzare questo metodo, la procedura riportata di seguito mostra come ottenere il file di licenza NLF.
 
 .Prima di iniziare
-Prima di iniziare, è necessario disporre delle seguenti informazioni:
-
-* Numero di serie del tiering di BlueXP
-+
-Individua questo numero nell'ordine di vendita o contatta l'account team per ottenere queste informazioni.
-
-* ID account BlueXP
-+
-Puoi trovare il tuo ID account BlueXP selezionando l'elenco a discesa *account* nella parte superiore di BlueXP, quindi facendo clic su *Gestisci account* accanto all'account. L'ID account si trova nella scheda Panoramica.
-
-
+Ti servirà il numero di serie del tiering BlueXP . Individua questo numero nell'ordine di vendita o contatta l'account team per ottenere queste informazioni.
 
 .Fasi
+. Trova il tuo ID account BlueXP :
++
+.. Nella parte superiore destra della console di BlueXP , selezionare image:icon-settings-option.png["L'icona delle impostazioni che viene visualizzata nella parte superiore destra della console Web di BlueXP ."] > *Gestione identità e accessi*.
+.. Nella pagina Organizzazione, individuare l'ID account e copiarlo.
++
+Se non è elencato alcun ID account e si dispone solo di un ID organizzazione, sarà necessario copiare i primi otto caratteri dell'ID organizzazione e aggiungerlo a _account-_
+
++
+Ad esempio, supponiamo che si tratti dell'ID dell'organizzazione:
+
++
+ea10e1c6-80cc-4219-8e99-3c3e6b161ba5
+
++
+L'ID account è il seguente:
+
++
+account-ea10e1c6
+
+
+
 . Accedere a https://mysupport.netapp.com["Sito di supporto NetApp"^] E fare clic su *sistemi > licenze software*.
 . Inserire il numero di serie della licenza di tiering BlueXP.
 +
 image:screenshot_cloud_tiering_license_step1.gif["Una schermata che mostra una tabella di licenze dopo la ricerca per numero di serie."]
 
 . Nella colonna *chiave di licenza*, fare clic su *Ottieni file di licenza NetApp*.
-. Inserire l'ID account BlueXP (chiamato ID tenant sul sito di supporto) e fare clic su *Submit* (Invia) per scaricare il file di licenza.
+. Immettere l'ID account BlueXP  (chiamato ID tenant sul sito di supporto) e fare clic su *Invia* per scaricare il file di licenza.
 +
 image:screenshot_cloud_tiering_license_step2.gif["Una schermata che mostra la finestra di dialogo Get License (Ottieni licenza) in cui inserire l'ID tenant e fare clic su Submit (Invia) per scaricare il file di licenza."]
 
@@ -192,7 +203,7 @@ image:screenshot_cloud_tiering_license_step2.gif["Una schermata che mostra la fi
 
 === Aggiungi le licenze BlueXP Tiering BYOL al tuo account
 
-Dopo aver acquistato una licenza di tiering BlueXP per l'account BlueXP, è necessario aggiungere la licenza a BlueXP per utilizzare il servizio di tiering BlueXP.
+Dopo aver acquistato una licenza di tiering BlueXP , è necessario aggiungere la licenza a BlueXP  per utilizzare il servizio di tiering BlueXP .
 
 .Fasi
 . Fare clic su *Governance > Digital wallet > licenze servizi dati*.
