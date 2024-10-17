@@ -1,0 +1,15 @@
+= La scheda Licensing (licenze) è stata rimossa
+:allow-uri-read: 
+
+
+
+
+=== La scheda Licensing (licenze) è stata rimossa
+
+La scheda Licensing (licenze) è stata rimossa dall'interfaccia di tiering BlueXP. Tutte le licenze per gli abbonamenti pay-as-you-go (PAYGO) sono accessibili subito dal pannello di controllo on-premise di BlueXP Tiering. Da questa pagina è inoltre disponibile un collegamento al portafoglio digitale BlueXP, che consente di visualizzare e gestire qualsiasi tipo di licenza BYOL (Bring-Your-Own-licenses) BlueXP tiering.
+
+
+
+=== Le schede di tiering sono state rinominate e aggiornate
+
+La scheda "Clusters Dashboard" è stata rinominata "Clusters" e la scheda "on-Prem Overview" è stata rinominata "on-premise Dashboard". In queste pagine sono state aggiunte alcune informazioni utili per valutare se è possibile ottimizzare lo spazio di storage con una configurazione di tiering aggiuntiva.

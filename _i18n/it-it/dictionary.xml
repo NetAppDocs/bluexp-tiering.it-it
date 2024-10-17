@@ -687,10 +687,8 @@
   <block id="102787ed6297b34a7504b527e91d01d3" category="section-title">3 aprile 2023</block>
   <block id="2e79231a13ecf62585403e20da2dea4a" category="section-title">La scheda Licensing (licenze) è stata rimossa</block>
   <block id="6e3d9df489c437a2601f627a5b8935c9" category="paragraph">La scheda Licensing (licenze) è stata rimossa dall'interfaccia di tiering BlueXP. Tutte le licenze per gli abbonamenti pay-as-you-go (PAYGO) sono accessibili subito dal pannello di controllo on-premise di BlueXP Tiering. Da questa pagina è inoltre disponibile un collegamento al portafoglio digitale BlueXP, che consente di visualizzare e gestire qualsiasi tipo di licenza BYOL (Bring-Your-Own-licenses) BlueXP tiering.</block>
-  <block id="66a0b4752150538292b81c073ca0b83b" category="section-title">Le schede di tiering sono state rinominate e il contenuto è stato aggiornato</block>
   <block id="f6e3b39522072e9cb3b0ffb8cecf9b0b" category="paragraph">La scheda "Clusters Dashboard" è stata rinominata "Clusters" e la scheda "on-Prem Overview" è stata rinominata "on-premise Dashboard". In queste pagine sono state aggiunte alcune informazioni utili per valutare se è possibile ottimizzare lo spazio di storage con una configurazione di tiering aggiuntiva.</block>
   <block id="d0693e7bf28b7bbc94287cee0e4b0768" category="section-title">5 marzo 2023</block>
-  <block id="b92f2131d3d225c3c3327daaa8862624" category="section-title">Ora è possibile generare un report di tiering per i volumi</block>
   <block id="f86857f0a51fde5819da3a17258b5448" category="inline-link">Scopri come scaricare il report sul tiering</block>
   <block id="5c0fff562b33dc0a5a3acac30ed2d313" category="section-title">6 dicembre 2022</block>
   <block id="433c1ccd6c6d5af5fc78b729975e5f20" category="section-title">Modifiche degli endpoint di accesso a Internet in uscita del connettore</block>
@@ -702,19 +700,13 @@
   <block id="9e434ddc2ad4b9de005368b77254223d" category="cell">https://*.cloudmanager.cloud.netapp.com</block>
   <block id="37ba276f010f4ea07f1196b487811443" category="cell">https://*.api.bluexp.netapp.com</block>
   <block id="5a4346a01828d72104a6540080377b25" category="section-title">6 novembre 2022</block>
-  <block id="3afb7cae2b7c3e96c6a4e1df765d3dce" category="section-title">Trascinare e rilasciare per abilitare il tiering BlueXP su Azure Blob, Google Cloud Storage e StorageGRID</block>
   <block id="6586247c64ea3f20421ae518b26fc973" category="paragraph">Se la destinazione Azure Blob, Google Cloud Storage o StorageGRID Tiering esiste come ambiente di lavoro su Canvas, è possibile trascinare l'ambiente di lavoro on-premise ONTAP sulla destinazione per avviare la configurazione guidata del tiering.</block>
   <block id="ab288ae4b4c50ebb9a997e0f0debbd15" category="section-title">19 settembre 2022</block>
-  <block id="c3d7ada1f42d9b916dd8624c5b5661c1" category="section-title">La procedura guidata di tiering consente di configurare AWS PrivateLink quando si esegue il tiering sullo storage S3</block>
   <block id="905ecf204d0cf0b2ed497e63ae9324d0" category="inline-link">Configurare il sistema per una connessione privata utilizzando un'interfaccia endpoint VPC</block>
   <block id="883959b6b7ad90936b33d524655bc282" category="inline-link">Consulta i requisiti e i passaggi per il Tier dei dati inattivi su Amazon S3</block>
-  <block id="18cd1c130656412d8089667948bc48a2" category="section-title">Trascinare e rilasciare per abilitare il tiering BlueXP su Amazon S3</block>
   <block id="84b50dc471c57455cf0359ad021a8c58" category="paragraph">Se la destinazione del tiering Amazon S3 esiste come ambiente di lavoro su Canvas, è possibile trascinare l'ambiente di lavoro ONTAP on-premise sulla destinazione per avviare la configurazione guidata del tiering.</block>
-  <block id="bf482155aab691ba59a0313f5628cbba" category="section-title">Scegliere il comportamento del tiering quando si rimuove l'archivio di oggetti mirror in una configurazione MetroCluster</block>
   <block id="1f6fd3301ab6ce127efad422dec03d61" category="section-title">3 agosto 2022</block>
-  <block id="059c9f6829260507f53186d7191b058c" category="section-title">Possibilità di configurare archivi di oggetti aggiuntivi per altri aggregati nel cluster</block>
   <block id="aa18b7b04ae6143c1d2f56b72718403e" category="inline-link">Scopri di più sulla nuova funzionalità di storage a oggetti.</block>
-  <block id="5c10257d843c1a8aa9e46f55d2064835" category="section-title">Supporto delle licenze Cloud Tiering per le configurazioni MetroCluster</block>
   <block id="afacb33ad65bcd63eb15aeba04b4aed0" category="inline-link">Scopri come concedere in licenza e configurare questi tipi di cluster.</block>
   <block id="56e7e76078700fc13565626e04d55715" category="summary">Liberare spazio sui cluster ONTAP on-premise eseguendo il tiering dei dati inattivi su qualsiasi servizio di storage a oggetti che utilizza il protocollo S3 (Simple Storage Service).</block>
   <block id="6fcd419d9b16c5368ab2877625e80567" category="doc">Tiering dei dati dai cluster ONTAP on-premise allo storage a oggetti S3</block>
@@ -1249,10 +1241,8 @@
   <block id="2ebfeabed40c2270d9fa8325080a4b3e" category="paragraph">È necessario fornire l'account NSS in modo che BlueXP possa caricare la chiave di licenza e attivare l'abbonamento per il periodo di validità dell'acquisto. Sono inclusi gli aggiornamenti automatici per i rinnovi dei termini.</block>
   <block id="f5135b68b75a8404803a1eb438e40c5e" category="list-text">Aggiornamento del software Cloud Volumes ONTAP alla versione più recente</block>
   <block id="28acda3f8bdb20220a5658f1cd81f226" category="section-title">4 luglio 2023</block>
-  <block id="f955a076eeae4df4466469593ff635ca" category="section-title">Ora è possibile regolare la larghezza di banda utilizzata per caricare i dati inattivi nello storage a oggetti</block>
   <block id="d59048f21fd887ad520398ce677be586" category="inline-link">Scopri di più</block>
   <block id="1d59c82c13288b53f26d652175016f90" category="paragraph">Quando si attiva il tiering BlueXP, ONTAP può utilizzare una quantità illimitata di larghezza di banda di rete per trasferire i dati inattivi dai volumi nel cluster allo storage a oggetti. Se si nota che il traffico di tiering influisce sui normali carichi di lavoro degli utenti, è possibile ridurre la quantità di larghezza di banda che può essere utilizzata durante il trasferimento.<block ref="bd661c8ba5ce12ee5a1adc1010618597" category="inline-link-rx"></block>.</block>
-  <block id="eb516d1f8f028dbd0333948ae6fc06a5" category="section-title">L'evento di tiering per "tiering basso" viene visualizzato nel Centro notifiche</block>
   <block id="250f0923d20814211c14c5a6cd0e2643" category="paragraph">L'evento di tiering "Tiering additional data from cluster &lt;name&gt; to object storage to aumento your storage efficiency" viene ora visualizzato come notifica quando un cluster tiering meno del 20% dei suoi dati cold - compresi i cluster che non tierano dati.</block>
   <block id="3c23988fbf7c203a2c811a5ce84251c0" category="inline-link">Calcolo del costo totale di proprietà e del risparmio di BlueXP Tiering</block>
   <block id="57f9b94b395c8e293b7f892fe5995ac7" category="paragraph">Questa notifica è un "consiglio" per rendere i sistemi più efficienti e risparmiare sui costi di storage. Fornisce un collegamento a<block ref="c9d262883689ef94201e8739cb50c7f6" category="inline-link-rx"></block> per aiutarti a calcolare i risparmi sui costi.</block>
@@ -1341,7 +1331,6 @@
   <block id="c0e0b7ff0de9558404e9b77ece42948a" category="list-text">Selezionare *Gestione NSS &gt; Aggiungi account NSS*.</block>
   <block id="85b9386ed443776127e099931d73448a" category="list-text">Quando richiesto, selezionare *continua* per essere reindirizzato a una pagina di accesso Microsoft.</block>
   <block id="4bca0fdcdafed1e5f31435f4b19c8738" category="section-title">9 agosto 2023</block>
-  <block id="b839d32c555694a5245fa2fa33d17d88" category="section-title">Utilizzare un prefisso personalizzato per il nome del bucket in cui sono memorizzati i dati a più livelli</block>
   <block id="6eb4429639db75cb3b56cc38a3fb8785" category="paragraph">In passato era necessario utilizzare il prefisso predefinito "fabric-pool" per definire il nome del bucket, ad esempio _fabric-pool-bucket1_. Ora è possibile utilizzare un prefisso personalizzato per assegnare un nome al bucket. Questa funzionalità è disponibile solo con il tiering dei dati su Amazon S3.<block ref="3e8270d3bc816ce30c7c11fe6d073535" category="inline-link-rx"></block>.</block>
   <block id="6a3a27c0cd9c23985f6e8260846d58bc" category="paragraph">Se si utilizzano più connettori per gestire tutti i sistemi storage del proprio ambiente, alcuni cluster in cui si desidera implementare il tiering potrebbero trovarsi in diversi connettori. Se non sai con certezza quale connettore gestisce un determinato cluster, puoi cercare in tutti i connettori utilizzando il tiering BlueXP.<block ref="017b0207cc8469b6ea246adade89f8e1" category="inline-link-rx"></block>.</block>
   <block id="d441270e2d66b6759e1bbe07190e3d30" category="admonition">Se stai pensando di configurare il tiering BlueXP per utilizzare un Tier di accesso a costi inferiori a cui passeranno i dati in Tier dopo un determinato numero di giorni, non devi selezionare alcuna regola per il ciclo di vita durante la configurazione del container nell'account Azure. Il tiering di BlueXP gestisce le transizioni del ciclo di vita.</block>
@@ -1446,4 +1435,15 @@
   <block id="7134f9d87483badec2f2028b49510a11" category="list-text"><block ref="7134f9d87483badec2f2028b49510a11" category="inline-link-rx"></block></block>
   <block id="e611f8473aa031238f45b544d113b51c" category="list-text">Non è necessaria una licenza di tiering BlueXP  nell'organizzazione BlueXP , né una licenza FabricPool sul cluster ONTAP, durante il tiering dei dati su StorageGRID.</block>
   <block id="aca1d9b834f4ef7d5cdec1dd3d882bd0" category="paragraph">BlueXP  non invia alcuna e-mail per questa notifica.</block>
+  <block id="344a2fbdf46c3a4ef07e7c73566f42f3" category="section-title">Le schede di tiering sono state rinominate e aggiornate</block>
+  <block id="a4e53922ceec159164a3765ff05e1458" category="doc">Regolare la larghezza di banda per trasferire i dati inattivi</block>
+  <block id="904ea3c3aba6edae61ba696b01808a11" category="section-title">Evento di tiering visualizzato nel Centro notifiche</block>
+  <block id="101e8e97885c05702335faecd0fb3f50" category="doc">Utilizzare un prefisso personalizzato per il nome del bucket</block>
+  <block id="5f659aa043041b7c7bd07335ac62ca55" category="section-title">Genera un report di tiering per i volumi</block>
+  <block id="02a02728987c939621edc3e2dc71d234" category="section-title">Trascina e rilascia per abilitare il tiering in destinazioni aggiuntive</block>
+  <block id="dc7d0bd65a1626d3b5577529e98dab87" category="section-title">Configura AWS PrivateLink in fase di tiering su Amazon S3</block>
+  <block id="5b509c72bc50acb8c10c2952b7982420" category="section-title">Trascina e rilascia per abilitare il tiering su Amazon S3</block>
+  <block id="e183a98351b41fa6323d79a2f03c328c" category="section-title">Scegliere il comportamento di tiering quando si rimuove l'archivio di oggetti mirror</block>
+  <block id="847d8c6cf21c261bf367fb1c3c41bf62" category="section-title">Configurazione di archivi di oggetti aggiuntivi per altri aggregati</block>
+  <block id="ed16268923e9fecfd07bdd809ee9d213" category="section-title">Supporto di licenze per configurazioni MetroCluster</block>
 </blocks>

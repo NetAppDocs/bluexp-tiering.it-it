@@ -1,0 +1,17 @@
+= Regolare la larghezza di banda per trasferire i dati inattivi
+:allow-uri-read: 
+
+
+
+
+=== Regolare la larghezza di banda per trasferire i dati inattivi
+
+Quando si attiva il tiering BlueXP, ONTAP può utilizzare una quantità illimitata di larghezza di banda di rete per trasferire i dati inattivi dai volumi nel cluster allo storage a oggetti. Se si nota che il traffico di tiering influisce sui normali carichi di lavoro degli utenti, è possibile ridurre la quantità di larghezza di banda che può essere utilizzata durante il trasferimento. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#changing-the-network-bandwidth-available-to-upload-inactive-data-to-object-storage["Scopri di più"].
+
+
+
+=== Evento di tiering visualizzato nel Centro notifiche
+
+L'evento di tiering "Tiering additional data from cluster <name> to object storage to aumento your storage efficiency" viene ora visualizzato come notifica quando un cluster tiering meno del 20% dei suoi dati cold - compresi i cluster che non tierano dati.
+
+Questa notifica è un "consiglio" per rendere i sistemi più efficienti e risparmiare sui costi di storage. Fornisce un collegamento a https://bluexp.netapp.com/cloud-tiering-service-tco["Calcolo del costo totale di proprietà e del risparmio di BlueXP Tiering"^] per aiutarti a calcolare i risparmi sui costi.
