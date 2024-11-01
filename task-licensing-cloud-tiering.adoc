@@ -54,7 +54,8 @@ Iscriviti a BlueXP Tiering da AWS Marketplace per impostare un abbonamento pay-a
 Il seguente video mostra il processo:
 
 +
-video::video_subscribing_aws_tiering.mp4[width=848,height=480]
+.Iscriviti a BlueXP dal marketplace AWS
+video::096e1740-d115-44cf-8c27-b051011611eb[panopto]
 
 
 
@@ -72,7 +73,8 @@ Iscriviti a BlueXP Tiering da Azure Marketplace per impostare un abbonamento pay
 Il seguente video mostra il processo:
 
 +
-video::video_subscribing_azure_tiering.mp4[width=848,height=480]
+.Iscriviti a BlueXP da Azure Marketplace
+video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto]
 
 
 
@@ -90,7 +92,8 @@ Iscriviti al tiering di BlueXP da Google Cloud Marketplace per configurare un ab
 Il seguente video mostra il processo:
 
 +
-video::video_subscribing_gcp_tiering.mp4[width=848,height=480]
+.Iscriviti a BlueXP da Google Cloud Marketplace
+video::373b96de-3691-4d84-b3f3-b05101161638[panopto]
 
 
 

@@ -39,7 +39,7 @@ image:screenshot_tiering_cluster_info.png["Una schermata che mostra la capacità
 
 Si noti che il display è diverso per i sistemi Cloud Volumes ONTAP. Anche se i volumi Cloud Volumes ONTAP possono avere dati a più livelli nel cloud, non utilizzano il servizio di tiering BlueXP. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["Scopri come eseguire il tiering dei dati inattivi dai sistemi Cloud Volumes ONTAP allo storage a oggetti a basso costo"^].
 
-Puoi anche farlo https://docs.netapp.com/us-en/active-iq/task-informed-decisions-based-on-cloud-recommendations.html#tiering["Visualizzazione delle informazioni di tiering per un cluster di Digital Advisor"^] Se hai familiarità con questo prodotto NetApp. Seleziona *Cloud Recommendations* dal riquadro di navigazione a sinistra.
+È possibile anche https://docs.netapp.com/us-en/active-iq/task-informed-decisions-based-on-cloud-recommendations.html#tiering["Visualizzare le informazioni sul tiering per un cluster dal consulente digitale Active IQ (noto anche come consulente digitale)"^] se si ha familiarità con questo prodotto NetApp. Seleziona *Cloud Recommendations* dal riquadro di navigazione a sinistra.
 
 image:screenshot_tiering_aiq_fabricpool_info.png["Una schermata che mostra le informazioni FabricPool per un cluster utilizzando FabricPool Advisor di Digital Advisor."]
 

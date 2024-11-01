@@ -366,8 +366,6 @@
   <block id="49a9cad33eae2f6eb1fee50c9b94235c" category="paragraph">Potresti voler vedere la quantità di dati nel Tier cloud e la quantità di dati presenti sui dischi. In alternativa, è possibile visualizzare la quantità di dati hot e cold sui dischi del cluster. BlueXP Tiering fornisce queste informazioni per ogni cluster.</block>
   <block id="f493df8ab5710f59a3ed9742a507da2b" category="list-text">Esaminare i dettagli del cluster.</block>
   <block id="4d947fe0b5c4693f487f4fd1a4295c99" category="paragraph">Ecco un esempio:</block>
-  <block id="29fdfd7eb2f0e4bc1264e61841c1e15c" category="inline-link">Visualizzazione delle informazioni di tiering per un cluster di Digital Advisor</block>
-  <block id="4beb855fa991422619d33c99b74d1365" category="paragraph">Puoi anche farlo<block ref="ba21940cc7b1756c6b93b4daf8cfd4fb" category="inline-link-rx"></block> Se hai familiarità con questo prodotto NetApp. Seleziona *Cloud Recommendations* dal riquadro di navigazione a sinistra.</block>
   <block id="d80d78ee61a9d0887caddafbd12776c6" category="inline-image-macro">Una schermata che mostra le informazioni FabricPool per un cluster utilizzando FabricPool Advisor di Digital Advisor.</block>
   <block id="dc0605b8b2de4441cff5b013be511267" category="paragraph"><block ref="dc0605b8b2de4441cff5b013be511267" category="inline-image-macro-rx" type="image"></block></block>
   <block id="27df5f5776d4bab5bcdcfbdeafb746ca" category="section-title">Correzione dello stato operativo</block>
@@ -1446,4 +1444,9 @@
   <block id="e183a98351b41fa6323d79a2f03c328c" category="section-title">Scegliere il comportamento di tiering quando si rimuove l'archivio di oggetti mirror</block>
   <block id="847d8c6cf21c261bf367fb1c3c41bf62" category="section-title">Configurazione di archivi di oggetti aggiuntivi per altri aggregati</block>
   <block id="ed16268923e9fecfd07bdd809ee9d213" category="section-title">Supporto di licenze per configurazioni MetroCluster</block>
+  <block id="8ddd07f4c199accad92d619cc396eaef" category="video-title">Iscriviti a BlueXP dal marketplace AWS</block>
+  <block id="040832c90148c5bba767901a4a55ebe4" category="video-title">Iscriviti a BlueXP da Azure Marketplace</block>
+  <block id="c6e17aa071476599f5e5fc5b8bc42431" category="video-title">Iscriviti a BlueXP da Google Cloud Marketplace</block>
+  <block id="2e02ef063e4f9a11ed835693daa2e7d1" category="inline-link">Visualizzare le informazioni sul tiering per un cluster dal consulente digitale Active IQ (noto anche come consulente digitale)</block>
+  <block id="aac4751e2e50c3f9d64afc60244ec854" category="paragraph">È possibile anche<block ref="ab766f8aad1f1b4bf567a28cf12cabcb" category="inline-link-rx"></block> se si ha familiarità con questo prodotto NetApp. Seleziona *Cloud Recommendations* dal riquadro di navigazione a sinistra.</block>
 </blocks>
