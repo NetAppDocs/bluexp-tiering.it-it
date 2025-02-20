@@ -891,43 +891,7 @@
   <block id="a7bd9725f68ab51f56b292638f876d9b" category="cell">La configurazione e la gestione del tiering vengono eseguite tramite Gestore di sistema o l'interfaccia CLI di ONTAP.</block>
   <block id="84d29247572532708a78dd9938063ac5" category="cell">Una volta configurato, è possibile utilizzare il servizio di tiering senza licenza per 30 giorni utilizzando la versione di prova gratuita.</block>
   <block id="0f54a92e132940776f23febb26ca8ceb" category="cell">Una volta configurato, è possibile eseguire il Tier dei primi 10 TB di dati gratuitamente.</block>
-  <block id="316a7aed758eb7b043492e848b931117" category="section-title">Ottenere il file di licenza per il tiering BlueXP</block>
-  <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link">Sito di supporto NetApp</block>
-  <block id="80c4b6e3dfa1d4f33033585b7c74e7e9" category="list-text">Accedere a<block ref="fcc52edac3ce57829c48ee35d97a295d" category="inline-link-rx"></block> E fare clic su *sistemi &gt; licenze software*.</block>
-  <block id="9b1441120e66cf63798ba27aa3531664" category="list-text">Inserire il numero di serie della licenza di tiering BlueXP.</block>
-  <block id="5190e9ec018f5e661ec4b31ff1b34423" category="inline-image-macro">Una schermata che mostra una tabella di licenze dopo la ricerca per numero di serie.</block>
-  <block id="d15379b9f839ac6523d1b06ad8763875" category="paragraph"><block ref="d15379b9f839ac6523d1b06ad8763875" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="56273f3344c87fabbf5196fba9816fff" category="inline-image-macro">Una schermata che mostra la finestra di dialogo Get License (Ottieni licenza) in cui inserire l'ID tenant e fare clic su Submit (Invia) per scaricare il file di licenza.</block>
-  <block id="212f5a95c637538f9375d966345ca9f7" category="paragraph"><block ref="212f5a95c637538f9375d966345ca9f7" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1a8eb6c0b4ba023742d25f05dbe5273d" category="section-title">Aggiungi le licenze BlueXP Tiering BYOL al tuo account</block>
-  <block id="58db88b7cd0054a3b13ce2930a48dad9" category="list-text">Fare clic su *Governance &gt; Digital wallet &gt; licenze servizi dati*.</block>
-  <block id="ea9a2b9ac34c9aab133f21aa5b67976e" category="list-text">Fare clic su *Aggiungi licenza*.</block>
-  <block id="c1b2dc0798d3960e25b8a12c751f53ec" category="list-text">Nella finestra di dialogo _Add License_, inserire le informazioni sulla licenza e fare clic su *Add License*:</block>
-  <block id="80b8da08efcb9500667b0fc290bbe1f6" category="list-text">Se si dispone del numero di serie della licenza di tiering e si conosce l'account NSS, selezionare l'opzione *inserire il numero di serie* e immettere le informazioni desiderate.</block>
-  <block id="bae190eec3db4a0dd635ae72756acde8" category="inline-link">Aggiungere l'account NSS a BlueXP</block>
-  <block id="4488cc251929ad2c43c07191375ca26e" category="list-text">Se si dispone del file di licenza di tiering, selezionare l'opzione *Upload License file* (carica file di licenza) e seguire le istruzioni per allegare il file.</block>
-  <block id="6b4dd8f152b00922385ef0e152554720" category="inline-image-macro">Una schermata che mostra la pagina per aggiungere la licenza BYOL per il tiering BlueXP.</block>
-  <block id="0a54431ad29a96ceb71a9ab3f197983c" category="paragraph"><block ref="0a54431ad29a96ceb71a9ab3f197983c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="6b151ce754bba307afbfbdfbdb41717b" category="paragraph">BlueXP aggiunge la licenza in modo che il servizio di tiering BlueXP sia attivo.</block>
-  <block id="28b875681d54f556230ca5c52173e3df" category="section-title">Aggiornare una licenza BlueXP Tiering BYOL</block>
-  <block id="85884cbcf3bef3a960250a4bea4d78c9" category="paragraph">Se la durata della licenza è prossima alla data di scadenza, o se la capacità concessa in licenza sta raggiungendo il limite, verrà inviata una notifica in BlueXP Tiering.</block>
-  <block id="a257270f45c3400d010c6b64e1918bbc" category="inline-image-macro">Una schermata che mostra una licenza in scadenza nella pagina di tiering di BlueXP.</block>
-  <block id="823ff9e6c8c5bae175b237dc370d0f90" category="paragraph"><block ref="823ff9e6c8c5bae175b237dc370d0f90" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="01b47f7bb171f9330df8674ddf7b5762" category="paragraph">Questo stato viene visualizzato anche nella pagina del portafoglio digitale BlueXP.</block>
-  <block id="0553876f11122be0920f9fa9c803d152" category="inline-image-macro">Una schermata che mostra una licenza in scadenza nella pagina del portafoglio digitale BlueXP.</block>
-  <block id="be95aaa9ff9dad75f49bfadf917b8f70" category="paragraph"><block ref="be95aaa9ff9dad75f49bfadf917b8f70" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="0404c6f4bcf79c09ea3f68a74aa284df" category="paragraph">Puoi aggiornare la tua licenza di tiering BlueXP prima della scadenza, in modo da non interrompere la tua capacità di tiering dei dati nel cloud.</block>
-  <block id="0df47d96ab99d3765b297d66af42219e" category="list-text">Fare clic sull'icona della chat nell'angolo inferiore destro di BlueXP per richiedere un'estensione del termine o una capacità aggiuntiva della licenza di tiering BlueXP per il numero di serie specifico.</block>
-  <block id="b23b97d3c26b0f7e2265329756cea9ca" category="paragraph">Dopo aver pagato la licenza e averla registrata nel NetApp Support Site, BlueXP aggiorna automaticamente la licenza nel portafoglio digitale BlueXP e la pagina licenze servizi dati rifletterà la modifica tra 5 e 10 minuti.</block>
-  <block id="822f69d2e49d7da6f8c764e0680f2f75" category="list-text">Se BlueXP non riesce ad aggiornare automaticamente la licenza, sarà necessario caricare manualmente il file di licenza.</block>
-  <block id="b2b168bd64a341a85c749cb61bba40cb" category="inline-xref">Ottenere il file di licenza dal NetApp Support Site</block>
-  <block id="d7f004a77faee56e8076bcfdfa7b0560" category="list-text">È possibile <block ref="025fb98ec9c8a155e5ac365eabb828dc" category="inline-xref-macro-rx"></block>.</block>
   <block id="8f0a75d2d5a82f31f2cf069c3b0ee684" category="inline-image-macro">Icona Altro</block>
-  <block id="70196feeb01dc8dfdb5276a2398e60f9" category="list-text">Nella pagina del portafoglio digitale BlueXP della scheda _licenze servizi dati_, fare clic su <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> Per il numero di serie del servizio che si sta aggiornando, fare clic su *Aggiorna licenza*.</block>
-  <block id="3ce750f001c2369e23b68f3210d9f100" category="inline-image-macro">Schermata che mostra la selezione del pulsante Update License (Aggiorna licenza) per un determinato servizio.</block>
-  <block id="2bdb7af2b6613fafdba930fb09034d3f" category="paragraph"><block ref="2bdb7af2b6613fafdba930fb09034d3f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="41e921305ae1b027e5d364af4a2a9df2" category="list-text">Nella pagina _Update License_, caricare il file di licenza e fare clic su *Update License* (Aggiorna licenza).</block>
-  <block id="89e28d16ae270dfde9199b600dc87aa5" category="paragraph">BlueXP aggiorna la licenza in modo che il servizio di tiering BlueXP continui ad essere attivo.</block>
   <block id="9af45e6d474a73f991c4a2515264ca3c" category="section-title">Applicare le licenze di tiering BlueXP ai cluster in configurazioni speciali</block>
   <block id="ba4742e3fc97f92aee8dd17337d92765" category="paragraph">I cluster ONTAP nelle seguenti configurazioni possono utilizzare le licenze di tiering BlueXP, ma la licenza deve essere applicata in modo diverso rispetto ai cluster a nodo singolo, ai cluster configurati in ha, ai cluster nelle configurazioni di mirror di tiering e alle configurazioni MetroCluster che utilizzano il mirror di FabricPool:</block>
   <block id="04b39654e6e5a443553195d1e2779190" category="list-text">Cluster a più livelli per IBM Cloud Object Storage</block>
@@ -1208,7 +1172,6 @@
   <block id="994f1fa9f6b6f6276b10a9c8a8f18a8c" category="list-text">Il backup e il ripristino di BlueXP sono influenzati in modo analogo dai volumi impostati con un criterio di tiering.<block ref="2db919f88216e9376af16eec91019e18" category="inline-link-rx"></block>.</block>
   <block id="5f6fdb8f4b29baeb552fcdad9078be66" category="list-text">Se hai già sottoscritto l'abbonamento BlueXP (PAYGO) nel mercato del tuo cloud provider, sei automaticamente iscritto al tiering BlueXP anche per i sistemi ONTAP on-premise. Verrà visualizzato un abbonamento attivo nella scheda BlueXP Tiering *on-premise dashboard*. Non dovrai più iscriverti. Nel portafoglio digitale BlueXP viene visualizzato un abbonamento attivo.</block>
   <block id="1ba2cc4758ef6d9270d73cfc36a18caa" category="paragraph">Se si dispone di una licenza basata su nodo non assegnata per Cloud Volumes ONTAP che non si intende utilizzare, è possibile convertirla in una licenza di tiering BlueXP con la stessa equivalenza in dollari e la stessa data di scadenza.<block ref="f4c32a82791cf9fc58c736c0aed05092" category="inline-link-rx"></block>.</block>
-  <block id="30fc689a9c3cd4222329fe3a4c818a33" category="paragraph">Se il tuo account NetApp Support Site non è disponibile nell'elenco a discesa,<block ref="06a3bc9d474b5d4e44d1a2733cac785a" category="inline-link-rx"></block>.</block>
   <block id="509259be6d5e15d8959f705cbe0cbcc1" category="paragraph"><block ref="509259be6d5e15d8959f705cbe0cbcc1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0972db30d942fdb65d1732e6e84bde99" category="paragraph"><block ref="0972db30d942fdb65d1732e6e84bde99" category="inline-image-macro-rx" type="image"></block></block>
   <block id="cb6a777dd3c6e43b0dc441d38519d219" category="paragraph"><block ref="cb6a777dd3c6e43b0dc441d38519d219" category="inline-image-macro-rx" type="image"></block></block>
@@ -1275,9 +1238,6 @@
   <block id="b6d7a1ad9440cb7fff09db239b1313d7" category="paragraph">Questa impostazione non influisce sulla larghezza di banda allocata ad altri cluster che eseguono il tiering dei dati.</block>
   <block id="7911cbd17bf94032db18ecf08e4fe5c8" category="list-text">Completare le sezioni della pagina *Tiering Setup*:</block>
   <block id="fe35e262c448d76aba8db40105f10ae6" category="paragraph">Se si desidera, scegliere se utilizzare un AWS PrivateLink precedentemente configurato. <block ref="e6b15c4e63006b05802c430924113019" category="inline-xref-macro-rx"></block> Viene visualizzata una finestra di dialogo che aiuta a configurare l'endpoint.</block>
-  <block id="c52a9d7f6355ad24bacb2c5f23c0e863" category="paragraph">Dopo aver acquistato la licenza di tiering BlueXP, si attiva la licenza in BlueXP inserendo il numero di serie del tiering BlueXP e l'account NSS o caricando il file di licenza NLF. Se si prevede di utilizzare questo metodo, la procedura riportata di seguito mostra come ottenere il file di licenza NLF.</block>
-  <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">Prima di iniziare</block>
-  <block id="a6cfac773f21906007a8ddf407596067" category="list-text">Nella colonna *chiave di licenza*, fare clic su *Ottieni file di licenza NetApp*.</block>
   <block id="7fe6981833e8fe7fd89e0a99a55573da" category="list-text">In BlueXP, selezionare *Guida &gt; supporto*.</block>
   <block id="6a1b74969231967ed071d465206b15c7" category="list-text">Selezionare *Chiamateci* se si desidera parlare con qualcuno al telefono. Viene visualizzata una pagina su netapp.com che elenca i numeri di telefono che è possibile chiamare.</block>
   <block id="d65a2a6fc9caad1867728d4382eeb989" category="list-text">Selezionare *Crea un caso* per aprire un ticket con uno specialista del supporto NetApp:</block>
@@ -1407,18 +1367,6 @@
   <block id="98d90e398fc56688ddc647e5f49075ec" category="paragraph">L'elenco degli ambienti di lavoro rientra nell'ambito dell'organizzazione (o account), del progetto (o dell'area di lavoro) BlueXP  e del connettore selezionato nell'intestazione superiore del servizio.</block>
   <block id="0aac35c69d56f468c7891da9594e68be" category="list-text">La licenza di tiering BYOL BlueXP  (precedentemente nota come licenza "Tiering cloud") è una licenza _fluttuante_ che puoi utilizzare su più cluster ONTAP on-premise nella tua organizzazione BlueXP . Si tratta di un'operazione diversa (e molto più semplice) rispetto al passato in cui è stata acquistata una licenza _FabricPool_ per ciascun cluster.</block>
   <block id="7f58c7f218a280f56c54c444e1bb8411" category="paragraph">Le licenze Bring-Your-Own di NetApp offrono termini di 1, 2 o 3 anni. La licenza BYOL *BlueXP  Tiering* (precedentemente nota come licenza Cloud Tiering) è una licenza _floating_ che puoi utilizzare su più cluster ONTAP on-premise nella tua organizzazione BlueXP . La capacità di tiering totale definita nella licenza di tiering BlueXP è condivisa tra *tutti* i cluster on-premise, semplificando il rinnovo e la licenza iniziale. La capacità minima per una licenza BYOL tiering inizia a 10 TIB.</block>
-  <block id="0e48ab0bd412e2c6d662a3a4540397a0" category="paragraph">Ti servirà il numero di serie del tiering BlueXP . Individua questo numero nell'ordine di vendita o contatta l'account team per ottenere queste informazioni.</block>
-  <block id="e53331a3231a958d20a4871d8efc35d8" category="list-text">Trova il tuo ID account BlueXP :</block>
-  <block id="e0e8a7d90375792efecad34c0c923e32" category="inline-image-macro">L'icona delle impostazioni che viene visualizzata nella parte superiore destra della console Web di BlueXP .</block>
-  <block id="cd42e1c1af0a908f68d68ae6103b5c30" category="list-text">Nella parte superiore destra della console di BlueXP , selezionare <block ref="32173ab85f1c68a28384d1a40cf387db" category="inline-image-macro-rx" type="image"></block> &gt; *Gestione identità e accessi*.</block>
-  <block id="3bcef3f6238058ae825d608e1557c538" category="list-text">Nella pagina Organizzazione, individuare l'ID account e copiarlo.</block>
-  <block id="2bd8c9344d3768dd44b910db169ef1fa" category="paragraph">Se non è elencato alcun ID account e si dispone solo di un ID organizzazione, sarà necessario copiare i primi otto caratteri dell'ID organizzazione e aggiungerlo a _account-_</block>
-  <block id="14da2ef10b9e4cc4d0981b05fff98072" category="paragraph">Ad esempio, supponiamo che si tratti dell'ID dell'organizzazione:</block>
-  <block id="2740d3013330ec13ae7693ee76bc6509" category="paragraph">ea10e1c6-80cc-4219-8e99-3c3e6b161ba5</block>
-  <block id="6ffe1a2d88424dc37ba43bdf5999183e" category="paragraph">L'ID account è il seguente:</block>
-  <block id="c0b58edc6437b03c81d24f7ded6f3648" category="paragraph">account-ea10e1c6</block>
-  <block id="d4393f7d35eb6fcb480572ab5d418710" category="list-text">Immettere l'ID account BlueXP  (chiamato ID tenant sul sito di supporto) e fare clic su *Invia* per scaricare il file di licenza.</block>
-  <block id="921d59a1a10f4e2423dfe3d60997086a" category="paragraph">Dopo aver acquistato una licenza di tiering BlueXP , è necessario aggiungere la licenza a BlueXP  per utilizzare il servizio di tiering BlueXP .</block>
   <block id="29360bfcdbc91d3f1514c372b4585965" category="list-text">Registrazione del numero di serie dell'account BlueXP  (il numero di serie 960xxxxxxxxx a 20 cifre si trova nella pagina risorse di supporto di BlueXP ).</block>
   <block id="444b74bc81e823cc1c4c704219ad8ed3" category="section-title">Registrare BlueXP  per ricevere assistenza NetApp</block>
   <block id="b3bf31f8a918c712f26cdf493a908825" category="paragraph">Per registrarsi per ricevere assistenza e attivare i diritti di supporto, un utente dell'organizzazione (o account) BlueXP  deve associare un account del sito di supporto NetApp al proprio login BlueXP . La modalità di registrazione al supporto NetApp dipende dal fatto che si disponga già di un account NetApp Support Site (NSS).</block>
@@ -1449,4 +1397,8 @@
   <block id="c6e17aa071476599f5e5fc5b8bc42431" category="video-title">Iscriviti a BlueXP da Google Cloud Marketplace</block>
   <block id="2e02ef063e4f9a11ed835693daa2e7d1" category="inline-link">Visualizzare le informazioni sul tiering per un cluster dal consulente digitale Active IQ (noto anche come consulente digitale)</block>
   <block id="aac4751e2e50c3f9d64afc60244ec854" category="paragraph">È possibile anche<block ref="ab766f8aad1f1b4bf567a28cf12cabcb" category="inline-link-rx"></block> se si ha familiarità con questo prodotto NetApp. Seleziona *Cloud Recommendations* dal riquadro di navigazione a sinistra.</block>
+  <block id="936ae05f91caeb56b08682cd274bed64" category="section-title">Gestire le licenze di tiering di BlueXP </block>
+  <block id="1430b68e61364b237636f6f0ce8e282a" category="paragraph">Se il termine della licenza si avvicina alla data di scadenza o se la tua capacità concessa in licenza sta raggiungendo il limite, riceverai una notifica nel tiering BlueXP  e nel Digital Wallet.</block>
+  <block id="f59ab7df4b9fd3526a4fbed390f7fa9a" category="inline-link">Informazioni sulla gestione delle licenze nel Digital Wallet</block>
+  <block id="bdfa472a184585b4fa4633165dc44d15" category="paragraph">Puoi aggiornare le licenze esistenti, visualizzare lo stato della licenza e aggiungere nuove licenze tramite il Digital Wallet di BlueXP .<block ref="eb38d0c8186bca45da4435026f76609b" category="inline-link-rx"></block>.</block>
 </blocks>
