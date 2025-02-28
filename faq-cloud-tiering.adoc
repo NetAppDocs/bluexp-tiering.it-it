@@ -130,9 +130,9 @@ Sì. BlueXP Tiering consente di utilizzare una licenza BYOL, UN abbonamento PAYG
 
 
 
-=== Cosa succede se è stato raggiunto il limite di capacità BYOL?
+=== Cosa succede se ho raggiunto il limite di capacità BYOL o se la mia licenza BYOL scade?
 
-Se si raggiunge il limite di capacità BYOL, il tiering dei nuovi dati cold si interrompe. Tutti i dati su più livelli in precedenza rimangono accessibili, il che significa che è possibile recuperare e utilizzare questi dati. Una volta recuperati, questi dati vengono spostati di nuovo nel Tier di performance dal cloud.
+Se raggiungi il limite di capacità BYOL o se la tua licenza BYOL scade, il tiering dei nuovi dati cold si ferma, il tiering dei nuovi dati cold. Tutti i dati su più livelli in precedenza rimangono accessibili, il che significa che è possibile recuperare e utilizzare questi dati. Una volta recuperati, questi dati vengono spostati di nuovo nel Tier di performance dal cloud.
 
 Tuttavia, se disponi di un abbonamento al marketplace PAYGO per _BlueXP - Deploy & Manage Cloud Data Services_, i nuovi dati cold continueranno a essere suddivisi in livelli per lo storage a oggetti e pagherai per ciascun utilizzo.
 

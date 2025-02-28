@@ -63,7 +63,7 @@ Al termine della prova gratuita, è possibile pagare il tiering BlueXP tramite u
 
 [role="quick-margin-list"]
 * Per iscriversi ad AWS Marketplace, https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["Vai all'offerta BlueXP Marketplace"^], Fare clic su *Subscribe*, quindi seguire le istruzioni.
-* Per pagare utilizzando una licenza BlueXP Tiering BYOL, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contattaci se devi acquistarne una], quindi link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account["Aggiungilo al tuo account dal portafoglio digitale BlueXP"].
+* Per pagare utilizzando una licenza BYOL di tiering BlueXP , mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contattaci se devi acquistarne una], quindi link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Aggiungilo al tuo account dal portafoglio digitale BlueXP"].
 
 
 
