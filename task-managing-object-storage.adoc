@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-managing-object-storage.html 
-keywords: object storage, mirror object storage, create object storage, remove object storage, swap object storage, display object storage 
+keywords: object storage, mirror object storage, create object storage, remove object storage, swap object storage, display object storage, license 
 summary: Dopo aver configurato i cluster ONTAP on-premise per il Tier dei dati su uno storage a oggetti specifico, è possibile eseguire ulteriori attività di storage a oggetti. È possibile aggiungere nuovo storage a oggetti, eseguire il mirroring dei dati a livelli in uno storage a oggetti secondario, sostituire lo storage a oggetti primario e mirror, rimuovere un archivio a oggetti mirrorati da un aggregato e molto altro ancora. 
 ---
 = Gestione dello storage a oggetti utilizzato per il tiering dei dati
@@ -91,9 +91,9 @@ Ora è possibile collegare l'archivio di oggetti a un aggregato nel cluster.
 
 È possibile collegare un secondo archivio di oggetti a un aggregato per creare un mirror FabricPool per tierare i dati in modo sincrono a due archivi di oggetti. È necessario disporre di un archivio di oggetti già collegato all'aggregato. https://docs.netapp.com/us-en/ontap/fabricpool/create-mirror-task.html["Scopri di più sui mirror FabricPool"^].
 
-Quando si utilizza una configurazione MetroCluster, è consigliabile utilizzare archivi di oggetti nel cloud pubblico che si trovano in diverse zone di disponibilità. https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html["Scopri di più sui requisiti MetroCluster nella documentazione ONTAP"^].
+Quando si utilizza una configurazione MetroCluster, è Best practice utilizzare archivi di oggetti nel cloud pubblico che si trovano in zone di disponibilità diverse. https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html["Scopri di più sui requisiti MetroCluster nella documentazione ONTAP"^]. All'interno di un MetroCluster, si sconsiglia di utilizzare aggregati senza mirror, in modo da visualizzare un messaggio di errore.
 
-Si noti che quando si utilizza StorageGRID come archivio di oggetti in una configurazione MetroCluster, entrambi i sistemi ONTAP possono eseguire il tiering FabricPool su un singolo sistema StorageGRID. Ogni sistema ONTAP deve eseguire il Tier dei dati in diversi bucket.
+Se si utilizza StorageGRID come archivio di oggetti in una configurazione MetroCluster, entrambi i sistemi ONTAP possono eseguire il tiering FabricPool su un singolo sistema StorageGRID. Ogni sistema ONTAP deve eseguire il Tier dei dati in diversi bucket.
 
 .Fasi
 . Dalla pagina *Clusters*, fare clic su *Advanced setup* (Configurazione avanzata) per il cluster selezionato.

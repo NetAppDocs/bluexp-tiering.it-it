@@ -168,6 +168,12 @@ Per ottenere una stima, è sufficiente aggiungere il cluster ONTAP a BlueXP e is
 
 
 
+=== In che modo è possibile addebitare i costi del tiering quando si utilizza un ONTAP MetroCluster?
+
+Se utilizzato in ambienti MetroCluster, il tiering della capacità con licenza viene applicato ai bucket con mirroring in maniera uguale. Ad esempio, se hai una licenza per 100TiB TB di tiering, entrambi i bucket possono essere suddivisi in Tier fino a 100 TiB. Non è previsto alcun costo aggiuntivo per i secchi specchiati. Durante il tiering dagli aggregati senza mirror negli ambienti MetroCluster, la licenza di tiering BlueXP  viene applicata normalmente e viene utilizzata la capacità totale con tiering in entrambi i bucket. Ad esempio, se disponi di una licenza per 100TiB TB di tiering, entrambi i bucket possono essere sottoposti a tiering fino a 50TB TB.
+
+
+
 == ONTAP
 
 Le seguenti domande si riferiscono a ONTAP.

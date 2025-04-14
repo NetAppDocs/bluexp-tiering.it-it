@@ -208,7 +208,7 @@ Si noti che, poiché i dati vengono suddivisi in due diverse posizioni di storag
 Non configurare il tiering a questo punto.
 
 . link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license["Acquistare una licenza di tiering BlueXP"] per la capacità necessaria per il nuovo cluster o cluster.
-. In BlueXP, link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account["Aggiungere la licenza al portafoglio digitale BlueXP"].
+. In BlueXP , <<licenses,Aggiungere la licenza al portafoglio digitale BlueXP>>[aggiungere la licenza al portafoglio digitale di BlueXP ].
 . Nel tiering BlueXP, link:task-managing-tiering.html#discovering-additional-clusters-from-bluexp-tiering["scopri i nuovi cluster"].
 . Nella pagina Clusters, fare clic su image:screenshot_horizontal_more_button.gif["Icona Altro"] Per il cluster e selezionare *Deploy License*.
 +
