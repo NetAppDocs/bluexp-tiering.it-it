@@ -32,4 +32,61 @@ https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Scop
 
 == Aree Azure supportate
 
-BlueXP Tiering supporta il tiering per qualsiasi account storage in qualsiasi regione accessibile tramite il connettore.
+Il tiering di BlueXP  supporta le seguenti aree Azure. Le regioni Azure Cina non sono supportate come destinazioni per il tiering.
+
+
+
+=== Africa
+
+* Sud Africa, Nord
+
+
+
+
+=== Asia Pacifico
+
+* Australia Est
+* Australia sud-orientale
+* Asia orientale
+* Giappone Est
+* Giappone occidentale
+* Corea centrale
+* Corea del Sud
+* Sud-est asiatico
+
+
+
+
+=== Europa
+
+* Francia centrale
+* Germania Centro Ovest
+* Germania Nord
+* Nord Europa
+* Regno Unito sud
+* Regno Unito, ovest
+* Europa occidentale
+
+
+
+
+=== Nord America
+
+* Canada centrale
+* Canada Est
+* Stati Uniti centrali
+* Stati Uniti orientali
+* Est US 2
+* Stati Uniti centro-nord
+* Stati Uniti centro-sud
+* Stati Uniti occidentali
+* US 2 ovest
+* Stati Uniti centro-occidentali
+
+
+
+
+=== America del Sud
+
+* Brasile Sud
+
