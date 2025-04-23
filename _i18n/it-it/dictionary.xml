@@ -1407,32 +1407,5 @@
   <block id="d3a48b6792b79f1932baa44071945c80" category="list-text">In BlueXP , <block ref="e5625abf9d60b2626bb47dbb5c12864c" category="inline-xref-macro-rx"></block>[aggiungere la licenza al portafoglio digitale di BlueXP ].</block>
   <block id="af35d47e77f1b287fca9c2a638c644aa" category="paragraph">Quando si utilizza una configurazione MetroCluster, è Best practice utilizzare archivi di oggetti nel cloud pubblico che si trovano in zone di disponibilità diverse.<block ref="8cdfadb67efe7ac0be1266ed1d493d6d" category="inline-link-rx"></block>. All'interno di un MetroCluster, si sconsiglia di utilizzare aggregati senza mirror, in modo da visualizzare un messaggio di errore.</block>
   <block id="437a34485fe2ce742e7d58f52bb6c1e5" category="paragraph">Se si utilizza StorageGRID come archivio di oggetti in una configurazione MetroCluster, entrambi i sistemi ONTAP possono eseguire il tiering FabricPool su un singolo sistema StorageGRID. Ogni sistema ONTAP deve eseguire il Tier dei dati in diversi bucket.</block>
-  <block id="aa43861a5e0a7fa90f107ba3b50f03cd" category="paragraph">Il tiering di BlueXP  supporta le seguenti aree Azure. Le regioni Azure Cina non sono supportate come destinazioni per il tiering.</block>
-  <block id="f5cd262901883dff68d06b215fb0f28e" category="section-title">Africa</block>
-  <block id="d5daca31a462e138266141f6d01ca814" category="list-text">Sud Africa, Nord</block>
-  <block id="cee3f0213dd8b7eb15d7b31824e01754" category="list-text">Australia Est</block>
-  <block id="c2701212de431ec66277aeb9ec636184" category="list-text">Australia sud-orientale</block>
-  <block id="f74e1c0c8ee8410fa5bfe03676347257" category="list-text">Asia orientale</block>
-  <block id="12fd3aa0a9f080663613364badb43e93" category="list-text">Giappone Est</block>
-  <block id="33e5ad3a780212ee47f127965a2dda72" category="list-text">Giappone occidentale</block>
-  <block id="6da3164e9884fb44e54fda035450cfaa" category="list-text">Corea centrale</block>
-  <block id="cbbf2ae44538816cc573fa3ad561a434" category="list-text">Corea del Sud</block>
-  <block id="ef005ab2b7187e0e4953a0abfdacad42" category="list-text">Sud-est asiatico</block>
-  <block id="bea1bd3d23555c539dab5f3f5426184c" category="list-text">Francia centrale</block>
-  <block id="1dab3491cdeeb2a6d567b21ee3063ae4" category="list-text">Germania Centro Ovest</block>
-  <block id="85c1bd2190b5e1105a9c4e7e6a224a96" category="list-text">Germania Nord</block>
-  <block id="d0fe0e3b6520479f718b98f0d471b7d0" category="list-text">Nord Europa</block>
-  <block id="390a1a81c9b43f7d364b54144161673d" category="list-text">Regno Unito sud</block>
-  <block id="23d58738c27b56ae980ce7b45716f6a5" category="list-text">Regno Unito, ovest</block>
-  <block id="8fb2033d01e3efa2825282a13f86c14e" category="list-text">Europa occidentale</block>
-  <block id="ea7c65fe418bef9cfe86be4944b30bcb" category="list-text">Canada Est</block>
-  <block id="2e168141b8f719cbd37e6beec663b599" category="list-text">Stati Uniti centrali</block>
-  <block id="3c110de67497eb3f8d4c100e43101c81" category="list-text">Stati Uniti orientali</block>
-  <block id="7c61981f0be77fb7e4061ba5395ff02b" category="list-text">Est US 2</block>
-  <block id="e306e59ae933d5705ad58b576840cfb7" category="list-text">Stati Uniti centro-nord</block>
-  <block id="00a0c4ce62672ec36639c314d0d8e114" category="list-text">Stati Uniti centro-sud</block>
-  <block id="f3397c566fedcaa2f63145169ba345fc" category="list-text">Stati Uniti occidentali</block>
-  <block id="c349d3a26cf4231660785a0c5b4cb007" category="list-text">US 2 ovest</block>
-  <block id="e74523dfd57d69116c6dc03759fe0a7b" category="list-text">Stati Uniti centro-occidentali</block>
-  <block id="47b9af39407829080e9cfeee3607c39c" category="list-text">Brasile Sud</block>
+  <block id="34d2244a64410dd4e28da2b82bf54998" category="paragraph">Il tiering di BlueXP  è supportato in tutte le aree Azure, ad eccezione della Cina, in cui Microsoft Azure gestito da 21Vianet.</block>
 </blocks>
