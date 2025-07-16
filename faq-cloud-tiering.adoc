@@ -144,7 +144,7 @@ No, non lo fa.
 
 
 
-=== La reidratazione dei sistemi on-premise è soggetta ai costi di uscita addebitati dai cloud provider?
+=== La reidratazione dei sistemi on-premise è soggetta ai costi di uscita addebitati dai provider cloud?
 
 Sì. Tutte le letture del cloud pubblico sono soggette a costi di uscita.
 
@@ -156,7 +156,7 @@ Il modo migliore per stimare quanto un cloud provider addebiterà per l'hosting 
 
 
 
-=== I provider di servizi cloud addebitano costi aggiuntivi per la lettura/recupero dei dati dallo storage a oggetti allo storage on-premise?
+=== I provider cloud applicano costi aggiuntivi per la lettura/il recupero dei dati dall'archiviazione degli oggetti all'archiviazione locale?
 
 Sì. Controllare https://aws.amazon.com/s3/pricing/["Prezzi Amazon S3"], https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["Prezzo a blocchi"], e. https://cloud.google.com/storage/pricing["Prezzi del cloud storage"] per ulteriori prezzi sostenuti per la lettura/recupero dei dati.
 
@@ -170,7 +170,7 @@ Per ottenere una stima, è sufficiente aggiungere il cluster ONTAP a BlueXP e is
 
 === In che modo è possibile addebitare i costi del tiering quando si utilizza un ONTAP MetroCluster?
 
-Se utilizzato in ambienti MetroCluster, il tiering della capacità con licenza viene applicato ai bucket con mirroring in maniera uguale. Ad esempio, se hai una licenza per 100TiB TB di tiering, entrambi i bucket possono essere suddivisi in Tier fino a 100 TiB. Non è previsto alcun costo aggiuntivo per i secchi specchiati. Durante il tiering dagli aggregati senza mirror negli ambienti MetroCluster, la licenza di tiering BlueXP  viene applicata normalmente e viene utilizzata la capacità totale con tiering in entrambi i bucket. Ad esempio, se disponi di una licenza per 100TiB TB di tiering, entrambi i bucket possono essere sottoposti a tiering fino a 50TB TB.
+In ambienti MetroCluster , la licenza di tiering totale viene applicata all'utilizzo di entrambi i cluster. Ad esempio, se si dispone di una licenza per 100 TiB di tiering, la capacità di tiering utilizzata da ciascun cluster contribuisce alla capacità totale di 100 TiB.
 
 
 
@@ -326,7 +326,7 @@ A partire da ONTAP 9.6, se l'aggregato di destinazione utilizza lo stesso livell
 
 
 
-=== Come posso riportare on-premise i miei dati Tiered al livello di performance?
+=== Come posso riportare i miei dati a livelli locali al livello delle prestazioni?
 
 La riscrittura viene generalmente eseguita in lettura e dipende dal tipo di policy di tiering. Prima di ONTAP 9.8, la scrittura dell'intero volume può essere eseguita con un'operazione di _spostamento del volume_. A partire da ONTAP 9.8, l'interfaccia utente di tiering dispone di opzioni per *riportare tutti i dati* o *riportare il file system attivo*. link:task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier["Scopri come riportare i dati al livello di performance"].
 

@@ -16,7 +16,9 @@ summary: Il servizio di tiering BlueXP di NetApp estende il tuo data center al c
 [role="lead"]
 Il servizio di tiering BlueXP di NetApp estende il tuo data center al cloud attraverso il tiering automatico dei dati inattivi dai cluster ONTAP on-premise allo storage a oggetti. In questo modo si libera spazio prezioso sul cluster per più carichi di lavoro, senza apportare modifiche al livello applicativo. Il tiering BlueXP consente di ridurre i costi del data center e di passare da un modello CAPEX a un modello OPEX.
 
-Il servizio di tiering BlueXP sfrutta le funzionalità di _FabricPool_. FabricPool è una tecnologia NetApp Data Fabric che consente il tiering automatizzato dei dati verso uno storage a oggetti a basso costo. I dati attivi (hot) rimangono nel Tier locale (aggregati ONTAP on-premise), mentre i dati inattivi (cold) vengono spostati nel Tier cloud, il tutto preservando l'efficienza dei dati ONTAP.
+Il servizio BlueXP tiering utilizza _FabricPool_. FabricPool è una tecnologia NetApp Data Fabric che consente il tiering automatizzato dei dati verso uno storage a oggetti a basso costo. I dati attivi (hot) rimangono nel Tier locale (aggregati ONTAP on-premise), mentre i dati inattivi (cold) vengono spostati nel Tier cloud, il tutto preservando l'efficienza dei dati ONTAP.
+
+Suggerimento: i dati attivi (hot) restano sul livello locale (aggregati ONTAP locali), mentre i dati inattivi (cold) vengono spostati sul livello cloud, mantenendo così l'efficienza dei dati ONTAP .
 
 Originariamente supportato sui sistemi AFF, FAS e ONTAP Select con aggregati all-SSD, a partire da ONTAP 9.8 è possibile eseguire il tiering dei dati da aggregati costituiti da HDD oltre a SSD dalle performance elevate. Vedere https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html["Considerazioni e requisiti per l'utilizzo di FabricPool"^] per ulteriori informazioni.
 
@@ -30,7 +32,7 @@ https://bluexp.netapp.com/cloud-tiering-service-tco["Utilizza il calcolatore del
 
 BlueXP Tiering offre automazione, monitoraggio, report e un'interfaccia di gestione comune:
 
-* L'automazione semplifica la configurazione e la gestione del tiering dei dati dai cluster ONTAP on-premise al cloud
+* L'automazione semplifica la configurazione e la gestione del livello dei dati dai cluster ONTAP locali al cloud
 * È possibile scegliere la classe di accesso/il Tier di storage di cloud provider predefiniti oppure utilizzare il Lifecycle management per assegnare un Tier più conveniente ai dati meno recenti
 * È possibile creare connessioni ad archivi di oggetti aggiuntivi che possono essere utilizzati per altri aggregati nel cluster
 * Utilizzando l'interfaccia utente è possibile trascinare gli archivi di oggetti in un aggregato per il tiering e per il mirroring FabricPool
@@ -133,7 +135,7 @@ Al momento, i contratti annuali non sono supportati in fase di tiering nel cloud
 
 === Porta la tua licenza
 
-Porta la tua licenza acquistando una licenza *BlueXP Tiering* da NetApp (precedentemente nota come licenza "Cloud Tiering"). È possibile acquistare licenze a 1, 2 o 3 anni e specificare qualsiasi quantità di capacità di tiering (a partire da un minimo di 10 TIB). La licenza di tiering BYOL BlueXP è una _licenza mobile_ che è possibile utilizzare su più cluster ONTAP on-premise. La capacità di tiering totale definita nella licenza di tiering BlueXP può essere utilizzata da tutti i cluster on-premise.
+Porta la tua licenza acquistando una licenza *BlueXP Tiering* da NetApp (precedentemente nota come licenza "Cloud Tiering"). È possibile acquistare licenze a 1, 2 o 3 anni e specificare qualsiasi quantità di capacità di tiering (a partire da un minimo di 10 TIB). La licenza di tiering BYOL BlueXP è una _licenza mobile_ che è possibile utilizzare su più cluster ONTAP on-premise. La capacità totale di suddivisione in livelli definita nella licenza BlueXP tiering può essere utilizzata da tutti i cluster locali.
 
 Dopo aver acquistato una licenza di tiering BlueXP, è necessario utilizzare il portafoglio digitale BlueXP in BlueXP per aggiungere la licenza. link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license["Scopri come utilizzare una licenza BlueXP Tiering BYOL"].
 
@@ -154,7 +156,7 @@ image:diagram_cloud_tiering.png["Immagine dell'architettura che mostra il serviz
 
 Ad un livello elevato, il tiering BlueXP funziona come segue:
 
-. Scopri il tuo cluster on-premise di BlueXP.
+. Puoi scoprire il tuo cluster on-premise da BlueXP.
 . È possibile impostare il tiering fornendo dettagli sullo storage a oggetti, tra cui il bucket/container, una classe di storage o un Tier di accesso e le regole del ciclo di vita per i dati a più livelli.
 . BlueXP configura ONTAP per l'utilizzo del provider di storage a oggetti e rileva la quantità di dati attivi e inattivi nel cluster.
 . È possibile scegliere i volumi da tiering e il criterio di tiering da applicare a tali volumi.

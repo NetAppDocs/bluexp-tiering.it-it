@@ -14,9 +14,9 @@ summary: È possibile visualizzare lo stato degli avvisi di tiering in BlueXP No
 
 
 [role="lead"]
-È possibile visualizzare lo stato degli avvisi di tiering in BlueXP Notification Center.
+È possibile visualizzare lo stato degli avvisi di suddivisione in livelli nel Centro notifiche.
 
-Il Centro notifiche tiene traccia dell'avanzamento degli incidenti di tiering, in modo da verificare se sono stati risolti o meno. È possibile visualizzare le notifiche facendo clic sul pulsante (image:icon_bell.png["campanello di notifica"]) Nella barra dei menu di BlueXP.
+Il Centro notifiche tiene traccia dell'avanzamento degli incidenti di tiering, in modo da verificare se sono stati risolti o meno. È possibile visualizzare le notifiche cliccando su ( image:icon_bell.png["campanello di notifica"] ) nella barra dei menu.
 
 A questo punto, viene visualizzato un evento di tiering come notifica:
 
@@ -24,6 +24,6 @@ Tier di dati aggiuntivi dal <name> del cluster allo storage a oggetti per aument
 
 Questa notifica è un "consiglio" per rendere i sistemi più efficienti e risparmiare sui costi di storage. Indica che un cluster tiering meno del 20% dei dati cold, inclusi i cluster che non utilizzano il tiering dei dati. Fornisce un collegamento a https://bluexp.netapp.com/cloud-tiering-service-tco["Calcolo del costo totale di proprietà e del risparmio di BlueXP Tiering"^] per aiutarti a calcolare i risparmi sui costi.
 
-BlueXP  non invia alcuna e-mail per questa notifica.
+Non riceverai email per questa notifica.
 
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["Scopri di più sul Centro notifiche"^].

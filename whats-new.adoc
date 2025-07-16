@@ -106,7 +106,7 @@ Consulta l'elenco completo degli endpoint per il https://docs.netapp.com/us-en/b
 
 === Trascina e rilascia per abilitare il tiering in destinazioni aggiuntive
 
-Se la destinazione Azure Blob, Google Cloud Storage o StorageGRID Tiering esiste come ambiente di lavoro su Canvas, è possibile trascinare l'ambiente di lavoro on-premise ONTAP sulla destinazione per avviare la configurazione guidata del tiering.
+Se la destinazione di suddivisione in livelli di Azure Blob, Google Cloud Storage o StorageGRID esiste come ambiente di lavoro su Canvas, è possibile trascinare l'ambiente di lavoro ONTAP locale sulla destinazione per avviare la procedura guidata di configurazione dei livelli.
 
 
 
@@ -124,7 +124,7 @@ https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html["Consu
 
 === Trascina e rilascia per abilitare il tiering su Amazon S3
 
-Se la destinazione del tiering Amazon S3 esiste come ambiente di lavoro su Canvas, è possibile trascinare l'ambiente di lavoro ONTAP on-premise sulla destinazione per avviare la configurazione guidata del tiering.
+Se la destinazione di suddivisione in livelli Amazon S3 esiste come ambiente di lavoro su Canvas, puoi trascinare il tuo ambiente di lavoro ONTAP locale sulla destinazione per avviare la procedura guidata di configurazione dei livelli.
 
 
 

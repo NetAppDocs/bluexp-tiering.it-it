@@ -14,13 +14,13 @@ summary: 'BlueXP Tiering offre una vista aggregata del tiering dei dati da ciasc
 
 
 [role="lead"]
-BlueXP Tiering offre una vista aggregata del tiering dei dati da ciascuno dei cluster on-premise. Questa panoramica fornisce un quadro chiaro dell'ambiente e consente di intraprendere le azioni appropriate.
+BlueXP Tiering offre una vista aggregata del tiering dei dati da ciascuno dei cluster on-premise.
 
-Fai clic su *Tiering > on-premise Dashboard*. BlueXP Tiering fornisce i seguenti dettagli sull'ambiente in uso.
+Seleziona *Tiering > Dashboard locale*. I seguenti dettagli sono inclusi nella dashboard.
 
 image:screenshot_tiering_onprem_dashboard.png["Schermata della pagina del dashboard on-premise."]
 
-Cluster rilevati:: Il numero di cluster on-premise scoperto dal tiering BlueXP. Il grafico fornisce una panoramica dello stato del tiering per questi cluster.
+Cluster rilevati:: Numero di cluster locali che sono stati scoperti. Il grafico fornisce una panoramica dello stato del tiering per questi cluster.
 +
 --
 * Tiering elevato: Cluster che tierano oltre il 20% dei dati cold

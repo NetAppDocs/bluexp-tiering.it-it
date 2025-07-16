@@ -25,8 +25,8 @@ Si consiglia di eseguire questo controllo quando l'utilizzo della CPU del cluste
 
 .Procedura per un cluster che non è stato configurato per il tiering
 . Dal menu di navigazione a sinistra, selezionare *mobilità > Tiering*.
-. Dalla pagina *Clusters*, fare clic sull'icona del menu di un cluster e selezionare *Cloud Performance Test*.
-. Rivedere i dettagli e fare clic su *continua*.
+. Dalla pagina *Cluster*, seleziona l'icona del menu per un cluster e seleziona *Cloud Performance Test*.
+. Controlla i dettagli e seleziona *Continua*.
 . Seguire le istruzioni per fornire le informazioni richieste.
 +
 Le informazioni che è necessario fornire sono le stesse di quelle relative all'impostazione del tiering nel cluster.
@@ -36,7 +36,7 @@ Le informazioni che è necessario fornire sono le stesse di quelle relative all'
 
 .Procedura per un cluster configurato per il tiering
 . Dal menu di navigazione a sinistra, selezionare *mobilità > Tiering*.
-. Dalla pagina *Clusters*, fare clic sull'icona del menu di un cluster e selezionare *Cloud Performance Test*.
+. Dalla pagina *Cluster*, seleziona l'icona del menu per un cluster e seleziona *Cloud Performance Test*.
 . Selezionare un nodo dall'elenco a discesa.
 . Visualizzare i risultati o ricontrollare le prestazioni.
 
